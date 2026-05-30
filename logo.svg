@@ -1,12 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="VEWO logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="VEWO logo">
   <defs>
-    <linearGradient id="vewoGrad" x1="12%" y1="6%" x2="78%" y2="98%">
-      <stop offset="0%" stop-color="#3b5bff"/>
-      <stop offset="52%" stop-color="#5b50ff"/>
+    <linearGradient id="vewoGrad" x1="14%" y1="8%" x2="80%" y2="96%">
+      <stop offset="0%" stop-color="#2f5bff"/>
+      <stop offset="50%" stop-color="#5b50ff"/>
       <stop offset="100%" stop-color="#9b6bff"/>
     </linearGradient>
   </defs>
-  <path fill="url(#vewoGrad)"
-        d="M6 14 L30 14 L50 66 L70 14 L94 14 L60 95 L40 95 Z"
-        stroke-linejoin="round"/>
+  <!-- Bold V with inner negative-space chevron notch -->
+  <path fill="url(#vewoGrad)" fill-rule="evenodd" d="
+    M12 16 L42 16 L60 65 L78 16 L108 16 L68 106 L52 106 Z
+    M56 62 L60 74 L64 62 L60 48 Z
+  "/>
 </svg>
