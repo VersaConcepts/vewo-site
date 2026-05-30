@@ -117,7 +117,7 @@
     });
   });
 
-  /* ---- Audit form (client-side handling; no backend) ---- */
+  /* ---- Audit form (submits to Web3Forms) ---- */
   var form = document.getElementById("auditForm");
   var note = document.getElementById("formNote");
   if (form) {
@@ -131,9 +131,36 @@
         note.className = "form-note err";
         return;
       }
-      note.textContent = "Thanks, " + name + " — your visibility audit request has been received. We'll be in touch at " + email + ".";
-      note.className = "form-note ok";
-      form.reset();
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn ? submitBtn.textContent : "";
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
+      note.textContent = "Sending your request…";
+      note.className = "form-note";
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data.success) {
+            note.textContent = "Thanks, " + name + " — your visibility audit request has been received. We'll be in touch at " + email + ".";
+            note.className = "form-note ok";
+            form.reset();
+          } else {
+            note.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
+            note.className = "form-note err";
+          }
+        })
+        .catch(function () {
+          note.textContent = "Network error. Please email hello@vewo.ai directly.";
+          note.className = "form-note err";
+        })
+        .finally(function () {
+          if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+        });
     });
   }
 
