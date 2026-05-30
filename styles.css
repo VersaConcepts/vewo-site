@@ -84,11 +84,11 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
   transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
 }
 .nav.scrolled { background: rgba(255,255,255,0.88); border-bottom-color: var(--line); box-shadow: 0 1px 0 rgba(16,17,40,0.03); }
-.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; height: 92px; }
 .brand { display: flex; align-items: center; gap: 10px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; }
 .brand__mark { width: 26px; height: 26px; display: block; object-fit: contain; }
-.brand__logo { height: 60px; width: auto; display: block; }
-.footer .brand__logo { height: 54px; }
+.brand__logo { height: 72px; width: auto; display: block; mix-blend-mode: multiply; }
+.footer .brand__logo { height: 66px; }
 .nav__links { display: flex; gap: 30px; }
 .nav__links a { color: var(--muted); font-size: 0.92rem; font-weight: 500; transition: color .15s; }
 .nav__links a:hover { color: var(--text); }
