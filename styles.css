@@ -24,7 +24,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 body {
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
@@ -32,7 +32,7 @@ body {
   overflow-x: hidden;
 }
 a { color: inherit; text-decoration: none; }
-h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height: 1.1; letter-spacing: -0.02em; font-weight: 600; }
+h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
 
 .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 860px; }
@@ -85,7 +85,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
 }
 .nav.scrolled { background: rgba(255,255,255,0.88); border-bottom-color: var(--line); box-shadow: 0 1px 0 rgba(16,17,40,0.03); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 92px; }
-.brand { display: flex; align-items: center; gap: 10px; font-family: "Space Grotesk", sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 1.25rem; letter-spacing: 0.04em; }
 .brand__mark { width: 26px; height: 26px; display: block; object-fit: contain; }
 .brand__logo { height: 72px; width: auto; display: block; mix-blend-mode: multiply; }
 .footer .brand__logo { height: 66px; }
@@ -106,7 +106,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
   color: var(--v3); font-weight: 600; padding: 7px 16px; border: 1px solid var(--line-2);
   border-radius: 999px; background: rgba(124,92,255,0.05); margin-bottom: 26px;
 }
-.hero__title { font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 700; margin-bottom: 26px; }
+.hero__title { font-size: clamp(2.1rem, 5.6vw, 4.5rem); font-weight: 700; margin-bottom: 26px; overflow-wrap: break-word; }
 .hero__lead { max-width: 720px; margin: 0 auto 22px; color: var(--muted); font-size: 1.12rem; }
 .hero__tagline { font-size: 1.05rem; color: var(--text); margin-bottom: 36px; }
 .hero__tagline strong { color: var(--text); }
@@ -119,7 +119,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
   text-align: center; transition: transform .2s, border-color .2s, box-shadow .2s;
 }
 .surface:hover { transform: translateY(-4px); border-color: var(--v3); box-shadow: var(--shadow-hover); }
-.surface__name { display: block; font-family: "Space Grotesk"; font-weight: 600; font-size: 1.05rem; }
+.surface__name { display: block; font-family: "Poppins"; font-weight: 600; font-size: 1.05rem; }
 .surface__sub { display: block; color: var(--muted-2); font-size: 0.82rem; margin-top: 4px; }
 
 /* ---------- Sections ---------- */
@@ -135,7 +135,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
 .shift-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
 .shift-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .shift-card__row { display: flex; align-items: center; gap: 12px; }
-.shift-card__val { font-family: "Space Grotesk"; font-size: 1.3rem; font-weight: 600; }
+.shift-card__val { font-family: "Poppins"; font-size: 1.3rem; font-weight: 600; }
 .shift-card__arrow { color: var(--v3); font-size: 1.4rem; margin: 10px 0 6px; }
 .shift-card p { color: var(--muted); margin-top: 16px; font-size: 0.95rem; }
 .tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
@@ -157,7 +157,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
 }
 .layer:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
 .layer.is-active { border-color: var(--v3); background: rgba(124,92,255,0.06); }
-.layer__num { font-family: "Space Grotesk"; font-weight: 700; font-size: 1.1rem; color: var(--v3); }
+.layer__num { font-family: "Poppins"; font-weight: 700; font-size: 1.1rem; color: var(--v3); }
 .layer__title { font-weight: 600; font-size: 0.98rem; }
 .layer-detail {
   border: 1px solid var(--line-2); border-radius: var(--radius); padding: 38px;
@@ -236,7 +236,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
 .metric h3 { font-size: 1.05rem; margin-bottom: 10px; }
 .metric p { color: var(--muted); font-size: 0.9rem; }
 .intel-statement { max-width: 780px; margin: 56px auto 0; text-align: center; }
-.intel-statement .big { font-family: "Space Grotesk"; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 600; margin-bottom: 16px; }
+.intel-statement .big { font-family: "Poppins"; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 600; margin-bottom: 16px; }
 .intel-statement > p { color: var(--muted); margin-bottom: 14px; }
 .intel-statement .muted { color: var(--muted-2); font-size: 0.95rem; }
 .intel-truths { list-style: none; display: grid; gap: 12px; margin: 28px 0; }
@@ -247,7 +247,7 @@ h1, h2, h3, h4 { font-family: "Space Grotesk", "Inter", sans-serif; line-height:
 /* ---------- FAQ ---------- */
 .faq { display: grid; gap: 12px; }
 .faq__item { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); overflow: hidden; }
-.faq__item summary { list-style: none; cursor: pointer; padding: 20px 24px; font-family: "Space Grotesk"; font-weight: 600; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq__item summary { list-style: none; cursor: pointer; padding: 20px 24px; font-family: "Poppins"; font-weight: 600; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .faq__item summary::-webkit-details-marker { display: none; }
 .faq__item summary::after { content: "+"; color: var(--v3); font-size: 1.4rem; font-weight: 400; transition: transform .2s; flex-shrink: 0; }
 .faq__item[open] summary::after { transform: rotate(45deg); }
