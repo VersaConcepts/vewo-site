@@ -196,6 +196,17 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
   .rag-flow__step { width: 100%; text-align: center; }
 }
 
+/* ---------- The Long Game / Investment ---------- */
+.invest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.invest-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+.invest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.invest-card__icon { font-size: 1.7rem; display: block; margin-bottom: 14px; }
+.invest-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
+.invest-card p { color: var(--muted); font-size: 0.98rem; }
+.invest-statement { max-width: 820px; margin: 38px auto 0; text-align: center; color: var(--muted); font-size: 1.1rem; padding: 28px; border-radius: var(--radius); background: linear-gradient(180deg, rgba(124,92,255,0.06), rgba(34,211,238,0.03)); border: 1px solid var(--line-2); }
+.invest-statement strong { display: block; margin-top: 10px; color: var(--text); font-size: 1.15rem; }
+@media (max-width: 600px) { .invest-grid { grid-template-columns: 1fr; } }
+
 /* ---------- Tiers ---------- */
 .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
 .tier { border: 1px solid var(--line); border-radius: 20px; padding: 34px 30px; background: var(--panel); box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
