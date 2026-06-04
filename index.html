@@ -100,6 +100,8 @@
         "@type": "FAQPage",
         "@id": "https://vewo.ai/#faq",
         "mainEntity": [
+          { "@type": "Question", "name": "I know AI is changing things, but I don't know where to start. Can you help?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — that's exactly who VEWO is built for. You don't need to understand the technical side or have a plan already. We start with a free audit, look at your brand the way AI does, and walk you through in plain English what's working, what's missing, and what to do first. We handle the how." } },
+          { "@type": "Question", "name": "Do I need to be technical to work with VEWO?", "acceptedAnswer": { "@type": "Answer", "text": "Not at all. Most of the brands we work with know something needs to change but aren't sure what. We translate the technical work into clear next steps and handle the execution, so you don't have to become an AI expert to get results." } },
           { "@type": "Question", "name": "What exactly is AI visibility infrastructure?", "acceptedAnswer": { "@type": "Answer", "text": "It is the semantic authority, entity structure, and AI-readable foundation that determine whether AI systems can understand, trust, and recommend your brand. Not a campaign — a durable system that compounds over time." } },
           { "@type": "Question", "name": "How is this different from SEO?", "acceptedAnswer": { "@type": "Answer", "text": "SEO optimizes for ranking position on a results page. VEWO engineers for recommendation probability across AI surfaces — ChatGPT, AI Overviews, Gemini, Perplexity, and the agent layer — where there is one synthesized answer, not ten blue links." } },
           { "@type": "Question", "name": "Isn't this just AEO or GEO with a new name?", "acceptedAnswer": { "@type": "Answer", "text": "No. Much of the AEO/GEO space relies on tactics Google has publicly debunked. VEWO builds infrastructure from Google's documented guidance — entity authority, semantic trust, and structured foundations — not hacks." } },
@@ -120,6 +122,14 @@
   <div class="bg-aura" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
 
+  <!-- ANNOUNCEMENT / URGENCY BAR -->
+  <div class="announce" id="announce">
+    <div class="container announce__inner">
+      <span class="announce__dot" aria-hidden="true"></span>
+      <p>Your competitors are building their AI visibility right now. Every month you wait, they pull further ahead. <a href="#audit">Get your free audit →</a></p>
+    </div>
+  </div>
+
   <!-- NAV -->
   <header class="nav" id="nav">
     <div class="container nav__inner">
@@ -127,11 +137,11 @@
         <img src="logo.png" class="brand__logo" alt="VEWO" width="150" height="39" />
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#shift">The Shift</a>
-        <a href="#framework">Framework</a>
+        <a href="#start-here">Start Here</a>
+        <a href="#framework">How It Works</a>
         <a href="#brand-brain">Brand Brain</a>
-        <a href="#long-game">Long Game</a>
         <a href="#tiers">Tiers</a>
+        <a href="#faq">FAQ</a>
       </nav>
       <a href="#audit" class="btn btn--solid nav__cta">Get Audit</a>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
@@ -139,11 +149,11 @@
       </button>
     </div>
     <div class="nav__mobile" id="navMobile">
-      <a href="#shift">The Shift</a>
-      <a href="#framework">Framework</a>
+      <a href="#start-here">Start Here</a>
+      <a href="#framework">How It Works</a>
       <a href="#brand-brain">Brand Brain</a>
-      <a href="#long-game">Long Game</a>
       <a href="#tiers">Tiers</a>
+      <a href="#faq">FAQ</a>
       <a href="#audit" class="btn btn--solid">Get Audit</a>
     </div>
   </header>
@@ -155,26 +165,65 @@
       <div class="container">
         <p class="eyebrow reveal">The AI Discovery Layer</p>
         <h1 class="hero__title reveal">
-          AI Visibility Infrastructure<br />
-          for the <span class="grad">Future of Search.</span>
+          When AI recommends a brand,<br />
+          will it be <span class="grad">yours — or theirs?</span>
         </h1>
         <p class="hero__lead reveal">
-          Search is shifting from rankings to recommendations. Traditional SEO is no longer
-          enough. AI systems now decide what gets surfaced, summarized, and selected — often
-          before a customer ever visits your website. The brands that win will be the ones
-          built into the AI discovery layer.
+          Search is shifting from rankings to recommendations. ChatGPT, Google AI Overviews,
+          Gemini, and Perplexity now decide which brands get surfaced and recommended — often
+          before a customer ever visits a website. The brands building for this <em>today</em> are
+          the ones AI will choose tomorrow. Everyone else gets left out of the answer.
         </p>
-        <p class="hero__tagline reveal"><strong>Visibility Everywhere Optimization.</strong> Infrastructure, not campaigns.</p>
+        <p class="hero__tagline reveal"><strong>VEWO builds your AI visibility infrastructure</strong> — so AI understands, trusts, and recommends you.</p>
         <div class="hero__actions reveal">
-          <a href="#audit" class="btn btn--solid btn--lg">Build Your AI Visibility</a>
-          <a href="#framework" class="btn btn--ghost btn--lg">See the Framework</a>
+          <a href="#audit" class="btn btn--solid btn--lg">Get Your Free Visibility Audit</a>
+          <a href="#start-here" class="btn btn--ghost btn--lg">New to this? Start here</a>
         </div>
+        <p class="hero__microtrust reveal">No jargon required. We'll show you exactly where you stand and what to do next.</p>
 
         <div class="surfaces reveal">
           <div class="surface"><span class="surface__name">ChatGPT</span><span class="surface__sub">Conversational Search</span></div>
           <div class="surface"><span class="surface__name">AI Overviews</span><span class="surface__sub">Google Generative</span></div>
           <div class="surface"><span class="surface__name">Perplexity</span><span class="surface__sub">Answer Engines</span></div>
           <div class="surface"><span class="surface__name">Agentic</span><span class="surface__sub">Commerce &amp; Buying</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- START HERE / NOVICE ON-RAMP -->
+    <section class="section section--alt" id="start-here">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="kicker">Start Here</span>
+          <h2>You know you need to change.<br /><span class="grad">You're just not sure how.</span></h2>
+          <p class="sec-sub">
+            If you've felt that AI is reshaping how customers find brands — but you're not sure what
+            to actually do about it — you're exactly who we built this for. You don't need to be
+            technical. You just need a clear path. Here it is, in plain English.
+          </p>
+        </header>
+
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <span class="step-card__num">1</span>
+            <h3>The way people search changed</h3>
+            <p>Instead of clicking ten blue links, people now ask ChatGPT, Google AI, or Perplexity a question and get one answer. That answer usually names a few specific brands. The rest are invisible.</p>
+          </article>
+          <article class="step-card reveal">
+            <span class="step-card__num">2</span>
+            <h3>AI has to understand you first</h3>
+            <p>For AI to recommend you, it has to clearly understand who you are, what you sell, and why you're trustworthy. Most websites aren't set up for a machine to read and "get" — so they get skipped.</p>
+          </article>
+          <article class="step-card reveal">
+            <span class="step-card__num">3</span>
+            <h3>We build that understanding for you</h3>
+            <p>We structure your brand's information the way AI actually reads it, and build authority across the web so AI trusts you. Done consistently, you become the brand AI recommends in your category.</p>
+          </article>
+        </div>
+
+        <div class="start-cta reveal">
+          <p><strong>Not sure where you stand?</strong> That's normal — and it's the whole point of the audit. We'll look at your brand the way AI does and show you, in plain terms, exactly what's working, what's missing, and what to do first.</p>
+          <a href="#audit" class="btn btn--solid btn--lg">Get My Free Audit</a>
         </div>
       </div>
     </section>
@@ -237,6 +286,68 @@
           <li class="reveal"><span class="x">✕</span> Content optimized for keywords, not reasoning.</li>
           <li class="reveal"><span class="x">✕</span> No AI-readable infrastructure. Invisible at the moment of decision.</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- THE LONG GAME / COMPOUNDING INVESTMENT -->
+    <section class="section section--alt" id="long-game">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="kicker">The Long Game</span>
+          <h2>Not an overnight fix.<br /><span class="grad">A compounding investment.</span></h2>
+          <p class="sec-sub">
+            This is not a one-month campaign with a quick spike. AI visibility infrastructure is
+            built over time — and like money in the bank, it pays dividends that grow the longer it
+            compounds. If you wait, your competitors compound first, and you get left behind.
+          </p>
+        </header>
+
+        <div class="invest-grid">
+          <article class="invest-card reveal">
+            <span class="invest-card__icon">📈</span>
+            <h3>It compounds like an investment</h3>
+            <p>Every cycle of authority, entity structure, and Brand Brain learning stacks on the last. Think of it as capital deposited now that earns visibility interest for years — not a cost you pay and forget.</p>
+          </article>
+          <article class="invest-card reveal">
+            <span class="invest-card__icon">⏳</span>
+            <h3>Time in the market beats timing it</h3>
+            <p>There is no overnight switch. If you are looking for a result inside a month, this is not that service. The brands that start now build a lead later entrants cannot buy back.</p>
+          </article>
+          <article class="invest-card reveal">
+            <span class="invest-card__icon">🎯</span>
+            <h3>Consistency, not bursts</h3>
+            <p>We keep a proactive plan always in place — tracking where the market and the models are shifting, then executing against it consistently. Steady, deliberate progress is what moves the needle.</p>
+          </article>
+          <article class="invest-card reveal">
+            <span class="invest-card__icon">🕸️</span>
+            <h3>A web of information that surfaces you in AI</h3>
+            <p>Over time we weave a connected web of information about your brand — the structure AI systems read, trust, and pull from. That web is what makes your brand show up when AI answers.</p>
+          </article>
+        </div>
+
+        <div class="agent-panel reveal">
+          <span class="agent-panel__tag">Built for AI Agents</span>
+          <h3>Your site has a new primary reader: the AI agent.</h3>
+          <p>
+            It is no longer just people scanning your pages. AI agents are the ones reading your
+            site, digesting your information, making inferences from it, and then returning answers —
+            to you, and to your customer as the final reader. If your information is not structured
+            and set up the right way, agents draw the wrong conclusions and pass along inaccurate
+            answers about your brand.
+          </p>
+          <p>
+            VEWO builds your site and its underlying information specifically for how AI agents read
+            and reason. Clean entity structure, machine-readable data, and a connected web of context
+            are what let an agent return <em>accurate</em> information about your brand — instead of
+            guessing, omitting you, or recommending a competitor it understood better.
+          </p>
+        </div>
+
+        <p class="invest-statement reveal">
+          The cost of waiting is not zero. Every month you delay, the AI discovery layer
+          consolidates further — and the compounding advantage moves to whoever started first.
+          <strong>The best time to start was a year ago. The second best time is now.</strong>
+        </p>
       </div>
     </section>
 
@@ -345,65 +456,115 @@
       </div>
     </section>
 
-    <!-- THE LONG GAME / COMPOUNDING INVESTMENT -->
-    <section class="section section--alt" id="long-game">
+    <!-- WHY DIFFERENT -->
+    <section class="section section--alt" id="different">
       <div class="container">
         <header class="sec-head reveal">
-          <span class="kicker">The Long Game</span>
-          <h2>Not an overnight fix.<br /><span class="grad">A compounding investment.</span></h2>
+          <span class="kicker">Why VEWO Is Different</span>
+          <h2>Not an agency.<br />A visibility infrastructure company.</h2>
           <p class="sec-sub">
-            This is not a one-month campaign with a quick spike. AI visibility infrastructure is
-            built over time — and like money in the bank, it pays dividends that grow the longer it
-            compounds. If you wait, your competitors compound first, and you get left behind.
+            Most providers in this space are repackaging old playbooks. VEWO is built from the
+            ground up for how AI systems discover, evaluate, and recommend brands.
           </p>
         </header>
 
-        <div class="invest-grid">
-          <article class="invest-card reveal">
-            <span class="invest-card__icon">📈</span>
-            <h3>It compounds like an investment</h3>
-            <p>Every cycle of authority, entity structure, and Brand Brain learning stacks on the last. Think of it as capital deposited now that earns visibility interest for years — not a cost you pay and forget.</p>
-          </article>
-          <article class="invest-card reveal">
-            <span class="invest-card__icon">⏳</span>
-            <h3>Time in the market beats timing it</h3>
-            <p>There is no overnight switch. If you are looking for a result inside a month, this is not that service. The brands that start now build a lead later entrants cannot buy back.</p>
-          </article>
-          <article class="invest-card reveal">
-            <span class="invest-card__icon">🎯</span>
-            <h3>Consistency, not bursts</h3>
-            <p>We keep a proactive plan always in place — tracking where the market and the models are shifting, then executing against it consistently. Steady, deliberate progress is what moves the needle.</p>
-          </article>
-          <article class="invest-card reveal">
-            <span class="invest-card__icon">🕸️</span>
-            <h3>A web of information that surfaces you in AI</h3>
-            <p>Over time we weave a connected web of information about your brand — the structure AI systems read, trust, and pull from. That web is what makes your brand show up when AI answers.</p>
-          </article>
+        <div class="compare">
+          <div class="compare__col reveal">
+            <h3>Traditional SEO Agencies</h3>
+            <ul>
+              <li>Optimize for keyword rankings</li>
+              <li>Tactic-driven deliverables</li>
+              <li>Single-channel, page-by-page</li>
+              <li>Compete for position on a results page</li>
+              <li>Built for the link-and-click era</li>
+            </ul>
+          </div>
+          <div class="compare__col reveal">
+            <h3>Generic AI Marketing Firms</h3>
+            <ul>
+              <li>Buy and resell AI tools</li>
+              <li>Tactics chasing the latest model update</li>
+              <li>Surface-level prompt engineering</li>
+              <li>Trend cycles, not infrastructure</li>
+              <li>No moat, no compounding asset</li>
+            </ul>
+          </div>
+          <div class="compare__col compare__col--vewo reveal">
+            <h3>VEWO</h3>
+            <ul>
+              <li>Engineer for recommendation probability</li>
+              <li>Build semantic and entity authority</li>
+              <li>Operate across every AI surface in parallel</li>
+              <li>Architect AI-readable infrastructure</li>
+              <li>Compound visibility into a defensible moat</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="agent-panel reveal">
-          <span class="agent-panel__tag">Built for AI Agents</span>
-          <h3>Your site has a new primary reader: the AI agent.</h3>
-          <p>
-            It is no longer just people scanning your pages. AI agents are the ones reading your
-            site, digesting your information, making inferences from it, and then returning answers —
-            to you, and to your customer as the final reader. If your information is not structured
-            and set up the right way, agents draw the wrong conclusions and pass along inaccurate
-            answers about your brand.
-          </p>
-          <p>
-            VEWO builds your site and its underlying information specifically for how AI agents read
-            and reason. Clean entity structure, machine-readable data, and a connected web of context
-            are what let an agent return <em>accurate</em> information about your brand — instead of
-            guessing, omitting you, or recommending a competitor it understood better.
-          </p>
-        </div>
-
-        <p class="invest-statement reveal">
-          The cost of waiting is not zero. Every month you delay, the AI discovery layer
-          consolidates further — and the compounding advantage moves to whoever started first.
-          <strong>The best time to start was a year ago. The second best time is now.</strong>
+        <p class="dont-foot reveal">
+          We optimize for discoverability, recommendation probability, semantic trust, and entity
+          authority. The infrastructure that decides whether AI chooses your brand.
         </p>
+      </div>
+    </section>
+
+    <!-- WHAT WE DON'T DO -->
+    <section class="section section--alt" id="dont">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="kicker">What We Don't Do</span>
+          <h2>No tactics. No hacks.</h2>
+          <p class="sec-sub">
+            The AI visibility category is full of tactics Google has publicly debunked. We don't sell them.
+          </p>
+        </header>
+        <div class="dont-grid">
+          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No llms.txt files.</strong> Google has stated these have no effect on AI search visibility.</p></div>
+          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No content chunking for AI.</strong> Google has confirmed AI systems understand full pages and don't need content broken into machine-sized pieces.</p></div>
+          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No rewriting content for AI extraction.</strong> Google has been explicit that content written for humans performs best, including in AI search.</p></div>
+          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No mention farming or inauthentic citations.</strong> Google's systems detect and discount manufactured authority signals.</p></div>
+          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No schema as a strategy.</strong> Structured data is foundational hygiene, not a path to AI recommendations.</p></div>
+        </div>
+        <p class="dont-foot reveal">
+          We operate from Google's documented guidance on optimizing for generative AI search, not
+          the hacks circulating in the AEO and GEO space.
+          <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Read Google's official guidance →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- VISIBILITY INTELLIGENCE -->
+    <section class="section" id="intelligence">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="kicker">Visibility Intelligence</span>
+          <h2>Directional intelligence<br />for the AI commerce era.</h2>
+          <p class="sec-sub">
+            AI visibility cannot be measured with traditional rank reports. Our goal is to build
+            the semantic infrastructure for it.
+          </p>
+        </header>
+
+        <div class="metrics">
+          <div class="metric reveal"><h3>AI summary inclusion</h3><p>Whether your brand appears inside generated overviews and answers for high-intent category queries.</p></div>
+          <div class="metric reveal"><h3>Recommendation presence</h3><p>How frequently AI systems actively recommend your products or services to in-market users.</p></div>
+          <div class="metric reveal"><h3>Semantic footprint growth</h3><p>Expansion of your brand's authoritative presence across the open web sources AI cross-checks.</p></div>
+          <div class="metric reveal"><h3>Competitive visibility gaps</h3><p>Where competitors appear in AI results, where you don't, and what closes the gap.</p></div>
+          <div class="metric reveal"><h3>Entity authority strength</h3><p>How resolvable and trustworthy AI considers your brand entity across systems.</p></div>
+          <div class="metric reveal"><h3>Share of model voice</h3><p>How often AI systems reference your brand inside category and comparison conversations.</p></div>
+          <div class="metric reveal"><h3>Structured data completeness</h3><p>How well your underlying data is organized for machine understanding and agent action.</p></div>
+        </div>
+
+        <div class="intel-statement reveal">
+          <p class="big">Not rankings. Not impressions. <span class="grad">Visibility everywhere.</span></p>
+          <p>Other providers track pages. VEWO measures the surfaces that decide whether you exist.</p>
+          <p class="muted">Attribution will never be perfect inside AI interfaces. Directional intelligence is the new ground truth.</p>
+          <ul class="intel-truths">
+            <li>If AI does not understand you, it cannot recommend you.</li>
+            <li>If AI does not trust you, it will not choose you.</li>
+            <li>If your data is not structured for commerce, you may never be seen.</li>
+          </ul>
+          <p class="future"><strong>Future-proof your visibility.</strong> AI search is evolving into AI commerce. VEWO builds the infrastructure that makes AI choose your brand across search, summaries, conversations, and agentic transactions.</p>
+        </div>
       </div>
     </section>
 
@@ -470,118 +631,6 @@
       </div>
     </section>
 
-    <!-- WHAT WE DON'T DO -->
-    <section class="section section--alt" id="dont">
-      <div class="container">
-        <header class="sec-head reveal">
-          <span class="kicker">What We Don't Do</span>
-          <h2>No tactics. No hacks.</h2>
-          <p class="sec-sub">
-            The AI visibility category is full of tactics Google has publicly debunked. We don't sell them.
-          </p>
-        </header>
-        <div class="dont-grid">
-          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No llms.txt files.</strong> Google has stated these have no effect on AI search visibility.</p></div>
-          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No content chunking for AI.</strong> Google has confirmed AI systems understand full pages and don't need content broken into machine-sized pieces.</p></div>
-          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No rewriting content for AI extraction.</strong> Google has been explicit that content written for humans performs best, including in AI search.</p></div>
-          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No mention farming or inauthentic citations.</strong> Google's systems detect and discount manufactured authority signals.</p></div>
-          <div class="dont-card reveal"><span class="x">✕</span><p><strong>No schema as a strategy.</strong> Structured data is foundational hygiene, not a path to AI recommendations.</p></div>
-        </div>
-        <p class="dont-foot reveal">
-          We operate from Google's documented guidance on optimizing for generative AI search, not
-          the hacks circulating in the AEO and GEO space.
-          <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">Read Google's official guidance →</a>
-        </p>
-      </div>
-    </section>
-
-    <!-- VISIBILITY INTELLIGENCE -->
-    <section class="section" id="intelligence">
-      <div class="container">
-        <header class="sec-head reveal">
-          <span class="kicker">Visibility Intelligence</span>
-          <h2>Directional intelligence<br />for the AI commerce era.</h2>
-          <p class="sec-sub">
-            AI visibility cannot be measured with traditional rank reports. Our goal is to build
-            the semantic infrastructure for it.
-          </p>
-        </header>
-
-        <div class="metrics">
-          <div class="metric reveal"><h3>AI summary inclusion</h3><p>Whether your brand appears inside generated overviews and answers for high-intent category queries.</p></div>
-          <div class="metric reveal"><h3>Recommendation presence</h3><p>How frequently AI systems actively recommend your products or services to in-market users.</p></div>
-          <div class="metric reveal"><h3>Semantic footprint growth</h3><p>Expansion of your brand's authoritative presence across the open web sources AI cross-checks.</p></div>
-          <div class="metric reveal"><h3>Competitive visibility gaps</h3><p>Where competitors appear in AI results, where you don't, and what closes the gap.</p></div>
-          <div class="metric reveal"><h3>Entity authority strength</h3><p>How resolvable and trustworthy AI considers your brand entity across systems.</p></div>
-          <div class="metric reveal"><h3>Share of model voice</h3><p>How often AI systems reference your brand inside category and comparison conversations.</p></div>
-          <div class="metric reveal"><h3>Structured data completeness</h3><p>How well your underlying data is organized for machine understanding and agent action.</p></div>
-        </div>
-
-        <div class="intel-statement reveal">
-          <p class="big">Not rankings. Not impressions. <span class="grad">Visibility everywhere.</span></p>
-          <p>Other providers track pages. VEWO measures the surfaces that decide whether you exist.</p>
-          <p class="muted">Attribution will never be perfect inside AI interfaces. Directional intelligence is the new ground truth.</p>
-          <ul class="intel-truths">
-            <li>If AI does not understand you, it cannot recommend you.</li>
-            <li>If AI does not trust you, it will not choose you.</li>
-            <li>If your data is not structured for commerce, you may never be seen.</li>
-          </ul>
-          <p class="future"><strong>Future-proof your visibility.</strong> AI search is evolving into AI commerce. VEWO builds the infrastructure that makes AI choose your brand across search, summaries, conversations, and agentic transactions.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY DIFFERENT -->
-    <section class="section section--alt" id="different">
-      <div class="container">
-        <header class="sec-head reveal">
-          <span class="kicker">Why VEWO Is Different</span>
-          <h2>Not an agency.<br />A visibility infrastructure company.</h2>
-          <p class="sec-sub">
-            Most providers in this space are repackaging old playbooks. VEWO is built from the
-            ground up for how AI systems discover, evaluate, and recommend brands.
-          </p>
-        </header>
-
-        <div class="compare">
-          <div class="compare__col reveal">
-            <h3>Traditional SEO Agencies</h3>
-            <ul>
-              <li>Optimize for keyword rankings</li>
-              <li>Tactic-driven deliverables</li>
-              <li>Single-channel, page-by-page</li>
-              <li>Compete for position on a results page</li>
-              <li>Built for the link-and-click era</li>
-            </ul>
-          </div>
-          <div class="compare__col reveal">
-            <h3>Generic AI Marketing Firms</h3>
-            <ul>
-              <li>Buy and resell AI tools</li>
-              <li>Tactics chasing the latest model update</li>
-              <li>Surface-level prompt engineering</li>
-              <li>Trend cycles, not infrastructure</li>
-              <li>No moat, no compounding asset</li>
-            </ul>
-          </div>
-          <div class="compare__col compare__col--vewo reveal">
-            <h3>VEWO</h3>
-            <ul>
-              <li>Engineer for recommendation probability</li>
-              <li>Build semantic and entity authority</li>
-              <li>Operate across every AI surface in parallel</li>
-              <li>Architect AI-readable infrastructure</li>
-              <li>Compound visibility into a defensible moat</li>
-            </ul>
-          </div>
-        </div>
-        <p class="dont-foot reveal">
-          We optimize for discoverability, recommendation probability, semantic trust, and entity
-          authority. The infrastructure that decides whether AI chooses your brand.
-        </p>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="container narrow">
@@ -592,6 +641,8 @@
         </header>
 
         <div class="faq">
+          <details class="faq__item reveal"><summary>I know AI is changing things, but I don't know where to start. Can you help?</summary><div class="faq__body"><p>Yes — that's exactly who VEWO is built for. You don't need to understand the technical side or have a plan already. We start with a free audit, look at your brand the way AI does, and walk you through in plain English what's working, what's missing, and what to do first. We handle the how.</p></div></details>
+          <details class="faq__item reveal"><summary>Do I need to be technical to work with VEWO?</summary><div class="faq__body"><p>Not at all. Most of the brands we work with know something needs to change but aren't sure what. We translate the technical work into clear next steps and handle the execution, so you don't have to become an AI expert to get results.</p></div></details>
           <details class="faq__item reveal"><summary>What exactly is AI visibility infrastructure?</summary><div class="faq__body"><p>It is the semantic authority, entity structure, and AI-readable foundation that determine whether AI systems can understand, trust, and recommend your brand. Not a campaign — a durable system that compounds over time.</p></div></details>
           <details class="faq__item reveal"><summary>How is this different from SEO?</summary><div class="faq__body"><p>SEO optimizes for ranking position on a results page. VEWO engineers for recommendation probability across AI surfaces — ChatGPT, AI Overviews, Gemini, Perplexity, and the agent layer — where there is one synthesized answer, not ten blue links.</p></div></details>
           <details class="faq__item reveal"><summary>Isn't this just AEO or GEO with a new name?</summary><div class="faq__body"><p>No. Much of the AEO/GEO space relies on tactics Google has publicly debunked. VEWO builds infrastructure from Google's documented guidance — entity authority, semantic trust, and structured foundations — not hacks.</p></div></details>
@@ -661,12 +712,12 @@
       </div>
       <div class="footer__col">
         <h4>Sections</h4>
+        <a href="#start-here">Start Here</a>
         <a href="#shift">The Shift</a>
-        <a href="#framework">Framework</a>
-        <a href="#brand-brain">Brand Brain</a>
         <a href="#long-game">The Long Game</a>
+        <a href="#framework">How It Works</a>
+        <a href="#brand-brain">Brand Brain</a>
         <a href="#tiers">Infrastructure Tiers</a>
-        <a href="#intelligence">Visibility Intelligence</a>
         <a href="#faq">FAQ</a>
         <a href="#audit">Request Audit</a>
       </div>
