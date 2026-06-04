@@ -254,7 +254,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; } }
 
 /* ---------- The Long Game / Investment ---------- */
-.invest-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .invest-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
 .invest-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .invest-card__icon { font-size: 1.7rem; display: block; margin-bottom: 14px; }
@@ -374,7 +374,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
   .nav__toggle { display: flex; }
   .nav.open .nav__mobile { display: flex; }
   .surfaces { grid-template-columns: repeat(2, 1fr); }
-  .shift-grid, .layers, .ld-grid, .tiers, .compare { grid-template-columns: 1fr; }
+  .shift-grid, .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid { grid-template-columns: 1fr; }
   .brain-grid { grid-template-columns: 1fr 1fr; }
   .metric { flex-basis: calc(50% - 8px); }
   .footer__inner { grid-template-columns: 1fr 1fr; }
