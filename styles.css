@@ -154,6 +154,10 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .tag--to { background: rgba(124,92,255,0.12); color: var(--v3); }
 
 /* ---------- Problem ---------- */
+.problem-block { max-width: 760px; margin: 44px auto 0; text-align: center; }
+.problem-block h3 { font-size: clamp(1.3rem, 2.6vw, 1.8rem); margin-bottom: 12px; }
+.problem-block > p { color: var(--muted); margin-bottom: 22px; }
+.problem-block .problem-list { text-align: left; }
 .problem-list { list-style: none; display: grid; gap: 14px; margin-top: 8px; }
 .problem-list li { display: flex; align-items: flex-start; gap: 14px; padding: 18px 22px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); font-size: 1.05rem; }
 .x { color: #e23a64; font-weight: 700; flex-shrink: 0; }
