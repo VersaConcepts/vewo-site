@@ -655,6 +655,40 @@
             <label for="website">Website</label>
             <input id="website" name="website" type="text" placeholder="yourcompany.com" />
           </div>
+          <div class="field">
+            <label for="platform">What platform is your website built on?</label>
+            <select id="platform" name="platform">
+              <option value="" disabled selected>Select a platform</option>
+              <option value="Shopify">Shopify</option>
+              <option value="WooCommerce">WooCommerce</option>
+              <option value="Wix">Wix</option>
+              <option value="WordPress">WordPress</option>
+              <option value="Something custom / other">Something custom / other</option>
+            </select>
+          </div>
+          <div class="field field--hidden" id="platformOtherField">
+            <label for="platformOther">Tell us about your platform</label>
+            <input id="platformOther" name="platform_other" type="text" placeholder="Which platform or setup?" />
+          </div>
+          <div class="field">
+            <label for="employees">How big is your company? (employees)</label>
+            <select id="employees" name="employees">
+              <option value="" disabled selected>Select a range</option>
+              <option value="0–15">0–15</option>
+              <option value="15–20">15–20</option>
+              <option value="20+">20+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="revenue">What's your revenue target?</label>
+            <select id="revenue" name="revenue">
+              <option value="" disabled selected>Select a range</option>
+              <option value="Less than $1M">Less than $1M</option>
+              <option value="$1M – $5M">$1M – $5M</option>
+              <option value="$5M – $10M">$5M – $10M</option>
+              <option value="$10M or more">$10M or more</option>
+            </select>
+          </div>
           <div class="field field--full">
             <label for="goals">Tell us about your visibility goals</label>
             <textarea id="goals" name="goals" rows="4" placeholder="What does AI discovery look like for your brand today? Which surfaces and categories matter most?"></textarea>

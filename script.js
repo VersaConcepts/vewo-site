@@ -117,6 +117,17 @@
     });
   });
 
+  /* ---- Conditional "other platform" field ---- */
+  var platformSelect = document.getElementById("platform");
+  var platformOtherField = document.getElementById("platformOtherField");
+  if (platformSelect && platformOtherField) {
+    platformSelect.addEventListener("change", function () {
+      var show = platformSelect.value === "Something custom / other";
+      platformOtherField.classList.toggle("field--hidden", !show);
+      if (show) { platformOtherField.querySelector("input").focus(); }
+    });
+  }
+
   /* ---- Audit form (submits to Web3Forms) ---- */
   var form = document.getElementById("auditForm");
   var note = document.getElementById("formNote");
