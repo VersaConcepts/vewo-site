@@ -5,7 +5,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/styles.css");
   eleventyConfig.addPassthroughCopy("src/script.js");
   eleventyConfig.addPassthroughCopy("src/logo.png");
-  eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/favicon-32.png");
   eleventyConfig.addPassthroughCopy("src/favicon-192.png");
   eleventyConfig.addPassthroughCopy("src/favicon-512.png");
