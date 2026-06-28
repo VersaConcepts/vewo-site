@@ -1,0 +1,45 @@
+---
+layout: layouts/base.njk
+ogType: article
+---
+<article class="section blog-post">
+  <div class="container narrow">
+    <p class="blog-post__back reveal"><a href="/blog/">← Back to the blog</a></p>
+    <header class="blog-post__head reveal">
+      {% if tags and tags.length %}<span class="kicker">{{ tags[0] }}</span>{% endif %}
+      <h1>{{ title }}</h1>
+      <p class="blog-post__meta">
+        <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+        {% if author %} · {{ author }}{% endif %}
+      </p>
+    </header>
+    <div class="blog-post__body reveal">
+      {{ content | safe }}
+    </div>
+
+    <div class="blog-post__cta reveal">
+      <h3>Want AI to recommend your brand?</h3>
+      <p>See exactly where you stand with a free visibility audit.</p>
+      <a href="/#audit" class="btn btn--solid btn--lg">Get Your Free Audit</a>
+    </div>
+  </div>
+</article>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "datePublished": "{{ page.date | isoDate }}",
+  "dateModified": "{{ page.date | isoDate }}",
+  "author": { "@type": "Organization", "name": "VEWO" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "VEWO",
+    "logo": { "@type": "ImageObject", "url": "https://vewo.ai/favicon-512.png" }
+  },
+  "image": "https://vewo.ai/favicon-512.png",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://vewo.ai{{ page.url }}" }
+}
+</script>

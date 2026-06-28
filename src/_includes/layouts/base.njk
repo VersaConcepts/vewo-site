@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | VEWO</title>
+  <meta name="description" content="{{ description }}" />
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}" />{% endif %}
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <meta property="og:title" content="{{ title }}" />
+  <meta property="og:description" content="{{ description }}" />
+  <meta property="og:type" content="{{ ogType or 'website' }}" />
+  {% if canonical %}<meta property="og:url" content="{{ canonical }}" />{% endif %}
+  <meta property="og:site_name" content="VEWO" />
+  <meta property="og:image" content="https://vewo.ai/favicon-512.png" />
+  <meta name="twitter:card" content="summary" />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="alternate" type="application/atom+xml" href="/blog/feed.xml" title="VEWO Blog" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <div class="bg-aura" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="/" class="brand" aria-label="VEWO home">
+        <img src="/logo.png" class="brand__logo" alt="VEWO" width="150" height="39" />
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="/#start-here">Start Here</a>
+        <a href="/#framework">How It Works</a>
+        <a href="/#brand-brain">Brand Brain</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#faq">FAQ</a>
+      </nav>
+      <a href="/#audit" class="btn btn--solid nav__cta">Get Audit</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="/#start-here">Start Here</a>
+      <a href="/#framework">How It Works</a>
+      <a href="/#brand-brain">Brand Brain</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#audit" class="btn btn--solid">Get Audit</a>
+    </div>
+  </header>
+
+  <main id="top">
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" class="brand"><img src="/logo.png" class="brand__logo" alt="VEWO" width="150" height="39" /></a>
+        <p>AI Visibility Infrastructure.<br />Built for the future of search.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Sections</h4>
+        <a href="/#start-here">Start Here</a>
+        <a href="/#framework">How It Works</a>
+        <a href="/#brand-brain">Brand Brain</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#tiers">Infrastructure Tiers</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#audit">Request Audit</a>
+      </div>
+      <div class="footer__col">
+        <h4>Operations</h4>
+        <span>Semantic Authority</span>
+        <span>Entity Optimization</span>
+        <span>Structured Data</span>
+        <span>Ecosystem Reinforcement</span>
+        <span>Agentic Commerce</span>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 VEWO LLC · Phoenix, AZ</p>
+      <p class="footer__tag">Visible. Everywhere. By design.</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
