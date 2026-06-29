@@ -91,6 +91,55 @@ If the story told in these places is shallow, inconsistent, or negative, AI will
 
 In a real sense, your brand has become a distributed entity across the web. Your website is one important node—but it's only one.
 
+<figure class="blog-figure">
+<svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: AI synthesizes signals from your website, Reddit, LinkedIn, YouTube, and reviews into a single answer and shortlist for the customer.">
+  <defs>
+    <linearGradient id="ig-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6d4aff"/><stop offset="50%" stop-color="#4f7df0"/><stop offset="100%" stop-color="#0fa9c4"/>
+    </linearGradient>
+  </defs>
+  <!-- connector lines from signals to AI -->
+  <g stroke="#c9cbe0" stroke-width="2" fill="none">
+    <path d="M196 56 C 280 70, 300 150, 322 168"/>
+    <path d="M196 120 C 270 130, 295 158, 322 176"/>
+    <path d="M196 184 L 322 184"/>
+    <path d="M196 248 C 270 238, 295 210, 322 192"/>
+    <path d="M196 312 C 280 296, 300 220, 322 200"/>
+  </g>
+  <!-- AI to answer -->
+  <path d="M438 184 L 520 184" stroke="url(#ig-grad)" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+  <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#0fa9c4"/></marker></defs>
+
+  <!-- signal nodes -->
+  <g font-family="Poppins, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+    <g><rect x="20" y="38" width="176" height="36" rx="10" fill="#fff" stroke="#6a3fff" stroke-width="1.5"/><text x="108" y="61" fill="#0e0f1a">Your Website</text></g>
+    <g><rect x="20" y="102" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="125" fill="#545569">Reddit</text></g>
+    <g><rect x="20" y="166" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="189" fill="#545569">LinkedIn</text></g>
+    <g><rect x="20" y="230" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="253" fill="#545569">YouTube &amp; Social</text></g>
+    <g><rect x="20" y="294" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="317" fill="#545569">Reviews</text></g>
+  </g>
+
+  <!-- AI engine -->
+  <g>
+    <circle cx="380" cy="184" r="58" fill="url(#ig-grad)"/>
+    <text x="380" y="178" font-family="Poppins, sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">AI</text>
+    <text x="380" y="200" font-family="Poppins, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">synthesizes</text>
+  </g>
+
+  <!-- answer card -->
+  <g font-family="Poppins, sans-serif" text-anchor="middle">
+    <rect x="528" y="118" width="212" height="132" rx="14" fill="#fff" stroke="#6a3fff" stroke-width="1.5"/>
+    <text x="634" y="148" font-size="13" font-weight="700" fill="#0e0f1a">One Answer</text>
+    <text x="634" y="170" font-size="11" font-weight="600" fill="#545569">Shortlist of brands</text>
+    <rect x="552" y="184" width="164" height="14" rx="4" fill="#eceaff"/>
+    <rect x="552" y="206" width="120" height="14" rx="4" fill="#f1f2f8"/>
+    <rect x="552" y="228" width="140" height="14" rx="4" fill="#f1f2f8"/>
+  </g>
+  <text x="634" y="282" font-family="Poppins, sans-serif" font-size="12" font-weight="600" fill="#82839a" text-anchor="middle">→ shown to the customer</text>
+</svg>
+<figcaption>AI doesn't read your website in isolation. It triangulates signals from across the web—your site, Reddit, LinkedIn, YouTube, reviews—into a single synthesized answer. Your job is to make every signal clear and consistent.</figcaption>
+</figure>
+
 ### 4. Traditional Metrics Don't Capture AI Visibility
 
 Most brands still report:
