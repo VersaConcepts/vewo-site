@@ -101,8 +101,12 @@
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -40px 0px" });
     revealEls.forEach(function (el) { io.observe(el); });
+    // Failsafe: never leave content hidden. Reveal anything still unanimated after 2s.
+    setTimeout(function () {
+      revealEls.forEach(function (el) { el.classList.add("in"); });
+    }, 2000);
   } else {
     revealEls.forEach(function (el) { el.classList.add("in"); });
   }
