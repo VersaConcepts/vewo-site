@@ -71,5 +71,3 @@ Allow: /
 
 # Sitemap
 Sitemap: https://vewo.ai/sitemap.xml
-
-<!-- build check 1782692372 -->
