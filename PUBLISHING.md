@@ -2,6 +2,21 @@
 
 Adding a post to vewo.ai is three steps: create a Markdown file, push it, done. The blog index, sitemap, RSS feed, and Article schema all update automatically.
 
+## The VEWO post standard
+
+Every VEWO blog post follows the same format so the blog stays consistent:
+
+1. **A boxed TL;DR** at the top — a highlighted callout summarizing the post (violet box).
+2. **A custom infographic** — one brand-styled visual that explains the post's central idea.
+3. The body in plain Markdown.
+4. The "Back to the blog" link and audit CTA are added automatically by the layout.
+
+**Start from the template:** copy `BLOG_TEMPLATE.md` (in the repo root) into `src/blog/posts/`, rename it, and fill it in. It already includes the TL;DR box and a placeholder for the infographic.
+
+**Reference example:** the live post `src/blog/posts/2026-06-28-your-brand-in-the-age-of-ai.md` shows the standard in practice — see its `.blog-tldr` box and `.blog-figure` infographic.
+
+> Handing a post to Claude? Claude reads the full post, writes the TL;DR box, and designs a fitting infographic in the brand style — then publishes it. You don't have to build the visual yourself.
+
 ## 1. Create the file
 
 Add a new file in `src/blog/posts/`. Name it with the date and a URL-friendly slug:
