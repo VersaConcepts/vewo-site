@@ -31,13 +31,15 @@ That shift changes the meaning of brand visibility. It's no longer about "gettin
 
 The brands that understand this early can build real, compounding advantage. The ones that don't will gradually disappear from the places where decisions are increasingly made.
 
-## TL;DR
-
-AI has turned your website from "the" customer destination into just one signal in a much larger discovery layer. Buyers now ask AI systems what to buy, and those systems synthesize answers using both your site and what the wider web says about you (Reddit, LinkedIn, YouTube, social, reviews, etc.). If AI doesn't clearly understand who you are, what you offer, and who you serve, your brand quietly disappears from those answers—even if your site and ads look great. The play now is to:
-
-- Make your on-site content structured, explicit, and answer-focused.
-- Keep your brand story consistent and rich across off-site channels.
-- Treat AI visibility as a measurable, ongoing capability, not a one-off SEO project.
+<aside class="blog-tldr">
+<h2>TL;DR</h2>
+<p>AI has turned your website from "the" customer destination into just one signal in a much larger discovery layer. Buyers now ask AI systems what to buy, and those systems synthesize answers using both your site and what the wider web says about you (Reddit, LinkedIn, YouTube, social, reviews, etc.). If AI doesn't clearly understand who you are, what you offer, and who you serve, your brand quietly disappears from those answers—even if your site and ads look great. The play now is to:</p>
+<ul>
+<li>Make your on-site content structured, explicit, and answer-focused.</li>
+<li>Keep your brand story consistent and rich across off-site channels.</li>
+<li>Treat AI visibility as a measurable, ongoing capability, not a one-off SEO project.</li>
+</ul>
+</aside>
 
 ## The Problem: Your Website Is No Longer The Whole Story
 

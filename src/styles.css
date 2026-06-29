@@ -430,3 +430,10 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .blog-figure { margin: 32px 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow); }
 .blog-figure svg { width: 100%; height: auto; display: block; }
 .blog-figure figcaption { margin-top: 14px; font-size: 0.9rem; color: var(--muted); text-align: center; line-height: 1.5; }
+
+/* Blog TL;DR callout */
+.blog-tldr { margin: 32px 0; padding: 28px 32px; border: 1px solid var(--v3); border-radius: var(--radius); background: linear-gradient(180deg, rgba(124,92,255,0.07), rgba(34,211,238,0.04)); box-shadow: var(--shadow); }
+.blog-tldr h2 { font-size: 0.8rem !important; letter-spacing: 0.14em; text-transform: uppercase; color: var(--v3); margin: 0 0 12px !important; }
+.blog-tldr p { margin-bottom: 14px; color: var(--text); }
+.blog-tldr ul { margin: 0 0 0 1.2em; color: var(--muted); }
+.blog-tldr li { margin-bottom: 8px; }
