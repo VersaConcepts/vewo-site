@@ -295,7 +295,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 @media (max-width: 600px) { .invest-grid { grid-template-columns: 1fr; } }
 
 /* ---------- Tiers ---------- */
-.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: start; }
+.tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
 .tier { border: 1px solid var(--line); border-radius: 20px; padding: 34px 30px; background: var(--panel); box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
 .tier:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
 .tier--featured { border-color: var(--v3); background: linear-gradient(180deg, rgba(124,92,255,0.07), #fff); box-shadow: 0 20px 60px rgba(124,92,255,0.18); }
