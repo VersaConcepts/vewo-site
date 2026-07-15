@@ -37,7 +37,7 @@
    means: "A resolvable, trustworthy brand entity AI systems can confidently identify and reason about.",
    matters: "If AI cannot resolve who you are, it cannot recommend you. Entity clarity is the precondition for visibility.",
    compounds: "A well-structured entity gets reinforced by every new mention, making your brand progressively easier for AI to surface.",
-   tags: ["Knowledge graph presence", "Consistent identity signals", "Disambiguation", "Cross-source corroboration"]
+   tags: ["Knowledge graph presence", "Consistent identity signals", "Cross-source corroboration"]
   },
   {
    title: "Structured Data Infrastructure",
