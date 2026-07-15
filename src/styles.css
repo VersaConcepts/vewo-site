@@ -253,6 +253,26 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .start-cta strong { color: var(--text); }
 @media (max-width: 760px) { .steps-grid { grid-template-columns: 1fr; } }
 
+/* ---------- The Recipe: Content / Distribution / Promotion ---------- */
+.recipe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.recipe-card { position: relative; border: 1px solid var(--line); border-radius: 20px; padding: 34px 30px; background: var(--panel); box-shadow: var(--shadow); overflow: hidden; transition: transform .2s, box-shadow .2s; }
+.recipe-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.recipe-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--grad); }
+.recipe-card__num { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--v3); letter-spacing: 0.04em; }
+.recipe-card h3 { font-size: 1.5rem; margin: 8px 0 12px; }
+.recipe-card__lead { font-weight: 600; color: var(--text); margin-bottom: 12px; }
+.recipe-card p { color: var(--muted); font-size: 0.97rem; }
+.recipe-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.recipe-chips li { font-size: 0.85rem; font-weight: 600; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 15px; }
+.recipe-flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 40px; }
+.recipe-flow__step { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 11px 20px; }
+.recipe-flow__step--result { color: #fff; background: var(--grad); border-color: transparent; }
+.recipe-flow__arrow { color: var(--v3); font-weight: 700; }
+@media (max-width: 600px) {
+  .recipe-flow__arrow { transform: rotate(90deg); }
+  .recipe-flow__step { width: 100%; text-align: center; }
+}
+
 /* ---------- The Long Game / Investment ---------- */
 .invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .invest-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
@@ -381,7 +401,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
   .nav__toggle { display: flex; }
   .nav.open .nav__mobile { display: flex; }
   .surfaces { grid-template-columns: repeat(2, 1fr); }
-  .shift-grid, .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid { grid-template-columns: 1fr; }
+  .shift-grid, .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid, .recipe-grid { grid-template-columns: 1fr; }
   .brain-grid { grid-template-columns: 1fr 1fr; }
   .metric { flex-basis: calc(50% - 8px); }
   .footer__inner { grid-template-columns: 1fr 1fr; }
