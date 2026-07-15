@@ -6,27 +6,27 @@ canonical: https://vewo.ai/blog/
 permalink: /blog/index.html
 ---
 <section class="section">
-  <div class="container">
-    <header class="sec-head reveal">
-      <span class="kicker">VEWO Blog</span>
-      <h2>Insights for the<br /><span class="grad">AI discovery era.</span></h2>
-      <p class="sec-sub">How AI is reshaping discovery — and what it takes to be the brand it recommends.</p>
-    </header>
+ <div class="container">
+  <header class="sec-head reveal">
+   <span class="kicker">VEWO Blog</span>
+   <h2>Insights for the<br /><span class="grad">AI discovery era.</span></h2>
+   <p class="sec-sub">How AI is reshaping discovery, and what it takes to be the brand it recommends.</p>
+  </header>
 
-    {% if collections.posts.length %}
-    <div class="blog-grid">
-      {% for post in collections.posts %}
-      <a class="blog-card reveal" href="{{ post.url }}">
-        {% if post.data.tags and post.data.tags[1] %}<span class="blog-card__tag">{{ post.data.tags[1] }}</span>{% endif %}
-        <h3>{{ post.data.title }}</h3>
-        <p class="blog-card__excerpt">{{ post.data.description }}</p>
-        <p class="blog-card__meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
-        <span class="blog-card__more">Read more →</span>
-      </a>
-      {% endfor %}
-    </div>
-    {% else %}
-    <p class="blog-empty reveal">New posts coming soon.</p>
-    {% endif %}
+  {% if collections.posts.length %}
+  <div class="blog-grid">
+   {% for post in collections.posts %}
+   <a class="blog-card reveal" href="{{ post.url }}">
+    {% if post.data.tags and post.data.tags[1] %}<span class="blog-card__tag">{{ post.data.tags[1] }}</span>{% endif %}
+    <h3>{{ post.data.title }}</h3>
+    <p class="blog-card__excerpt">{{ post.data.description }}</p>
+    <p class="blog-card__meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
+    <span class="blog-card__more">Read more →</span>
+   </a>
+   {% endfor %}
   </div>
+  {% else %}
+  <p class="blog-empty reveal">New posts coming soon.</p>
+  {% endif %}
+ </div>
 </section>
