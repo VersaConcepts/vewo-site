@@ -457,3 +457,12 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .blog-tldr p { margin-bottom: 14px; color: var(--text); }
 .blog-tldr ul { margin: 0 0 0 1.2em; color: var(--muted); }
 .blog-tldr li { margin-bottom: 8px; }
+
+/* ---------- Intake page ---------- */
+.intake-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 36px; }
+.intake-step { display: flex; align-items: flex-start; gap: 12px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); }
+.intake-step__num { flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--grad); color: #fff; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 0.95rem; }
+.intake-step p { color: var(--muted); font-size: 0.95rem; margin: 3px 0 0; }
+.intake-embed { border: 1px solid var(--line-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: #fff; }
+.intake-embed iframe { display: block; width: 100%; border: 0; }
+@media (max-width: 700px) { .intake-steps { grid-template-columns: 1fr; } }
