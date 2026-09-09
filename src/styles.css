@@ -110,7 +110,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .nav__mobile a.btn { color: #fff; border: 0; margin-top: 8px; }
 
 /* ---------- Hero ---------- */
-.hero { padding: 48px 0 80px; text-align: center; }
+.hero { padding: 40px 0 56px; text-align: center; }
 .eyebrow {
  display: inline-block; font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase;
  color: var(--v3); font-weight: 600; padding: 7px 16px; border: 1px solid var(--line-2);
@@ -134,16 +134,16 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .surface__sub { display: block; color: var(--muted-2); font-size: 0.82rem; margin-top: 4px; }
 
 /* ---------- Sections ---------- */
-.section { padding: 96px 0; position: relative; }
+.section { padding: 60px 0; position: relative; }
 .section--alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.sec-head { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+.sec-head { max-width: 760px; margin: 0 auto 34px; text-align: center; }
 .kicker { display: inline-block; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--c-ink); font-weight: 700; margin-bottom: 16px; }
 .sec-head h2 { font-size: clamp(1.9rem, 4vw, 3rem); margin-bottom: 20px; }
 .sec-sub { color: var(--muted); font-size: 1.05rem; margin-top: 12px; }
 
 /* ---------- Shift cards ---------- */
-.shift-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.shift-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; }
+.shift-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
+.shift-card { flex: 0 1 340px; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); text-align: center; transition: transform .2s, box-shadow .2s; }
 .shift-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
 .shift-card__row { display: flex; align-items: center; gap: 12px; }
 .shift-card__val { font-family: "Poppins"; font-size: 1.3rem; font-weight: 600; }
@@ -188,9 +188,9 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 
 /* ---------- Brand Brain ---------- */
 .section--brain { background: radial-gradient(80% 60% at 50% 0%, rgba(124,92,255,0.06), transparent 70%); }
-.brain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-.brain-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); position: relative; overflow: hidden; }
-.brain-card::before { content: ""; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--grad); opacity: .9; }
+.brain-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 22px; }
+.brain-card { flex: 0 1 340px; border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; background: var(--panel); box-shadow: var(--shadow); text-align: center; position: relative; overflow: hidden; }
+.brain-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--grad); opacity: .9; }
 .brain-card h3 { font-size: 1.25rem; margin-bottom: 12px; }
 .brain-card p { color: var(--muted); font-size: 0.98rem; }
 .brain-note { max-width: 760px; margin: 38px auto 0; text-align: center; color: var(--muted); font-size: 1.08rem; padding: 26px; border: 1px dashed var(--line-2); border-radius: var(--radius); }
@@ -401,16 +401,15 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
  .nav__toggle { display: flex; }
  .nav.open .nav__mobile { display: flex; }
  .surfaces { grid-template-columns: repeat(2, 1fr); }
- .shift-grid, .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid, .recipe-grid { grid-template-columns: 1fr; }
- .brain-grid { grid-template-columns: 1fr 1fr; }
+ .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid, .recipe-grid { grid-template-columns: 1fr; }
  .metric { flex-basis: calc(50% - 8px); }
  .footer__inner { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 600px) {
- .section { padding: 70px 0; }
- .hero { padding: 32px 0 60px; }
- .surfaces, .brain-grid, .audit-form, .footer__inner { grid-template-columns: 1fr; }
- .dont-card, .metric { flex-basis: 100%; }
+ .section { padding: 44px 0; }
+ .hero { padding: 28px 0 44px; }
+ .surfaces, .audit-form, .footer__inner { grid-template-columns: 1fr; }
+ .brain-card, .shift-card, .dont-card, .metric { flex-basis: 100%; }
  .footer__bottom { flex-direction: column; gap: 10px; text-align: center; }
  .btn--lg { width: 100%; }
 }
