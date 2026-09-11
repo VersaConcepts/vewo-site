@@ -116,7 +116,8 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
  color: var(--v3); font-weight: 600; padding: 7px 16px; border: 1px solid var(--line-2);
  border-radius: 999px; background: rgba(124,92,255,0.05); margin-bottom: 26px;
 }
-.hero__title { font-size: clamp(2.1rem, 5.6vw, 4.5rem); font-weight: 700; margin-bottom: 26px; overflow-wrap: break-word; }
+.hero__title { font-size: clamp(1.9rem, 5vw, 4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 24px; overflow-wrap: break-word; }
+.hero__title .grad { display: block; margin-top: 4px; }
 .hero__lead { max-width: 720px; margin: 0 auto 22px; color: var(--muted); font-size: 1.12rem; }
 .hero__tagline { font-size: 1.05rem; color: var(--text); margin-bottom: 36px; }
 .hero__tagline strong { color: var(--text); }
@@ -406,6 +407,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 @media (max-width: 600px) {
  .section { padding: 44px 0; }
  .hero { padding: 28px 0 44px; }
+ .hero__title { font-size: 1.8rem; line-height: 1.14; }
  .surfaces, .audit-form, .footer__inner { grid-template-columns: 1fr; }
  .brain-card, .shift-card, .dont-card, .metric { flex-basis: 100%; }
  .footer__bottom { flex-direction: column; gap: 10px; text-align: center; }
