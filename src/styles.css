@@ -264,14 +264,12 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .recipe-card p { color: var(--muted); font-size: 0.97rem; }
 .recipe-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .recipe-chips li { font-size: 0.85rem; font-weight: 600; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 8px 15px; }
-.recipe-flow { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; margin-top: 40px; }
-.recipe-flow__step { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 11px 20px; }
+.recipe-flow { display: flex; flex-wrap: nowrap; align-items: center; justify-content: center; gap: 8px; margin: 40px 0 48px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.recipe-flow::-webkit-scrollbar { display: none; }
+.recipe-flow__step { flex: 0 0 auto; white-space: nowrap; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 0.9rem; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 10px 16px; }
 .recipe-flow__step--result { color: #fff; background: var(--grad); border-color: transparent; }
-.recipe-flow__arrow { color: var(--v3); font-weight: 700; }
-@media (max-width: 600px) {
- .recipe-flow__arrow { transform: rotate(90deg); }
- .recipe-flow__step { width: 100%; text-align: center; }
-}
+.recipe-flow__arrow { flex: 0 0 auto; color: var(--v3); font-weight: 700; }
+@media (max-width: 600px) { .recipe-flow { justify-content: flex-start; } }
 
 /* ---------- The Long Game / Investment ---------- */
 .invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
