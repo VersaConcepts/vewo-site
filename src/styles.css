@@ -488,3 +488,11 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .stat-panel__body p { color: var(--muted); font-size: 0.98rem; }
 .stat-panel .belief-cite { text-align: left; }
 @media (max-width: 700px) { .stat-panel { flex-direction: column; text-align: center; gap: 14px; padding: 28px; } .stat-panel__body h3, .stat-panel__body p, .stat-panel .belief-cite { text-align: center; } }
+
+/* ---------- Full-width CTA bands ---------- */
+.cta-band { padding: 54px 0; background: var(--grad); text-align: center; position: relative; z-index: 1; }
+.cta-band--alt { background: linear-gradient(100deg, #0e0f1a 0%, #241b52 55%, #0e8fa8 100%); }
+.cta-band h2 { color: #fff; font-size: clamp(1.6rem, 3.6vw, 2.4rem); margin-bottom: 12px; }
+.cta-band p { color: rgba(255,255,255,0.92); max-width: 640px; margin: 0 auto 24px; font-size: 1.05rem; }
+.btn--onlight { background: #fff; color: var(--v3); box-shadow: 0 8px 26px rgba(0,0,0,0.18); }
+.btn--onlight:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0,0,0,0.28); background: #fff; }
