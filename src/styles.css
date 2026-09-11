@@ -498,7 +498,9 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .btn--onlight:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0,0,0,0.28); background: #fff; }
 
 /* ---------- Redesign: operating loop, 2-col compare, brand brain chips ---------- */
-.loop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.loop-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.loop-grid .step-card { flex: 1 1 240px; max-width: 264px; }
+@media (max-width: 600px) { .loop-grid .step-card { flex-basis: 100%; max-width: none; } }
 .compare--two { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 600px) { .compare--two { grid-template-columns: 1fr; } }
 .bb-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 860px; margin: 0 auto; }
