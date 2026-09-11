@@ -496,3 +496,10 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 .cta-band p { color: rgba(255,255,255,0.92); max-width: 640px; margin: 0 auto 24px; font-size: 1.05rem; }
 .btn--onlight { background: #fff; color: var(--v3); box-shadow: 0 8px 26px rgba(0,0,0,0.18); }
 .btn--onlight:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0,0,0,0.28); background: #fff; }
+
+/* ---------- Redesign: operating loop, 2-col compare, brand brain chips ---------- */
+.loop-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.compare--two { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 600px) { .compare--two { grid-template-columns: 1fr; } }
+.bb-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 860px; margin: 0 auto; }
+.bb-chip { font-size: 0.9rem; font-weight: 600; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 16px; box-shadow: var(--shadow); }
