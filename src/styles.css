@@ -523,3 +523,34 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
   .dont-card { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
   .bb-chip { font-size: 0.8rem; padding: 7px 12px; }
 }
+
+/* ---------- Mobile: condense stats, comparisons, and copy ---------- */
+@media (max-width: 600px) {
+  .container { padding: 0 16px; }
+  .section { padding: 40px 0; }
+  .sec-head { margin-bottom: 24px; }
+  .sec-head h2 { font-size: clamp(1.5rem, 6.2vw, 1.9rem); margin-bottom: 14px; }
+  .sec-sub { font-size: 0.92rem; }
+  .belief-note { font-size: 0.92rem; margin-top: 22px; }
+
+  /* Stat panel (+444%) */
+  .stat-panel { padding: 20px 18px; gap: 8px; margin-bottom: 20px; }
+  .stat-panel__num { font-size: 2.2rem; }
+  .stat-panel__body h3 { font-size: 1.02rem; }
+  .stat-panel__body p { font-size: 0.85rem; line-height: 1.5; }
+
+  /* Comparison blocks: keep columns side by side, tighten everything */
+  .compare--two { grid-template-columns: 1fr 1fr; gap: 10px; }
+  /* Why VEWO 3-up: two comparisons side by side, VEWO full-width beneath */
+  #vs .compare { grid-template-columns: 1fr 1fr; gap: 10px; }
+  #vs .compare__col--vewo { grid-column: 1 / -1; }
+  .compare__col { padding: 14px 12px; border-radius: 12px; }
+  .compare__col h3 { font-size: 0.9rem; margin-bottom: 10px; padding-bottom: 9px; }
+  .compare__col ul { gap: 7px; }
+  .compare__col li { font-size: 0.78rem; padding-left: 15px; line-height: 1.35; }
+
+  /* Brand Brain chips + caption */
+  .bb-caption { font-size: 0.9rem; margin: 22px auto 16px; }
+  .bb-chips { gap: 7px; }
+  .bb-chip { font-size: 0.76rem; padding: 6px 11px; }
+}
