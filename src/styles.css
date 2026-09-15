@@ -505,6 +505,8 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.15; letter-s
 @media (max-width: 600px) { .compare--two { grid-template-columns: 1fr; } }
 .bb-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 860px; margin: 0 auto; }
 .bb-chip { font-size: 0.9rem; font-weight: 600; color: var(--text); background: #fff; border: 1px solid var(--line-2); border-radius: 999px; padding: 9px 16px; box-shadow: var(--shadow); }
+.bb-caption { text-align: center; color: var(--muted); font-size: 1.02rem; max-width: 760px; margin: 40px auto 22px; }
+.bb-caption strong { color: var(--text); }
 
 /* ---------- Balanced, seamless centered headings ---------- */
 .hero__title, .sec-head h2, .blog-post__head h1 { text-wrap: balance; }
