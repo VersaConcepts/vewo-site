@@ -129,7 +129,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 }
 .hero__title { font-size: clamp(1.9rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.14; margin-bottom: 24px; overflow-wrap: break-word; }
 .hero__title .grad { display: block; margin-top: 4px; line-height: 1.2; padding-bottom: 0.12em; }
-.hero__lead { max-width: 720px; margin: 0 auto 22px; color: var(--muted); font-size: 1.12rem; }
+.hero__lead { max-width: 640px; margin: 0 auto 22px; color: var(--muted); font-size: 1.12rem; text-wrap: balance; }
 .hero__tagline { font-size: 1.05rem; color: var(--text); margin-bottom: 36px; }
 .hero__tagline strong { color: var(--text); }
 .hero__actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
@@ -163,7 +163,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 }
 .hero__eyebrow { display: inline-block; max-width: 640px; margin: 0 auto 22px; font-family: "Poppins", sans-serif; font-weight: 600; font-size: 0.92rem; line-height: 1.4; color: var(--text); background: rgba(124,92,255,0.06); border: 1px solid var(--line-2); border-radius: 18px; padding: 9px 18px; }
 .hero__eyebrow .q { color: var(--v3); }
-.hero__engine { max-width: 760px; margin: 0 auto 14px; font-family: "Poppins", sans-serif; font-size: clamp(1.1rem, 2.2vw, 1.35rem); font-weight: 700; color: var(--text); }
+.hero__engine { max-width: 680px; margin: 0 auto 14px; font-family: "Poppins", sans-serif; font-size: clamp(1.1rem, 2.2vw, 1.35rem); font-weight: 700; color: var(--text); text-wrap: balance; }
 .hero__strip { display: flex; flex-direction: column; gap: 14px; align-items: center; margin: 30px auto 22px; max-width: 800px; }
 .hero__strip-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; }
 .hero__strip-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); }
