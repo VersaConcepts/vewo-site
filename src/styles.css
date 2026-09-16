@@ -665,3 +665,6 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 .belief-note--feature { background: var(--grad); color: #fff; border: 0; border-radius: 20px; padding: 30px 36px; font-size: 1.16rem; line-height: 1.55; box-shadow: 0 18px 48px rgba(109, 74, 255, 0.32); }
 .belief-note--feature strong { color: #fff; }
 @media (max-width: 600px) { .belief-note--feature { padding: 22px 18px; font-size: 1.02rem; } }
+
+/* Highlight a phrase inside the gradient feature callout */
+.hl-white { background: rgba(255,255,255,0.26); border-radius: 6px; padding: 0.04em 0.34em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
