@@ -627,3 +627,34 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
   .bb-chips { gap: 7px; }
   .bb-chip { font-size: 0.76rem; padding: 6px 11px; }
 }
+
+/* ============ Nuanced-style carded sections ============ */
+main .section { background: transparent; border-top: 0; border-bottom: 0; padding: 34px 20px; }
+main .section > .container {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: clamp(30px, 4vw, 58px) clamp(20px, 4vw, 52px);
+  box-shadow: 0 14px 46px rgba(26, 36, 64, 0.08);
+}
+main .section--alt > .container {
+  background: linear-gradient(180deg, rgba(124,92,255,0.07), rgba(34,211,238,0.05));
+  border-color: rgba(124,92,255,0.16);
+}
+main .section--cta { background: transparent; }
+/* Pricing card is its own card, so no outer panel */
+main #pricing > .container { background: transparent; border: 0; box-shadow: none; padding-top: 0; padding-bottom: 0; }
+@media (max-width: 640px) {
+  main .section { padding: 18px 12px; }
+  main .section > .container { padding: 26px 18px; border-radius: 22px; }
+}
+
+/* ============ Bold color feature cards ============ */
+.compare__col--vewo { border-color: transparent; background: var(--grad); box-shadow: 0 16px 40px rgba(109, 74, 255, 0.30); }
+.compare__col--vewo h3 { color: #fff; border-bottom-color: rgba(255,255,255,0.28); }
+.compare__col--vewo li { color: #fff; }
+.compare__col--vewo li::before { content: "✓"; color: #fff; }
+
+.shift-card--feature { background: var(--grad); border-color: transparent; box-shadow: 0 16px 40px rgba(109, 74, 255, 0.28); }
+.shift-card--feature h3 { color: #fff; }
+.shift-card--feature p { color: rgba(255,255,255,0.92); }
