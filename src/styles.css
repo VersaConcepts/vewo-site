@@ -60,7 +60,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
   radial-gradient(75% 50% at 50% 108%, rgba(124, 92, 255, 0.08), transparent 72%);
 }
 .bg-grid {
- position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.7;
+ position: fixed; inset: 0; z-index: -1; pointer-events: none; display: none;
  background-image:
   linear-gradient(rgba(16,17,40,0.035) 1px, transparent 1px),
   linear-gradient(90deg, rgba(16,17,40,0.035) 1px, transparent 1px);
@@ -125,8 +125,8 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
  color: var(--v3); font-weight: 600; padding: 7px 16px; border: 1px solid var(--line-2);
  border-radius: 999px; background: rgba(124,92,255,0.05); margin-bottom: 26px;
 }
-.hero__title { font-size: clamp(1.9rem, 5vw, 4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 24px; overflow-wrap: break-word; }
-.hero__title .grad { display: block; margin-top: 4px; }
+.hero__title { font-size: clamp(1.9rem, 5vw, 4.2rem); font-weight: 800; line-height: 1.14; margin-bottom: 24px; overflow-wrap: break-word; }
+.hero__title .grad { display: block; margin-top: 4px; line-height: 1.2; padding-bottom: 0.12em; }
 .hero__lead { max-width: 720px; margin: 0 auto 22px; color: var(--muted); font-size: 1.12rem; }
 .hero__tagline { font-size: 1.05rem; color: var(--text); margin-bottom: 36px; }
 .hero__tagline strong { color: var(--text); }
