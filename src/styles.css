@@ -42,6 +42,8 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
  -webkit-background-clip: text; background-clip: text;
  -webkit-text-fill-color: transparent; color: transparent;
 }
+/* Put a gradient phrase on its own line under the first part of a heading */
+.sec-head h2 .gradline { display: block; padding-bottom: 0.08em; }
 
 /* Hand-drawn style underline swipe under a key phrase */
 .swipe-under { position: relative; display: inline-block; }
