@@ -666,5 +666,5 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 .belief-note--feature strong { color: #fff; }
 @media (max-width: 600px) { .belief-note--feature { padding: 22px 18px; font-size: 1.02rem; } }
 
-/* Highlight a phrase inside the gradient feature callout */
-.hl-white { background: rgba(255,255,255,0.26); border-radius: 6px; padding: 0.04em 0.34em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+/* Emphasize a phrase inside the gradient feature callout */
+.hl-white { font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.75); padding-bottom: 1px; }
