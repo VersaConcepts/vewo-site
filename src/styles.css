@@ -667,4 +667,4 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 @media (max-width: 600px) { .belief-note--feature { padding: 22px 18px; font-size: 1.02rem; } }
 
 /* Emphasize a phrase inside the gradient feature callout */
-.hl-white { font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.75); padding-bottom: 1px; }
+.hl-white { font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.75); padding-bottom: 1px; white-space: nowrap; }
