@@ -17,7 +17,7 @@ permalink: /blog/index.html
   <div class="blog-grid">
    {% for post in collections.posts %}
    <a class="blog-card reveal" href="{{ post.url }}">
-    {% if post.data.tags and post.data.tags[1] %}<span class="blog-card__tag">{{ post.data.tags[1] }}</span>{% endif %}
+    {% if post.data.category %}<span class="blog-card__tag">{{ post.data.category }}</span>{% endif %}
     <h3>{{ post.data.title }}</h3>
     <p class="blog-card__excerpt">{{ post.data.description }}</p>
     <p class="blog-card__meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>

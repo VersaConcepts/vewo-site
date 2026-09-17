@@ -4,6 +4,7 @@ description: "AI turned your website from the customer destination into one sign
 date: 2026-06-28
 author: "Jim Umlauf"
 tags: ["posts", "AI Visibility"]
+category: "AI Visibility"
 canonical: https://vewo.ai/blog/your-brand-in-the-age-of-ai/
 ---
 

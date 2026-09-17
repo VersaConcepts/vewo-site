@@ -6,7 +6,7 @@ ogType: article
   <div class="container narrow">
     <p class="blog-post__back reveal"><a href="/blog/">← Back to the blog</a></p>
     <header class="blog-post__head reveal">
-      {% if tags and tags.length %}<span class="kicker">{{ tags[0] }}</span>{% endif %}
+      {% if category %}<span class="kicker">{{ category }}</span>{% endif %}
       <h1>{{ title }}</h1>
       <p class="blog-post__meta">
         <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>

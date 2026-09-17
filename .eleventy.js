@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
 
   // Collection of all blog posts, newest first
   eleventyConfig.addCollection("posts", (collectionApi) =>
-    collectionApi.getFilteredByGlob("src/blog/posts/*.md").reverse()
+    collectionApi.getFilteredByGlob(["src/blog/posts/*.md", "src/blog/posts/*.njk"]).reverse()
   );
 
   // RSS feed
