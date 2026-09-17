@@ -1,0 +1,601 @@
+---
+title: "Distribution Doesn't Fix a Content Problem: You Need Something Worth Distributing First"
+description: "Distribution without a content foundation creates a treadmill. Build the authoritative answer on your own site first, then turn it into native formats for LinkedIn, Reddit, email, and video."
+date: 2026-09-19
+tags: ["posts", "Content Strategy"]
+category: "Content Strategy"
+author: "Jim Umlauf"
+permalink: /blog/distribution-doesnt-fix-a-content-problem/index.html
+canonical: https://vewo.ai/blog/distribution-doesnt-fix-a-content-problem/
+---
+{% raw %}
+<div class="dist-post">
+<style>
+  .dist-post{
+    --ink:#1a2440; --ink-soft:#39424f; --muted:#6b7480;
+    --rule:#e4e7ec; --rule-soft:#eef0f4;
+    --accent:#6a3fff; --accent-dark:#5433c9; --accent-soft:#f3f0ff;
+    --warn:#b4530a; --warn-soft:#fff6ec; --panel:#f7f8fa;
+    color:var(--ink-soft);
+  }
+  .dist-post h2{ font-size:clamp(24px,3.3vw,30px); line-height:1.24; letter-spacing:-.018em; font-weight:800; margin:0 0 16px; color:var(--ink); scroll-margin-top:96px; text-wrap:balance; }
+  .dist-post h3{ font-size:clamp(19px,2.3vw,21px); line-height:1.36; font-weight:700; letter-spacing:-.008em; margin:34px 0 10px; color:var(--ink); text-wrap:balance; }
+  .dist-post h4{ font-size:17px; font-weight:700; margin:0 0 6px; color:var(--ink); }
+  .dist-post p{ margin:0 0 18px; color:var(--ink-soft); }
+  .dist-post p.lead{ font-size:20px; color:var(--ink); font-weight:600; }
+  .dist-post strong{ color:var(--ink); font-weight:650; }
+  .dist-post a{ color:var(--accent); }
+  .dist-post ul,.dist-post ol{ margin:0 0 20px; padding-left:22px; color:var(--ink-soft); }
+  .dist-post li{ margin-bottom:7px; }
+  .dist-post li::marker{ color:#aab2be; }
+
+  .dist-post .standfirst{ font-size:clamp(18px,2.5vw,21px); line-height:1.6; color:var(--muted); margin:0 0 30px; text-wrap:pretty; }
+  .dist-post section.chunk{ margin:44px 0; }
+  .dist-post .sec-label{ display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.13em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:12px; }
+  .dist-post .sec-label i{ font-style:normal; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:6px; background:var(--ink); color:#fff; font-size:12px; font-weight:700; }
+  .dist-post .sec-label span{ height:1px; flex:1; background:var(--rule); }
+
+  .dist-post .tldr{ background:var(--panel); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:10px; padding:22px 24px; margin:0 0 34px; }
+  .dist-post .tldr h2{ margin:0 0 10px; font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .dist-post .tldr p{ font-size:17px; margin-bottom:12px; }
+  .dist-post .tldr p:last-child{ margin-bottom:0; }
+
+  .dist-post .toc{ border:1px solid var(--rule); border-radius:10px; padding:20px 24px; margin:0 0 44px; }
+  .dist-post .toc h2{ font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; font-weight:800; }
+  .dist-post .toc ol{ margin:0; padding-left:20px; font-size:16px; }
+  .dist-post .toc li{ margin-bottom:6px; }
+  .dist-post .toc a{ text-decoration:none; color:var(--ink-soft); }
+  .dist-post .toc a:hover{ color:var(--accent); text-decoration:underline; }
+
+  .dist-post .soup{ display:flex; flex-wrap:wrap; gap:9px; justify-content:center; margin:26px 0 28px; padding:24px 18px; border:1px dashed var(--rule); border-radius:12px; background:var(--panel); }
+  .dist-post .soup b{ font-size:clamp(15px,2.4vw,19px); font-weight:750; color:var(--muted); background:#fff; border:1px solid var(--rule); border-radius:8px; padding:7px 14px; letter-spacing:-.01em; }
+  .dist-post .soup b.hot{ color:var(--accent-dark); border-color:#cdbdff; background:var(--accent-soft); }
+
+  .dist-post .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:28px 0 30px; }
+  .dist-post .stat{ background:#fff; padding:20px 18px; }
+  .dist-post .stat b{ display:block; font-size:clamp(26px,4.6vw,34px); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:var(--accent); margin-bottom:6px; }
+  .dist-post .stat span{ display:block; font-size:14px; line-height:1.5; color:var(--muted); }
+  @media (max-width:600px){ .dist-post .stats{ grid-template-columns:1fr; } }
+
+  .dist-post figure{ margin:30px 0 34px; }
+  .dist-post .fig-frame{ border:1px solid var(--rule); border-radius:12px; background:#fff; padding:22px 20px 16px; }
+  .dist-post .fig-kicker{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; color:var(--muted); margin:0 0 4px; }
+  .dist-post .fig-title{ font-size:18px; font-weight:700; color:var(--ink); margin:0 0 18px; line-height:1.4; }
+  .dist-post .scroller{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .dist-post .scroller svg{ display:block; width:100%; min-width:600px; height:auto; }
+  .dist-post figcaption{ font-size:14px; line-height:1.6; color:var(--muted); margin-top:12px; padding-top:12px; border-top:1px solid var(--rule-soft); }
+
+  .dist-post .flowset{ display:grid; gap:14px; }
+  .dist-post .flowrow{ border:1px solid var(--rule); border-radius:10px; padding:16px 18px; }
+  .dist-post .flowrow.then{ background:var(--panel); }
+  .dist-post .flowrow.now{ border-color:#cdbdff; background:var(--accent-soft); }
+  .dist-post .flowrow .rowlabel{ display:inline-block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:800; padding:4px 9px; border-radius:5px; margin-bottom:12px; }
+  .dist-post .flowrow.then .rowlabel{ background:#dfe3e9; color:#525c6b; }
+  .dist-post .flowrow.now .rowlabel{ background:var(--accent); color:#fff; }
+  .dist-post .steps em{ font-style:normal; font-weight:640; color:var(--ink); background:#fff; border:1px solid var(--rule); border-radius:7px; line-height:1.35; }
+  .dist-post .flowrow.now .steps em{ border-color:#d6c9ff; }
+  .dist-post .steps1 em{ display:block; font-size:16px; padding:11px 15px; }
+
+  .dist-post .srcs{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0 26px; }
+  .dist-post .src{ border:1px solid var(--rule); border-radius:10px; padding:16px 18px; }
+  .dist-post .src h4{ margin:0 0 8px; font-size:16px; display:flex; align-items:center; gap:8px; }
+  .dist-post .src h4 span{ display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:6px; background:var(--accent-soft); color:var(--accent-dark); font-size:12px; font-weight:800; flex-shrink:0; }
+  .dist-post .src ul{ margin:0; padding-left:18px; font-size:15px; line-height:1.55; }
+  .dist-post .src li{ margin-bottom:4px; }
+  @media (max-width:600px){ .dist-post .srcs{ grid-template-columns:1fr; } }
+
+  .dist-post .grid6{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:22px 0 26px; }
+  .dist-post .g6{ background:#fff; padding:16px 18px; }
+  .dist-post .g6 b{ display:block; font-size:15px; font-weight:750; color:var(--ink); margin-bottom:4px; }
+  .dist-post .g6 span{ font-size:14px; line-height:1.5; color:var(--muted); }
+  @media (max-width:700px){ .dist-post .grid6{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:460px){ .dist-post .grid6{ grid-template-columns:1fr; } }
+
+  .dist-post .os{ border:1px solid var(--rule); border-radius:12px; overflow:hidden; margin:26px 0 6px; }
+  .dist-post .os-track{ display:grid; grid-template-columns:repeat(6,1fr); position:relative; padding:26px 10px 22px; background:#fff; }
+  .dist-post .os-track::before{ content:""; position:absolute; left:9%; right:9%; top:45px; height:2px; background:linear-gradient(90deg,var(--accent) 0%,#b9a7ff 100%); }
+  .dist-post .os-step{ position:relative; text-align:center; padding:0 4px; }
+  .dist-post .os-num{ position:relative; z-index:1; width:38px; height:38px; margin:0 auto 11px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:750; box-shadow:0 0 0 5px #fff; }
+  .dist-post .os-step h4{ font-size:15px; margin:0 0 3px; }
+  .dist-post .os-step p{ font-size:13px; line-height:1.4; color:var(--muted); margin:0; }
+  .dist-post .os-repeat{ background:var(--accent-soft); border-top:1px solid var(--rule); padding:13px 18px; text-align:center; font-size:15px; font-weight:650; color:var(--accent-dark); }
+  @media (max-width:680px){
+    .dist-post .os-track{ grid-template-columns:1fr; gap:16px; padding:22px 18px; }
+    .dist-post .os-track::before{ left:37px; right:auto; top:34px; bottom:34px; width:2px; height:auto; background:linear-gradient(180deg,var(--accent) 0%,#b9a7ff 100%); }
+    .dist-post .os-step{ display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; text-align:left; padding:0; }
+    .dist-post .os-num{ margin:0; }
+    .dist-post .os-step div{ padding-top:4px; }
+    .dist-post .os-step p{ font-size:14px; }
+  }
+
+  .dist-post .tablewrap{ overflow-x:auto; margin:24px 0 10px; border:1px solid var(--rule); border-radius:10px; }
+  .dist-post table{ border-collapse:collapse; width:100%; min-width:560px; font-size:16px; }
+  .dist-post th,.dist-post td{ text-align:left; padding:14px 18px; border-bottom:1px solid var(--rule-soft); vertical-align:top; }
+  .dist-post th{ background:var(--panel); font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:750; color:var(--muted); white-space:nowrap; }
+  .dist-post td{ color:var(--ink-soft); }
+  .dist-post td:first-child{ font-weight:650; color:var(--ink); }
+  .dist-post tr:last-child td{ border-bottom:0; }
+  .dist-post table.prep td:first-child{ white-space:normal; min-width:170px; }
+  .dist-post table.prep td:last-child{ white-space:normal; font-weight:650; color:var(--accent-dark); }
+
+  .dist-post .takeaway{ display:flex; gap:14px; align-items:flex-start; background:var(--accent-soft); border-radius:10px; padding:16px 18px; margin:24px 0 30px; }
+  .dist-post .takeaway .tag{ flex-shrink:0; font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; color:#fff; background:var(--accent); padding:4px 9px; border-radius:5px; margin-top:3px; }
+  .dist-post .takeaway p{ margin:0; font-size:16px; color:var(--ink); font-weight:600; line-height:1.55; }
+  .dist-post .warnbox{ background:var(--warn-soft); border-left:3px solid var(--warn); border-radius:0 8px 8px 0; padding:16px 20px; margin:24px 0; }
+  .dist-post .warnbox p{ margin:0; font-size:16px; }
+  .dist-post .warnbox p + p{ margin-top:10px; }
+  .dist-post .pull{ font-size:clamp(20px,2.9vw,25px); font-weight:750; line-height:1.4; color:var(--ink); letter-spacing:-.015em; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 0; margin:32px 0; text-wrap:balance; }
+
+  .dist-post .faq details{ border:1px solid var(--rule); border-radius:10px; padding:0 20px; margin-bottom:10px; }
+  .dist-post .faq summary{ cursor:pointer; font-weight:700; color:var(--ink); padding:16px 0; list-style:none; font-size:17px; display:flex; justify-content:space-between; align-items:flex-start; gap:14px; }
+  .dist-post .faq summary::-webkit-details-marker{ display:none; }
+  .dist-post .faq summary::after{ content:"+"; font-weight:400; font-size:24px; line-height:1; color:var(--accent); flex-shrink:0; }
+  .dist-post .faq details[open] summary::after{ content:"\2013"; }
+  .dist-post .faq details[open] summary{ border-bottom:1px solid var(--rule-soft); }
+  .dist-post .faq .answer{ padding:14px 0 4px; }
+  .dist-post .faq .answer p{ margin:0; font-size:17px; }
+</style>
+
+  <p class="standfirst">Everyone wants to talk about where to post. Almost nobody asks what exactly is being posted.</p>
+
+  <section class="tldr" aria-label="Summary">
+    <h2>TL;DR</h2>
+    <p>Brands are constantly told to publish more on LinkedIn, Reddit, Instagram, YouTube, and email. But distribution without a content foundation creates a treadmill: another post, another video, another idea, most of it gone within days.</p>
+    <p>A better model starts with your owned property. Find a question your customer is asking, create the best answer you can, publish it on your website, then turn that answer into native formats for the channels where your customers actually spend time.</p>
+    <p><strong>Distribution amplifies authority. It doesn't create it.</strong></p>
+  </section>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>In this article</h2>
+    <ol>
+      <li><a href="#rented">Brands are building on rented land</a></li>
+      <li><a href="#knowledge">Your website should be your knowledge base</a></li>
+      <li><a href="#answer">Start with the authoritative answer</a></li>
+      <li><a href="#model">The model: source first, distribution second</a></li>
+      <li><a href="#ai">Why this matters more in the age of AI</a></li>
+      <li><a href="#native">Distribution isn't copy and paste</a></li>
+      <li><a href="#flywheel">The content flywheel</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="intro">Everyone Wants to Talk About Distribution</h2>
+
+  <div class="soup" aria-label="Common distribution advice">
+    <b>Post more on LinkedIn</b><b>Get active on Reddit</b><b>Make Reels</b><b>Start a YouTube channel</b><b>Send more emails</b><b>Be everywhere</b>
+  </div>
+
+  <p>There's no shortage of advice telling brands where to distribute content, and most of it isn't wrong. Distribution matters.</p>
+
+  <p>But a step usually gets skipped.</p>
+
+  <p class="pull">What exactly are you distributing?</p>
+
+  <p>If your content strategy starts with figuring out what to post on LinkedIn tomorrow, you're solving the wrong problem. Before you worry about distribution, you need something worth distributing, something useful, something authoritative, something your company actually knows, something that answers a real question your customer is asking. And ideally, something that lives somewhere you control.</p>
+
+  <p><strong>Your website should be the knowledge base. Distribution is how those ideas travel.</strong></p>
+
+  <section class="chunk" id="rented">
+    <div class="sec-label"><i>1</i> The Problem <span></span></div>
+    <h2>Brands Are Building on Rented Land</h2>
+
+    <p>Social platforms are powerful. They're where people spend time, where ideas spread, and where customers discover brands they didn't know existed. But there's an important distinction between your website and most distribution channels.</p>
+
+    <div class="srcs">
+      <div class="src">
+        <h4><span>&#10003;</span>You own</h4>
+        <ul>
+          <li>Your website and everything on it</li>
+          <li>Your structure, internal links, and data</li>
+          <li>Your relationship with the customer</li>
+        </ul>
+      </div>
+      <div class="src">
+        <h4><span>&#10005;</span>You don't own</h4>
+        <ul>
+          <li>LinkedIn, Instagram, Facebook, TikTok</li>
+          <li>Reddit, YouTube, and their algorithms</li>
+          <li>The formats, the rules, or your reach</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Those platforms control the algorithms, the formats, the rules, and ultimately your access to the audience. That doesn't mean you shouldn't use them, you absolutely should. It means they should play a specific role in your content system.</p>
+
+    <div class="takeaway">
+      <span class="tag">Takeaway</span>
+      <p>They're distribution channels. They shouldn't be your entire knowledge base.</p>
+    </div>
+
+    <h3>The disposable content treadmill</h3>
+
+    <p>Imagine your marketing strategy starts with this question every Monday: "What should we post this week?"</p>
+
+    <p>You brainstorm. Someone writes a LinkedIn post. Someone makes an Instagram graphic. Someone records a short video. Someone writes an email. You publish everything. Then Monday comes around again.</p>
+
+    <p>That's the treadmill. You're creating disposable pieces instead of building something that compounds. A LinkedIn post might perform well for a few days. An email might generate clicks. A video might reach a new audience. Those are valuable outcomes, but what did you build? Where can someone go six months later to find the information?</p>
+
+    <div class="warnbox">
+      <p>If every idea lives only inside individual distribution channels, <strong>your knowledge is fragmented across platforms you don't control.</strong></p>
+    </div>
+  </section>
+
+  <section class="chunk" id="knowledge">
+    <div class="sec-label"><i>2</i> The Asset <span></span></div>
+    <h2>Your Website Should Be Your Knowledge Base</h2>
+
+    <p>This requires changing how you think about your website. It isn't just a homepage, an About page, product pages, and a checkout. It should increasingly become the knowledge base for what your company knows. Ask yourself:</p>
+
+    <ul>
+      <li>If your company has solved a particular problem for 10 years, where does that knowledge live?</li>
+      <li>If your sales team has answered the same question 500 times, where does that answer live?</li>
+      <li>If you've tested five approaches and know why three don't work, where is that documented?</li>
+      <li>If customers constantly misunderstand something about your category, have you explained it?</li>
+      <li>If your product works especially well for a specific use case, have you documented why?</li>
+    </ul>
+
+    <p>If the answer is "our team knows that," it isn't enough. Your company's expertise has to become accessible information.</p>
+
+    <p class="pull">Customers can't discover knowledge that only exists inside your company. Neither can machines.</p>
+  </section>
+
+  <section class="chunk" id="answer">
+    <div class="sec-label"><i>3</i> The Starting Point <span></span></div>
+    <h2>Start With the Authoritative Answer</h2>
+
+    <p>This connects directly to how we think about content at VEWO: find the questions, answer them, repeat. But there's an important next step.</p>
+
+    <p>Once you find a good question, don't immediately ask what your LinkedIn post should say. First ask: <strong>what is the best answer we can create?</strong></p>
+
+    <p>Build that answer. Make it useful and specific. Include your experience and evidence. Add examples. Answer the obvious follow-ups. Explain the nuances. Then publish it somewhere you control. Now you have an authoritative source, and distribution becomes much easier.</p>
+
+    <h3>One great answer becomes an entire distribution system</h3>
+
+    <p>Say you sell premium outdoor furniture, and customers repeatedly ask: <em>"What's the best outdoor furniture material for extreme heat?"</em></p>
+
+    <p>Instead of creating seven unrelated social posts this week, answer that question exceptionally well on your website: how heat affects different materials, aluminum versus teak versus steel versus synthetics, what fades, what needs maintenance, what matters in desert climates, the mistakes buyers make, and what your company has learned firsthand.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 1</p>
+        <p class="fig-title">One authoritative answer, six native expressions</p>
+        <div class="grid6">
+          <div class="g6"><b>LinkedIn</b><span>"The most expensive outdoor furniture isn't always the best choice for extreme heat. Here's what actually matters…"</span></div>
+          <div class="g6"><b>Instagram</b><span>A carousel: 5 things to consider before buying patio furniture for extreme heat</span></div>
+          <div class="g6"><b>YouTube</b><span>Aluminum vs. teak, which holds up better in hot climates?</span></div>
+          <div class="g6"><b>Email</b><span>One takeaway: before you buy outdoor furniture this summer, check these three things</span></div>
+          <div class="g6"><b>Reddit</b><span>Genuine participation in a thread about materials for hot climates, information, not a link drop</span></div>
+          <div class="g6"><b>Short-form video</b><span>30 seconds on why some patio furniture becomes unusable in direct summer sun</span></div>
+        </div>
+        <figcaption>Different formats, different audiences, different platforms. One underlying piece of expertise.</figcaption>
+      </div>
+    </figure>
+  </section>
+
+  <section class="chunk" id="model">
+    <div class="sec-label"><i>4</i> The Model <span></span></div>
+    <h2>Source First, Distribution Second</h2>
+
+    <p>This is the content system more brands should build.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 2</p>
+        <p class="fig-title">The source-first content system</p>
+        <div class="scroller">
+          <svg viewBox="0 0 760 290" role="img" aria-labelledby="f1t f1d">
+            <title id="f1t">The source-first content system</title>
+            <desc id="f1d">A customer question leads to an authoritative answer published on your website, which is translated into native formats per channel, which creates discovery, and some of that audience returns to the source answer on your site.</desc>
+
+            <defs>
+              <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                <path d="M0,0 L9,4.5 L0,9 z" fill="#b9a7ff"/>
+              </marker>
+            </defs>
+
+            <g fill="none" stroke="#b9a7ff" stroke-width="2.5" marker-end="url(#ar)">
+              <line x1="180" y1="95" x2="203" y2="95"/>
+              <line x1="395" y1="95" x2="418" y2="95"/>
+              <line x1="575" y1="95" x2="598" y2="95"/>
+            </g>
+
+            <path d="M675,134 C675,202 470,202 300,202 L300,150" fill="none" stroke="#c8cdd6"
+                  stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar)"/>
+
+            <rect x="10" y="60" width="168" height="70" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" text-anchor="middle" fill="#1a2440">
+              <text x="94" y="90" font-size="15" font-weight="750">Customer</text>
+              <text x="94" y="110" font-size="15" font-weight="750">question</text>
+            </g>
+
+            <rect x="205" y="52" width="188" height="86" rx="10" fill="#6a3fff"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" text-anchor="middle">
+              <text x="299" y="82" font-size="15" font-weight="780" fill="#ffffff">Authoritative answer</text>
+              <text x="299" y="102" font-size="15" font-weight="780" fill="#ffffff">on your website</text>
+              <text x="299" y="122" font-size="13" fill="#d9ccff">the source of record</text>
+            </g>
+
+            <rect x="420" y="60" width="153" height="70" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" text-anchor="middle" fill="#1a2440">
+              <text x="496" y="90" font-size="15" font-weight="750">Native formats</text>
+              <text x="496" y="110" font-size="15" font-weight="750">per channel</text>
+            </g>
+
+            <rect x="600" y="60" width="150" height="70" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" text-anchor="middle" fill="#1a2440">
+              <text x="675" y="100" font-size="15" font-weight="750">Discovery</text>
+            </g>
+
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="11.5" fill="#6b7480" text-anchor="middle">
+              <text x="496" y="152">LinkedIn · Reddit · Social</text>
+              <text x="496" y="168">Email · Video · Communities</text>
+            </g>
+
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" font-size="12.5" fill="#6b7480" text-anchor="middle">
+              <text x="487" y="232">Some of that audience, and the AI systems helping them,</text>
+              <text x="487" y="249">come back to the deeper source</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>The website becomes the source. The channels become the distribution network. Then you repeat the process with the next important question.</figcaption>
+      </div>
+    </figure>
+
+    <h3>Distribution amplifies authority. It doesn't create it.</h3>
+
+    <p>Imagine someone posting 20 times a week about a topic they barely understand. They're distributing a lot, but that doesn't make the underlying information authoritative.</p>
+
+    <p>Now imagine a company with years of category experience, proprietary testing, customer data, product expertise, and a genuine point of view. That company already possesses something valuable: knowledge. The opportunity is to turn it into accessible information and then distribute it.</p>
+
+    <div class="srcs">
+      <div class="src">
+        <h4><span>1</span>Builds an asset</h4>
+        <ul>
+          <li>Starts from what your company knows</li>
+          <li>Publishes the answer where you control it</li>
+          <li>Compounds, it's still working in a year</li>
+        </ul>
+      </div>
+      <div class="src">
+        <h4><span>2</span>Feeds a treadmill</h4>
+        <ul>
+          <li>Starts from what the algorithm rewards</li>
+          <li>Lives only on platforms you rent</li>
+          <li>Resets every Monday</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="chunk" id="ai">
+    <div class="sec-label"><i>5</i> The AI Angle <span></span></div>
+    <h2>Why This Matters More in the Age of AI</h2>
+
+    <p>This isn't only a social media strategy. It's increasingly an AI visibility strategy.</p>
+
+    <p>AI systems need information. They need to understand who your company is, what you know, what problems you solve, what topics you're associated with, who your products are right for, how you compare with alternatives, and whether other sources reinforce those associations.</p>
+
+    <p>Your website is where you establish that. Distribution helps those ideas move beyond it, discussed, shared, referenced, mentioned, expanded on, creating a broader information footprint around your brand.</p>
+
+    <div class="takeaway">
+      <span class="tag">Takeaway</span>
+      <p>Your website and your distribution channels shouldn't compete. They should reinforce one another.</p>
+    </div>
+
+    <h3>SEO, AEO, GEO, and distribution should work together</h3>
+
+    <p>It's easy to turn these into separate initiatives. SEO over here. Social over there. Email somewhere else. PR doing its own thing. Someone experimenting with GEO. But customers don't experience your company in departments, and neither does the internet. One authoritative answer creates multiple outcomes.</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Outcome</th><th>What the same asset does</th></tr></thead>
+        <tbody>
+          <tr><td>SEO</td><td>Ranks for relevant searches and long-tail questions</td></tr>
+          <tr><td>AEO</td><td>Clear structure makes specific answers easier to identify and surface</td></tr>
+          <tr><td>GEO</td><td>Helps generative AI understand your brand and potentially reference your expertise</td></tr>
+          <tr><td>Social</td><td>The ideas generate conversation and discovery</td></tr>
+          <tr><td>Email</td><td>Educates your existing audience</td></tr>
+          <tr><td>Video</td><td>Reaches people who prefer watching to reading</td></tr>
+          <tr><td>Earned media</td><td>Original insight or testing becomes something publications want to reference</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>These shouldn't be seven unrelated content strategies. They're seven ways of creating value from the same knowledge.</p>
+  </section>
+
+  <section class="chunk" id="native">
+    <div class="sec-label"><i>6</i> The Craft <span></span></div>
+    <h2>Distribution Isn't Copy and Paste</h2>
+
+    <p>One important caveat. Repurposing doesn't mean pasting the first three paragraphs of your blog onto every platform.</p>
+
+    <p>Each channel has its own culture. What works on LinkedIn might not work on Reddit. What works in an email might not work on Instagram. A 10-minute YouTube video won't work as a 30-second Reel.</p>
+
+    <div class="flowset">
+      <div class="flowrow now">
+        <span class="rowlabel">The rule</span>
+        <div class="steps steps1"><em>The idea travels. The format changes.</em></div>
+      </div>
+    </div>
+
+    <p>On LinkedIn, lead with an insight. On Reddit, participate in a discussion and answer a specific question. On Instagram, make it visual. On YouTube, make it a demonstration. In email, focus on one takeaway and link to the deeper explanation.</p>
+
+    <p><strong>Same expertise, native execution.</strong> That's far stronger than blasting identical content everywhere.</p>
+
+    <h3>Stop creating content from scratch for every channel</h3>
+
+    <p>This is also an operational problem. If your social, email, video, and website teams are all independently inventing content, you're creating unnecessary work. Everyone needs ideas, research, expertise, and source material. Instead, create a common foundation.</p>
+
+    <div class="stats">
+      <div class="stat"><b>1</b><span>Question worth answering</span></div>
+      <div class="stat"><b>1</b><span>Authoritative answer on your site</span></div>
+      <div class="stat"><b>6+</b><span>Native expressions your team never has to invent</span></div>
+    </div>
+
+    <p>Now your social person isn't starting with a blank page. Neither is your email marketer or your video team. Your sales team has something to send. Your support team has something to reference. Your whole organization works from the same body of knowledge, which is more efficient, and creates a far more consistent story around your brand.</p>
+
+    <h3>What content is worth distributing?</h3>
+
+    <p>Not every article deserves a ten-channel campaign. Prioritize content with something worth amplifying:</p>
+
+    <div class="grid6">
+      <div class="g6"><b>Real question</b><span>If nobody cares about the question, distribution won't fix that</span></div>
+      <div class="g6"><b>Something to say</b><span>Generic content doesn't improve because you post it seven times</span></div>
+      <div class="g6"><b>Demonstrates expertise</b><span>Your strongest content shows what your company actually knows</span></div>
+      <div class="g6"><b>Connects to the business</b><span>No hard sell needed, but it should reinforce where you want authority</span></div>
+      <div class="g6"><b>Multiple conversations</b><span>Strong pieces contain several ideas worth extracting separately</span></div>
+      <div class="g6"><b>Still true later</b><span>Evergreen answers keep earning; news cycles don't</span></div>
+    </div>
+  </section>
+
+  <section class="chunk" id="flywheel">
+    <div class="sec-label"><i>7</i> The System <span></span></div>
+    <h2>The Content Flywheel</h2>
+
+    <p>Done properly, this becomes a flywheel rather than a treadmill.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 3</p>
+        <p class="fig-title">Listen, answer, distribute, discover, learn, improve</p>
+        <div class="os">
+          <div class="os-track">
+            <div class="os-step"><div class="os-num">1</div><div><h4>Listen</h4><p>What customers are asking</p></div></div>
+            <div class="os-step"><div class="os-num">2</div><div><h4>Answer</h4><p>Authoritatively, on your site</p></div></div>
+            <div class="os-step"><div class="os-num">3</div><div><h4>Distribute</h4><p>Native formats per channel</p></div></div>
+            <div class="os-step"><div class="os-num">4</div><div><h4>Discover</h4><p>New audiences meet the idea</p></div></div>
+            <div class="os-step"><div class="os-num">5</div><div><h4>Learn</h4><p>What they engage with or question</p></div></div>
+            <div class="os-step"><div class="os-num">6</div><div><h4>Improve</h4><p>Strengthen it, find the next question</p></div></div>
+          </div>
+          <div class="os-repeat">↻ &nbsp;Distribution sits in the middle, never at the beginning</div>
+        </div>
+        <figcaption>You need something valuable before you can amplify it. That single ordering is the difference between a flywheel and a treadmill.</figcaption>
+      </div>
+    </figure>
+
+    <h3>What should you measure?</h3>
+
+    <p>Don't judge this system on social engagement alone. Likes and views are useful indicators, not the objective.</p>
+
+    <div class="tablewrap">
+      <table class="prep">
+        <thead><tr><th>Layer</th><th>What to watch</th></tr></thead>
+        <tbody>
+          <tr><td>Website</td><td>Organic impressions, rankings, traffic, engagement, internal navigation, conversions</td></tr>
+          <tr><td>Distribution</td><td>Reach, engagement, shares, comments, video views, email clicks</td></tr>
+          <tr><td>Authority</td><td>Backlinks, brand mentions, citations, earned media, community discussion</td></tr>
+          <tr><td>AI visibility</td><td>Brand mentions in relevant AI answers, citation visibility, accuracy of brand descriptions, competitive presence, questions where you appear or stay absent</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>The goal isn't more content, and it isn't more distribution. It's a system where useful information creates increasing visibility and authority over time.</p>
+  </section>
+
+  <section class="chunk" id="faq">
+    <div class="sec-label"><i>8</i> Questions <span></span></div>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <details open>
+        <summary>Should we stop posting on social until our website content is strong?</summary>
+        <div class="answer"><p>No. Keep the channels active, but change what feeds them. Start sourcing posts from authoritative answers you publish on your own site instead of inventing something new each week.</p></div>
+      </details>
+      <details>
+        <summary>How many channels should one article support?</summary>
+        <div class="answer"><p>As many as your customers genuinely use, and no more. A strong foundational piece can usually support three to six native formats. Ten channels executed poorly is worse than three done natively.</p></div>
+      </details>
+      <details>
+        <summary>Isn't this just repurposing content?</summary>
+        <div class="answer"><p>Repurposing usually means reformatting the same text. This is different: the website answer is the source of record, and each channel gets a native expression of the idea rather than a copy of the paragraphs.</p></div>
+      </details>
+      <details>
+        <summary>Does distribution help AI visibility, or only search?</summary>
+        <div class="answer"><p>Both. Your site establishes what you know; off-site discussion, mentions, and references reinforce it. AI systems cross-check the wider web, so a brand talked about consistently across platforms is easier to understand and recommend.</p></div>
+      </details>
+      <details>
+        <summary>What if we don't have anything unique to say yet?</summary>
+        <div class="answer"><p>You almost certainly do, it's just trapped in sales calls, support tickets, and product decisions. Start there: the questions your team answers repeatedly are your first authoritative articles.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="chunk" id="conclusion">
+    <div class="sec-label"><i>9</i> Conclusion <span></span></div>
+    <h2>Build the Source Before You Build the Megaphone</h2>
+
+    <p>Distribution matters. LinkedIn, Reddit, YouTube, Instagram, email, and communities all matter. But none of them eliminate the need for something valuable underneath. Without strong source material, adding channels just creates more places where your team has to invent something to say. That's exhausting.</p>
+
+    <p>Instead: find a question worth answering. Create the best answer you can. Put the authoritative version on your website. Turn the ideas inside it into content for the channels where your customers spend time. Let those channels amplify your expertise. Learn from the response. Then answer the next question.</p>
+
+    <p>Because before you ask where you should distribute your content, ask a more important question: <strong>do we have something worth distributing?</strong></p>
+
+    <p>Build that first. Then amplify it.</p>
+
+    <p class="pull">Distribution amplifies authority. It doesn't create it.</p>
+  </section>
+
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Should we stop posting on social until our website content is strong?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Keep the channels active, but change what feeds them. Start sourcing posts from authoritative answers you publish on your own site instead of inventing something new each week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many channels should one article support?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As many as your customers genuinely use, and no more. A strong foundational piece can usually support three to six native formats. Ten channels executed poorly is worse than three done natively."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Isn't this just repurposing content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Repurposing usually means reformatting the same text. This is different: the website answer is the source of record, and each channel gets a native expression of the idea rather than a copy of the paragraphs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does distribution help AI visibility, or only search?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both. Your site establishes what you know; off-site discussion, mentions, and references reinforce it. AI systems cross-check the wider web, so a brand talked about consistently across platforms is easier to understand and recommend."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if we don't have anything unique to say yet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You almost certainly do, it is just trapped in sales calls, support tickets, and product decisions. Start there: the questions your team answers repeatedly are your first authoritative articles."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vewo.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://vewo.ai/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Distribution Doesn't Fix a Content Problem", "item": "https://vewo.ai/blog/distribution-doesnt-fix-a-content-problem/" }
+  ]
+}
+</script>
+{% endraw %}
