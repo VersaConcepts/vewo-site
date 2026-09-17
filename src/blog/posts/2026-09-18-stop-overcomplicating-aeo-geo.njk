@@ -1,0 +1,616 @@
+---
+title: "Stop Overcomplicating AEO and GEO: Find the Questions. Answer Them. Repeat."
+description: "SEO, AEO, and GEO aren't three separate strategies, they're outcomes from the same foundation. Plus what AI agents and agentic commerce change, why the interface is disappearing, and how to prepare now."
+date: 2026-09-18
+tags: ["posts", "AI Visibility"]
+category: "AI Visibility"
+author: "Jim Umlauf"
+permalink: /blog/stop-overcomplicating-aeo-geo/index.html
+canonical: https://vewo.ai/blog/stop-overcomplicating-aeo-geo/
+---
+{% raw %}
+<div class="geo-post">
+<style>
+  .geo-post{
+    --ink:#1a2440; --ink-soft:#39424f; --muted:#6b7480;
+    --rule:#e4e7ec; --rule-soft:#eef0f4;
+    --accent:#6a3fff; --accent-dark:#5433c9; --accent-soft:#f3f0ff;
+    --warn:#b4530a; --warn-soft:#fff6ec; --panel:#f7f8fa;
+    color:var(--ink-soft);
+  }
+  .geo-post h2{ font-size:clamp(24px,3.3vw,30px); line-height:1.24; letter-spacing:-.018em; font-weight:800; margin:0 0 16px; color:var(--ink); scroll-margin-top:96px; text-wrap:balance; }
+  .geo-post h3{ font-size:clamp(19px,2.3vw,21px); line-height:1.36; font-weight:700; letter-spacing:-.008em; margin:34px 0 10px; color:var(--ink); text-wrap:balance; }
+  .geo-post h4{ font-size:17px; font-weight:700; margin:0 0 6px; color:var(--ink); }
+  .geo-post p{ margin:0 0 18px; color:var(--ink-soft); }
+  .geo-post p.lead{ font-size:20px; color:var(--ink); font-weight:600; }
+  .geo-post strong{ color:var(--ink); font-weight:650; }
+  .geo-post a{ color:var(--accent); }
+  .geo-post ul,.geo-post ol{ margin:0 0 20px; padding-left:22px; color:var(--ink-soft); }
+  .geo-post li{ margin-bottom:7px; }
+  .geo-post li::marker{ color:#aab2be; }
+
+  .geo-post .standfirst{ font-size:clamp(18px,2.5vw,21px); line-height:1.6; color:var(--muted); margin:0 0 30px; text-wrap:pretty; }
+  .geo-post section.chunk{ margin:44px 0; }
+  .geo-post .sec-label{ display:flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.13em; text-transform:uppercase; font-weight:700; color:var(--muted); margin-bottom:12px; }
+  .geo-post .sec-label i{ font-style:normal; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:6px; background:var(--ink); color:#fff; font-size:12px; font-weight:700; }
+  .geo-post .sec-label span{ height:1px; flex:1; background:var(--rule); }
+
+  .geo-post .tldr{ background:var(--panel); border:1px solid var(--rule); border-left:4px solid var(--accent); border-radius:10px; padding:22px 24px; margin:0 0 34px; }
+  .geo-post .tldr h2{ margin:0 0 10px; font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); font-weight:800; }
+  .geo-post .tldr p{ font-size:17px; margin-bottom:12px; }
+  .geo-post .tldr p:last-child{ margin-bottom:0; }
+
+  .geo-post .toc{ border:1px solid var(--rule); border-radius:10px; padding:20px 24px; margin:0 0 44px; }
+  .geo-post .toc h2{ font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); margin:0 0 12px; font-weight:800; }
+  .geo-post .toc ol{ margin:0; padding-left:20px; font-size:16px; }
+  .geo-post .toc li{ margin-bottom:6px; }
+  .geo-post .toc a{ text-decoration:none; color:var(--ink-soft); }
+  .geo-post .toc a:hover{ color:var(--accent); text-decoration:underline; }
+
+  .geo-post .soup{ display:flex; flex-wrap:wrap; gap:9px; justify-content:center; margin:26px 0 28px; padding:24px 18px; border:1px dashed var(--rule); border-radius:12px; background:var(--panel); }
+  .geo-post .soup b{ font-size:clamp(15px,2.4vw,19px); font-weight:750; color:var(--muted); background:#fff; border:1px solid var(--rule); border-radius:8px; padding:7px 14px; letter-spacing:-.01em; }
+  .geo-post .soup b.hot{ color:var(--accent-dark); border-color:#cdbdff; background:var(--accent-soft); }
+
+  .geo-post .stats{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:28px 0 30px; }
+  .geo-post .stat{ background:#fff; padding:20px 18px; }
+  .geo-post .stat b{ display:block; font-size:clamp(24px,4.2vw,32px); line-height:1.1; font-weight:800; letter-spacing:-.02em; color:var(--accent); margin-bottom:6px; }
+  .geo-post .stat span{ display:block; font-size:14px; line-height:1.5; color:var(--muted); }
+  .geo-post .stat a{ color:var(--muted); text-decoration:underline; }
+  @media (max-width:600px){ .geo-post .stats{ grid-template-columns:1fr; } }
+
+  .geo-post figure{ margin:30px 0 34px; }
+  .geo-post .fig-frame{ border:1px solid var(--rule); border-radius:12px; background:#fff; padding:22px 20px 16px; }
+  .geo-post .fig-kicker{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; color:var(--muted); margin:0 0 4px; }
+  .geo-post .fig-title{ font-size:18px; font-weight:700; color:var(--ink); margin:0 0 18px; line-height:1.4; }
+  .geo-post .scroller{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .geo-post .scroller svg{ display:block; width:100%; min-width:600px; height:auto; }
+  .geo-post figcaption{ font-size:14px; line-height:1.6; color:var(--muted); margin-top:12px; padding-top:12px; border-top:1px solid var(--rule-soft); }
+
+  .geo-post .flowset{ display:grid; gap:14px; }
+  .geo-post .flowrow{ border:1px solid var(--rule); border-radius:10px; padding:16px 18px; }
+  .geo-post .flowrow.then{ background:var(--panel); }
+  .geo-post .flowrow.now{ border-color:#cdbdff; background:var(--accent-soft); }
+  .geo-post .flowrow .rowlabel{ display:inline-block; font-size:11px; letter-spacing:.12em; text-transform:uppercase; font-weight:800; padding:4px 9px; border-radius:5px; margin-bottom:12px; }
+  .geo-post .flowrow.then .rowlabel{ background:#dfe3e9; color:#525c6b; }
+  .geo-post .flowrow.now .rowlabel{ background:var(--accent); color:#fff; }
+  .geo-post .steps em{ font-style:normal; font-weight:640; color:var(--ink); background:#fff; border:1px solid var(--rule); border-radius:7px; line-height:1.35; }
+  .geo-post .flowrow.now .steps em{ border-color:#d6c9ff; }
+  .geo-post .steps4{ display:grid; grid-template-columns:repeat(4,1fr); gap:26px; }
+  .geo-post .steps4 em{ position:relative; display:flex; align-items:center; justify-content:center; text-align:center; font-size:14px; padding:11px 10px; min-height:100%; }
+  .geo-post .steps4 em + em::before{ content:"\2192"; position:absolute; left:-20px; top:50%; transform:translateY(-50%); color:#9aa2ae; font-weight:700; font-size:15px; }
+  @media (max-width:620px){
+    .geo-post .steps4{ grid-template-columns:1fr; gap:26px; }
+    .geo-post .steps4 em{ font-size:15px; }
+    .geo-post .steps4 em + em::before{ content:"\2193"; left:50%; top:-21px; transform:translateX(-50%); }
+  }
+  .geo-post .steps1 em{ display:block; font-size:16px; padding:11px 15px; }
+
+  .geo-post .eras{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:24px 0 8px; }
+  .geo-post .era{ border:1px solid var(--rule); border-radius:10px; padding:16px 18px; background:#fff; }
+  .geo-post .era.e3{ border-color:#cdbdff; background:var(--accent-soft); }
+  .geo-post .era .tagline{ display:inline-block; font-size:11px; letter-spacing:.11em; text-transform:uppercase; font-weight:800; background:#dfe3e9; color:#525c6b; padding:4px 9px; border-radius:5px; margin-bottom:10px; }
+  .geo-post .era.e3 .tagline{ background:var(--accent); color:#fff; }
+  .geo-post .era h4{ margin:0 0 6px; font-size:17px; }
+  .geo-post .era p{ margin:0 0 12px; font-size:15px; line-height:1.5; }
+  .geo-post .era .sees{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; font-weight:750; color:var(--muted); margin:0 0 6px; }
+  .geo-post .dots{ display:flex; flex-wrap:wrap; gap:4px; align-items:center; }
+  .geo-post .dots i{ width:11px; height:11px; border-radius:3px; background:#c8cdd6; display:block; }
+  .geo-post .era.e3 .dots i{ background:#b9a7ff; }
+  .geo-post .dots b{ font-size:13px; font-weight:700; color:var(--muted); font-style:normal; }
+  @media (max-width:700px){ .geo-post .eras{ grid-template-columns:1fr; } }
+
+  .geo-post .loses{ list-style:none; padding:0; margin:20px 0 24px; }
+  .geo-post .loses li{ position:relative; padding:11px 16px 11px 42px; margin-bottom:8px; border:1px solid var(--rule); border-radius:9px; font-size:16px; color:var(--ink-soft); }
+  .geo-post .loses li::before{ content:"\00d7"; position:absolute; left:15px; top:50%; transform:translateY(-50%); color:#c0563a; font-weight:800; font-size:19px; line-height:1; }
+  .geo-post .loses li b{ color:var(--ink); font-weight:700; }
+
+  .geo-post .srcs{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:24px 0 26px; }
+  .geo-post .src{ border:1px solid var(--rule); border-radius:10px; padding:16px 18px; }
+  .geo-post .src h4{ margin:0 0 8px; font-size:16px; display:flex; align-items:center; gap:8px; }
+  .geo-post .src h4 span{ display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:6px; background:var(--accent-soft); color:var(--accent-dark); font-size:12px; font-weight:800; flex-shrink:0; }
+  .geo-post .src ul{ margin:0; padding-left:18px; font-size:15px; line-height:1.55; }
+  .geo-post .src li{ margin-bottom:4px; }
+  @media (max-width:600px){ .geo-post .srcs{ grid-template-columns:1fr; } }
+
+  .geo-post .grid6{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:1px solid var(--rule); border-radius:10px; overflow:hidden; margin:22px 0 26px; }
+  .geo-post .g6{ background:#fff; padding:16px 18px; }
+  .geo-post .g6 b{ display:block; font-size:15px; font-weight:750; color:var(--ink); margin-bottom:4px; }
+  .geo-post .g6 span{ font-size:14px; line-height:1.5; color:var(--muted); }
+  @media (max-width:700px){ .geo-post .grid6{ grid-template-columns:1fr 1fr; } }
+  @media (max-width:460px){ .geo-post .grid6{ grid-template-columns:1fr; } }
+
+  .geo-post .os{ border:1px solid var(--rule); border-radius:12px; overflow:hidden; margin:26px 0 6px; }
+  .geo-post .os-track{ display:grid; grid-template-columns:repeat(6,1fr); position:relative; padding:26px 10px 22px; background:#fff; }
+  .geo-post .os-track::before{ content:""; position:absolute; left:9%; right:9%; top:45px; height:2px; background:linear-gradient(90deg,var(--accent) 0%,#b9a7ff 100%); }
+  .geo-post .os-step{ position:relative; text-align:center; padding:0 4px; }
+  .geo-post .os-num{ position:relative; z-index:1; width:38px; height:38px; margin:0 auto 11px; border-radius:50%; background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:750; box-shadow:0 0 0 5px #fff; }
+  .geo-post .os-step h4{ font-size:15px; margin:0 0 3px; }
+  .geo-post .os-step p{ font-size:13px; line-height:1.4; color:var(--muted); margin:0; }
+  .geo-post .os-repeat{ background:var(--accent-soft); border-top:1px solid var(--rule); padding:13px 18px; text-align:center; font-size:15px; font-weight:650; color:var(--accent-dark); }
+  @media (max-width:680px){
+    .geo-post .os-track{ grid-template-columns:1fr; gap:16px; padding:22px 18px; }
+    .geo-post .os-track::before{ left:37px; right:auto; top:34px; bottom:34px; width:2px; height:auto; background:linear-gradient(180deg,var(--accent) 0%,#b9a7ff 100%); }
+    .geo-post .os-step{ display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; text-align:left; padding:0; }
+    .geo-post .os-num{ margin:0; }
+    .geo-post .os-step div{ padding-top:4px; }
+    .geo-post .os-step p{ font-size:14px; }
+  }
+
+  .geo-post .tablewrap{ overflow-x:auto; margin:24px 0 10px; border:1px solid var(--rule); border-radius:10px; }
+  .geo-post table{ border-collapse:collapse; width:100%; min-width:560px; font-size:16px; }
+  .geo-post th,.geo-post td{ text-align:left; padding:14px 18px; border-bottom:1px solid var(--rule-soft); vertical-align:top; }
+  .geo-post th{ background:var(--panel); font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:750; color:var(--muted); white-space:nowrap; }
+  .geo-post td{ color:var(--ink-soft); }
+  .geo-post td:first-child{ font-weight:650; color:var(--ink); }
+  .geo-post tr:last-child td{ border-bottom:0; }
+  .geo-post table.terms td:first-child{ white-space:nowrap; }
+  .geo-post table.terms td:first-child b{ color:var(--accent-dark); }
+  .geo-post table.map td:first-child{ white-space:nowrap; }
+  .geo-post table.prep td:first-child{ white-space:normal; min-width:170px; }
+  .geo-post table.prep td:last-child{ white-space:nowrap; font-weight:650; color:var(--accent-dark); }
+
+  .geo-post .takeaway{ display:flex; gap:14px; align-items:flex-start; background:var(--accent-soft); border-radius:10px; padding:16px 18px; margin:24px 0 30px; }
+  .geo-post .takeaway .tag{ flex-shrink:0; font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:800; color:#fff; background:var(--accent); padding:4px 9px; border-radius:5px; margin-top:3px; }
+  .geo-post .takeaway p{ margin:0; font-size:16px; color:var(--ink); font-weight:600; line-height:1.55; }
+  .geo-post .warnbox{ background:var(--warn-soft); border-left:3px solid var(--warn); border-radius:0 8px 8px 0; padding:16px 20px; margin:24px 0; }
+  .geo-post .warnbox p{ margin:0; font-size:16px; }
+  .geo-post .warnbox p + p{ margin-top:10px; }
+  .geo-post .pull{ font-size:clamp(20px,2.9vw,25px); font-weight:750; line-height:1.4; color:var(--ink); letter-spacing:-.015em; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); padding:24px 0; margin:32px 0; text-wrap:balance; }
+
+  .geo-post .faq details{ border:1px solid var(--rule); border-radius:10px; padding:0 20px; margin-bottom:10px; }
+  .geo-post .faq summary{ cursor:pointer; font-weight:700; color:var(--ink); padding:16px 0; list-style:none; font-size:17px; display:flex; justify-content:space-between; align-items:flex-start; gap:14px; }
+  .geo-post .faq summary::-webkit-details-marker{ display:none; }
+  .geo-post .faq summary::after{ content:"+"; font-weight:400; font-size:24px; line-height:1; color:var(--accent); flex-shrink:0; }
+  .geo-post .faq details[open] summary::after{ content:"\2013"; }
+  .geo-post .faq details[open] summary{ border-bottom:1px solid var(--rule-soft); }
+  .geo-post .faq .answer{ padding:14px 0 4px; }
+  .geo-post .faq .answer p{ margin:0; font-size:17px; }
+</style>
+
+  <p class="standfirst">There's a new acronym every week. Underneath all of them is the same job, and it hasn't changed. What is changing is who's reading your answers.</p>
+
+  <section class="tldr" aria-label="Summary">
+    <h2>TL;DR</h2>
+    <p>Search is shifting from keywords and links to questions and direct answers. That changes how brands earn visibility, it doesn't require turning your strategy into alphabet soup. SEO, AEO, and GEO produce different outcomes, but they share one foundation: useful, authoritative, well-structured answers to real questions.</p>
+    <p>What most brands underestimate is what comes next. AI assistant use among US shoppers jumped from 12% to 35% in a year, and the payment rails letting agents buy on your customer's behalf are already being standardized. Eventually the customer talks to their glasses and never sees a webpage. Then your brand is whatever an agent can read, verify, and trust.</p>
+    <p><strong>Find the questions. Answer them. Repeat. And make the answers machine-readable before you have to.</strong></p>
+  </section>
+
+  <nav class="toc" aria-label="Table of contents">
+    <h2>In this article</h2>
+    <ol>
+      <li><a href="#soup">The alphabet soup problem</a></li>
+      <li><a href="#changed">What actually changed</a></li>
+      <li><a href="#questions">Start with the questions</a></li>
+      <li><a href="#map">Turn questions into a content map</a></li>
+      <li><a href="#authority">What makes an answer authoritative</a></li>
+      <li><a href="#foundation">One asset, three outcomes</a></li>
+      <li><a href="#agentic">The agent era has already started</a></li>
+      <li><a href="#interface">When the interface disappears</a></li>
+      <li><a href="#system">The simple operating system</a></li>
+      <li><a href="#faq">Frequently asked questions</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="intro">This Sounds More Complicated Than It Is</h2>
+
+  <div class="soup" aria-label="AI search terminology">
+    <b class="hot">AEO</b><b class="hot">GEO</b><b>LLM optimization</b><b>AI visibility</b><b>Entity optimization</b><b>Agentic commerce</b>
+  </div>
+
+  <p>If you market a brand right now, it feels like there's a new acronym every week. Should you optimize for ChatGPT? Do you need a separate GEO strategy? What happens when agents start shopping for customers?</p>
+
+  <p>Legitimate questions that also create unnecessary complexity. Underneath the terminology is a straightforward job.</p>
+
+  <p class="pull">Your customers have questions. Answer them better than anyone else.</p>
+
+  <p>Find the questions people ask. Decide which matter to your business. Create the best answers you can. Structure them so humans and machines understand them. Publish. See what happens. Repeat.</p>
+
+  <p>AEO isn't magic. GEO isn't magic. The technology is changing fast. <strong>The fundamental job isn't.</strong></p>
+
+  <section class="chunk" id="soup">
+    <div class="sec-label"><i>1</i> The Problem <span></span></div>
+    <h2>Alphabet Soup</h2>
+
+    <p>Whenever technology changes, new terminology emerges and something understandable starts sounding complicated. The terms aren't useless, each describes a real shift.</p>
+
+    <div class="tablewrap">
+      <table class="terms">
+        <thead><tr><th>Term</th><th>Stands for</th><th>Focuses on</th></tr></thead>
+        <tbody>
+          <tr><td><b>SEO</b></td><td>Search Engine Optimization</td><td>Getting pages discovered and ranked in search engines</td></tr>
+          <tr><td><b>AEO</b></td><td>Answer Engine Optimization</td><td>Becoming the useful direct answer to a question</td></tr>
+          <tr><td><b>GEO</b></td><td>Generative Engine Optimization</td><td>How your brand is understood, referenced, or cited inside generative AI</td></tr>
+          <tr><td><b>LLMO</b></td><td>LLM Optimization</td><td>Making information easy for language models to interpret and use</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="takeaway">
+      <span class="tag">Takeaway</span>
+      <p>Brands get into trouble by building a separate strategy around every acronym instead of building the information foundation underneath all of them. That's backwards.</p>
+    </div>
+  </section>
+
+  <section class="chunk" id="changed">
+    <div class="sec-label"><i>2</i> The Shift <span></span></div>
+    <h2>What Actually Changed</h2>
+
+    <p>For years, discovery worked one way. Increasingly it works another.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 1</p>
+        <p class="fig-title">How the discovery path changed</p>
+        <div class="flowset">
+          <div class="flowrow then">
+            <span class="rowlabel">The old path</span>
+            <div class="steps steps4"><em>Enters a keyword</em><em>Gets a page of links</em><em>Visits several sites</em><em>Assembles the answer</em></div>
+          </div>
+          <div class="flowrow now">
+            <span class="rowlabel">The new path</span>
+            <div class="steps steps4"><em>Asks a full question</em><em>AI synthesizes sources</em><em>Receives an answer</em><em>Decides whether to explore</em></div>
+          </div>
+        </div>
+        <figcaption>The work of assembling an answer moved from the customer to the machine. Whether your brand is part of that assembly is the new visibility question.</figcaption>
+      </div>
+    </figure>
+
+    <p>A customer no longer needs to start on your website to form an opinion. They ask an AI what to look for, which options are best, or what someone in their situation should choose, and the answer takes shape before they see your homepage.</p>
+
+    <h3>What hasn't changed</h3>
+
+    <p>People still have problems and alternatives to compare. They still want evidence, still need to know whether something works for their situation, and still need to trust the source. Businesses still have to show they understand the problem they claim to solve.</p>
+
+    <div class="takeaway">
+      <span class="tag">Takeaway</span>
+      <p>The interface changed. The need for a good answer didn't. That's why the starting point isn't an acronym, it's a question.</p>
+    </div>
+  </section>
+
+  <section class="chunk" id="questions">
+    <div class="sec-label"><i>3</i> The Input <span></span></div>
+    <h2>Start With the Questions</h2>
+
+    <p>Build an inventory of what your customers actually ask. Don't guess, the questions already exist in six places:</p>
+
+    <div class="srcs">
+      <div class="src"><h4><span>1</span>Search</h4><ul><li>Queries bringing people to your site</li><li>Long-tail searches in your category</li></ul></div>
+      <div class="src"><h4><span>2</span>Customer service</h4><ul><li>What your team answers repeatedly</li><li>What confuses people</li></ul></div>
+      <div class="src"><h4><span>3</span>Sales</h4><ul><li>Pre-purchase questions and objections</li><li>Comparisons prospects make</li></ul></div>
+      <div class="src"><h4><span>4</span>Reviews</h4><ul><li>What customers praise or regret</li><li>What they wish they'd known</li></ul></div>
+      <div class="src"><h4><span>5</span>Communities</h4><ul><li>Reddit threads and Facebook groups</li><li>YouTube comments</li></ul></div>
+      <div class="src"><h4><span>6</span>AI systems</h4><ul><li>Ask ChatGPT, Gemini, and Perplexity what your customers would ask</li><li>See which brands and sources come back</li></ul></div>
+    </div>
+
+    <p class="pull">You don't need to invent 100 blog topics. You need to find 100 real questions.</p>
+
+    <h3>Not every question deserves an article</h3>
+
+    <p>Strategy still matters. Filter each question on relevance to your customer, legitimate expertise on your side, connection to a problem you solve, position in the buying journey, and whether you can genuinely answer better than what exists.</p>
+
+    <p>The objective isn't answering every question on the internet. It's becoming exceptionally useful around the ones that matter to your customers and your business.</p>
+  </section>
+
+  <section class="chunk" id="map">
+    <div class="sec-label"><i>4</i> The Map <span></span></div>
+    <h2>Turn Buyer Questions Into a Content Map</h2>
+
+    <p>Questions change as someone moves through the buying process.</p>
+
+    <div class="tablewrap">
+      <table class="map">
+        <thead><tr><th>Stage</th><th>What they're asking</th><th>What you publish</th></tr></thead>
+        <tbody>
+          <tr><td>1. Understanding the problem</td><td>"Why does this keep happening?"</td><td>Educational content</td></tr>
+          <tr><td>2. Exploring solutions</td><td>"What should I look for?"</td><td>Buying guides, category education</td></tr>
+          <tr><td>3. Comparing options</td><td>"Is the expensive one worth it?"</td><td>Comparisons, decision support</td></tr>
+          <tr><td>4. Making the purchase</td><td>"Will this fit?"</td><td>Product pages, FAQs</td></tr>
+          <tr><td>5. After the purchase</td><td>"How do I install this?"</td><td>Support content, useful to future buyers too</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Put those together and you don't have a blog calendar. You have a map of your customer's information needs.</p>
+  </section>
+
+  <section class="chunk" id="authority">
+    <div class="sec-label"><i>5</i> The Standard <span></span></div>
+    <h2>What Makes an Answer Authoritative</h2>
+
+    <p>The internet doesn't need another generic article summarizing five other generic articles, and AI makes generic content easier than ever. Authority has to come from somewhere.</p>
+
+    <div class="grid6">
+      <div class="g6"><b>Experience</b><span>What you've learned working in the category</span></div>
+      <div class="g6"><b>Expertise</b><span>What an outside writer would miss</span></div>
+      <div class="g6"><b>Evidence</b><span>Testing, data, customer feedback</span></div>
+      <div class="g6"><b>Specificity</b><span>When it works, when it doesn't, why</span></div>
+      <div class="g6"><b>Originality</b><span>A perspective or dataset that's new</span></div>
+      <div class="g6"><b>Clarity</b><span>Understandable without filler</span></div>
+    </div>
+
+    <div class="warnbox">
+      <p>AI can help you research, organize, draft, and scale, but your advantage isn't access to AI, since everyone has that. <strong>It's what your company knows that AI doesn't until someone publishes it.</strong></p>
+    </div>
+
+    <h3>Structure it for humans and machines</h3>
+
+    <p>Once the answer is good, make it easy to parse: descriptive titles, logical headings, direct answers near the top, short paragraphs, lists, clear definitions, comparison tables, FAQs, evidence, and internal links.</p>
+
+    <p>If someone asks a straightforward question, don't bury the answer halfway down the page. Answer it, then explain it.</p>
+
+    <p class="pull">Good structure isn't an AI trick. It's good communication.</p>
+  </section>
+
+  <section class="chunk" id="foundation">
+    <div class="sec-label"><i>6</i> The Insight <span></span></div>
+    <h2>SEO, AEO, and GEO Are Outcomes From the Same Foundation</h2>
+
+    <p>Publish one excellent guide answering an important customer question. That single asset can do three different jobs.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 2</p>
+        <p class="fig-title">One authoritative answer, three discovery outcomes</p>
+        <div class="scroller">
+          <svg viewBox="0 0 760 300" role="img" aria-labelledby="fig2t fig2d">
+            <title id="fig2t">One content asset producing SEO, AEO, and GEO outcomes</title>
+            <desc id="fig2d">A single authoritative answer branches into three outcomes: found in traditional search, extracted as a direct answer, and cited inside a generative AI response.</desc>
+            <defs>
+              <marker id="arw" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#b9a7ff"/></marker>
+            </defs>
+            <g fill="none" stroke="#b9a7ff" stroke-width="2.5" marker-end="url(#arw)">
+              <path d="M232,150 C320,150 340,58 452,58"/>
+              <path d="M232,150 C320,150 340,150 452,150"/>
+              <path d="M232,150 C320,150 340,242 452,242"/>
+            </g>
+            <rect x="14" y="104" width="218" height="92" rx="12" fill="#6a3fff"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" text-anchor="middle" fill="#ffffff">
+              <text x="123" y="136" font-size="16" font-weight="750">One excellent answer</text>
+              <text x="123" y="160" font-size="14" fill="#e5ddff">to a real customer</text>
+              <text x="123" y="178" font-size="14" fill="#e5ddff">question</text>
+            </g>
+            <rect x="458" y="20" width="288" height="76" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+              <text x="478" y="48" font-size="15" font-weight="780" fill="#5433c9">SEO outcome</text>
+              <text x="478" y="70" font-size="14" fill="#39424f">Someone finds it through</text>
+              <text x="478" y="87" font-size="14" fill="#39424f">traditional search results</text>
+            </g>
+            <rect x="458" y="112" width="288" height="76" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+              <text x="478" y="140" font-size="15" font-weight="780" fill="#5433c9">AEO outcome</text>
+              <text x="478" y="162" font-size="14" fill="#39424f">An answer experience extracts</text>
+              <text x="478" y="179" font-size="14" fill="#39424f">it as the direct answer</text>
+            </g>
+            <rect x="458" y="204" width="288" height="76" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+              <text x="478" y="232" font-size="15" font-weight="780" fill="#5433c9">GEO outcome</text>
+              <text x="478" y="254" font-size="14" fill="#39424f">A generative AI response cites</text>
+              <text x="478" y="271" font-size="14" fill="#39424f">or references your brand</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>Different discovery experiences, same foundational asset. You don't need three content strategies, you need one strong foundation and appropriate optimization at the edges.</figcaption>
+      </div>
+    </figure>
+  </section>
+
+  <section class="chunk" id="agentic">
+    <div class="sec-label"><i>7</i> The Agent Era <span></span></div>
+    <h2>This Is Already Starting, and It Only Grows</h2>
+
+    <p>This gets far more consequential as AI moves from answering to acting.</p>
+
+    <div class="flowset">
+      <div class="flowrow then"><span class="rowlabel">Today</span><div class="steps steps1"><em>"What's the best product for my situation?"</em></div></div>
+      <div class="flowrow now"><span class="rowlabel">Increasingly</span><div class="steps steps1"><em>"Find the best one that meets these requirements and buy it for me."</em></div></div>
+    </div>
+
+    <p>That's agentic commerce, and it's already partially built. US shopper use of AI assistants more than doubled year over year, and 51% say they'd be open to AI handling the entire process including the purchase, per the <a href="https://www.adyen.com/press-and-media/retail-report-2026-us">Adyen Retail Report 2026</a>. Roughly 132 million US adults have already used AI to assist a retail purchase (<a href="https://forkast.news/132-million-americans-now-shop-with-ai-and-59-of-those-purchases-still-land-on-amazon/">PYMNTS Intelligence</a>).</p>
+
+    <div class="stats">
+      <div class="stat"><b>12% &rarr; 35%</b><span>US shoppers using AI assistants, year over year (<a href="https://www.adyen.com/press-and-media/retail-report-2026-us">Adyen</a>)</span></div>
+      <div class="stat"><b>132M</b><span>US adults who've used AI to help with a purchase (<a href="https://forkast.news/132-million-americans-now-shop-with-ai-and-59-of-those-purchases-still-land-on-amazon/">PYMNTS</a>)</span></div>
+      <div class="stat"><b>51%</b><span>Open to AI handling the whole process (<a href="https://www.adyen.com/press-and-media/retail-report-2026-us">Adyen</a>)</span></div>
+    </div>
+
+    <p>But adoption is lopsided, and that tells you where to focus. AI use sits around 62% for product comparison, about 23% at checkout, and 19% post-purchase (<a href="https://www.globenewswire.com/news-release/2026/08/17/3345937/28124/en/ai-shopping-agents-and-agentic-commerce-2026-adoption-trends-and-execution-limits.html">Research and Markets</a>). Only about 3% of transactions currently involve agents.</p>
+
+    <div class="takeaway">
+      <span class="tag">Read this twice</span>
+      <p>Discovery and comparison are already agent-assisted. Purchase is the part catching up. The information work matters right now, at exactly the stage where AI is most involved.</p>
+    </div>
+
+    <h3>The plumbing is being standardized</h3>
+
+    <div class="tablewrap">
+      <table class="terms">
+        <thead><tr><th>Standard</th><th>Behind it</th><th>Handles</th></tr></thead>
+        <tbody>
+          <tr><td><b>ACP</b><br>Agentic Commerce Protocol</td><td>Stripe, OpenAI, Meta</td><td>In-chat checkout and merchant product feeds (<a href="https://docs.stripe.com/agentic-commerce/acp">Stripe</a>)</td></tr>
+          <tr><td><b>UCP</b><br>Universal Commerce Protocol</td><td>Google, Shopify, Microsoft</td><td>Product discovery, carts, agent-readable product data (<a href="https://www.tryvizup.com/blog/microsoft-s-90-day-agentic-commerce-roadmap">Microsoft guidance</a>)</td></tr>
+          <tr><td><b>AP2</b><br>Agent Payments Protocol</td><td>Google, now donated to the FIDO Alliance</td><td>Proving who authorized a purchase, including "Human Not Present" autonomous payments (<a href="https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/">Google</a>)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>AP2 v0.2 explicitly supports payments an agent executes autonomously from pre-authorized instructions, plus a Mastercard-co-developed "Verifiable Intent" standard creating a tamper-proof log of what the user authorized (<a href="https://blog.google/products-and-platforms/platforms/google-pay/agent-payments-protocol-fido-alliance/">Google</a>). Mastercard projects 300 million AI agent shoppers by 2030.</p>
+
+    <p class="pull">Nobody builds cryptographic authorization rails for a trend they expect to fade.</p>
+  </section>
+
+  <section class="chunk" id="interface">
+    <div class="sec-label"><i>8</i> The Big Shift <span></span></div>
+    <h2>When the Interface Disappears</h2>
+
+    <p>Most AI-assisted shopping still ends with a human looking at a screen. That's transitional. The direction is the customer talking to their glasses, earbuds, or phone, describing what they need, and delegating the rest. Meta already ships AI glasses with live camera assistance and in-conversation shopping.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 3</p>
+        <p class="fig-title">Three eras of discovery, and how much the customer actually sees</p>
+        <div class="eras">
+          <div class="era e1">
+            <span class="tagline">Era 1</span><h4>Links</h4>
+            <p>Searches, scans results, visits sites to decide.</p>
+            <p class="sees">Pages they see</p>
+            <div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="era e2">
+            <span class="tagline">Era 2</span><h4>Answers</h4>
+            <p>Asks a question, reads one synthesized answer.</p>
+            <p class="sees">Pages they see</p>
+            <div class="dots"><i></i><i></i></div>
+          </div>
+          <div class="era e3">
+            <span class="tagline">Era 3</span><h4>Actions</h4>
+            <p>Tells an agent what they need; it researches, decides, buys.</p>
+            <p class="sees">Pages they see</p>
+            <div class="dots"><b>None</b></div>
+          </div>
+        </div>
+        <figcaption>Each era removes surface area you control. By era three, your website isn't a destination or even a citation, it's a data source an agent consults and moves on from.</figcaption>
+      </div>
+    </figure>
+
+    <ul class="loses">
+      <li><b>No homepage.</b> No first impression to design.</li>
+      <li><b>No product page as you built it.</b> Layout, photography, and merchandising may never render.</li>
+      <li><b>No A/B tested hero image.</b> Nothing to test if nothing is displayed.</li>
+      <li><b>No cart experience.</b> The agent handles it, possibly through a protocol endpoint.</li>
+      <li><b>No chance to explain yourself.</b> If your information is ambiguous, the agent doesn't email you. It picks a competitor whose data is clear.</li>
+    </ul>
+
+    <p>Your brand becomes two things an agent can process: <strong>structured, accurate information</strong> about what you sell, who it's for, what it costs, and whether it fits this customer, and <strong>verifiable trust signals</strong> like consistent data, authentic reviews, and real business information. Much of what used to be persuasion becomes data quality.</p>
+
+    <p>Trust, not capability, is the bottleneck. 45% of shoppers want clarity on who's accountable if the wrong item is purchased (<a href="https://www.adyen.com/press-and-media/retail-report-2026-us">Adyen</a>), and 93% of merchants say the agent provider should bear that loss (<a href="https://forkast.news/132-million-americans-now-shop-with-ai-and-59-of-those-purchases-still-land-on-amazon/">PYMNTS Intelligence</a>). Brands with clean, unambiguous information will be the low-risk choice while everyone else argues about liability.</p>
+
+    <h3>How to prepare now</h3>
+
+    <div class="tablewrap">
+      <table class="prep">
+        <thead><tr><th>Prepare</th><th>Why</th><th>Start</th></tr></thead>
+        <tbody>
+          <tr><td>Structured product feed</td><td>Agents can't browse pages. ACP takes TSV, CSV, XML, or JSON, refreshed every 15 minutes (<a href="https://agentic-commerce-protocol.com/docs/commerce/specs/feed">ACP spec</a>)</td><td>Now</td></tr>
+          <tr><td>Complete attributes</td><td>Feeds increasingly expect return policies, support contacts, shipping windows (<a href="https://www.tryvizup.com/blog/microsoft-s-90-day-agentic-commerce-roadmap">Microsoft</a>)</td><td>Now</td></tr>
+          <tr><td>Data parity</td><td>Disagreement on price or stock across surfaces reads as unreliable</td><td>Now</td></tr>
+          <tr><td>Compatibility answers</td><td>"Will this work with what I own?" must be machine-resolvable</td><td>Now</td></tr>
+          <tr><td>Trust signals</td><td>How an agent assesses risk before recommending you</td><td>Now</td></tr>
+          <tr><td>An agent policy</td><td>Only 28% of merchants give agents their full range on equal terms (<a href="https://forkast.news/132-million-americans-now-shop-with-ai-and-59-of-those-purchases-still-land-on-amazon/">PYMNTS</a>)</td><td>This year</td></tr>
+          <tr><td>Protocol monitoring</td><td>ACP, UCP, and AP2 move fast, someone should own watching them</td><td>This quarter</td></tr>
+          <tr><td>The question library</td><td>Every clear answer is material an agent can use to choose you</td><td>Ongoing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="warnbox">
+      <p>Most of that list is the same work described above. <strong>Agents don't change the job.</strong> They raise the penalty for a weak information foundation and remove the human's ability to give you the benefit of the doubt.</p>
+    </div>
+  </section>
+
+  <section class="chunk" id="system">
+    <div class="sec-label"><i>9</i> The System <span></span></div>
+    <h2>The Simple Operating System</h2>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 4</p>
+        <p class="fig-title">The whole strategy, in six steps</p>
+        <div class="os">
+          <div class="os-track">
+            <div class="os-step"><div class="os-num">1</div><div><h4>Find</h4><p>What customers actually ask</p></div></div>
+            <div class="os-step"><div class="os-num">2</div><div><h4>Prioritize</h4><p>What matters to the business</p></div></div>
+            <div class="os-step"><div class="os-num">3</div><div><h4>Create</h4><p>Real expertise and evidence</p></div></div>
+            <div class="os-step"><div class="os-num">4</div><div><h4>Structure</h4><p>Clear for people and machines</p></div></div>
+            <div class="os-step"><div class="os-num">5</div><div><h4>Publish</h4><p>Get it onto the web</p></div></div>
+            <div class="os-step"><div class="os-num">6</div><div><h4>Repeat</h4><p>Find the next question</p></div></div>
+          </div>
+          <div class="os-repeat">No acronym required, the loop is the strategy</div>
+        </div>
+        <figcaption>Over time you're no longer creating random content. You're building authority around a subject.</figcaption>
+      </div>
+    </figure>
+
+    <p>Knowing about GEO doesn't create visibility. Buying another AI tool doesn't either. Publishing useful information does, and once isn't enough.</p>
+
+    <div class="stats">
+      <div class="stat"><b>60</b><span>Answers a year at five real questions a month</span></div>
+      <div class="stat"><b>120</b><span>Answers a year at ten</span></div>
+      <div class="stat"><b>3</b><span>Discovery outcomes each answer can produce</span></div>
+    </div>
+
+    <p>Connect them deliberately and you aren't adding pages, you're building a knowledge base that compounds.</p>
+  </section>
+
+  <section class="chunk" id="faq">
+    <div class="sec-label"><i>10</i> Questions <span></span></div>
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <details open>
+        <summary>Is AEO different from SEO?</summary>
+        <div class="answer"><p>They overlap heavily but optimize for different outcomes. SEO is about being ranked among links. AEO is about being clear enough to become the direct answer. One well-structured page can do both.</p></div>
+      </details>
+      <details>
+        <summary>Do I need a separate GEO strategy?</summary>
+        <div class="answer"><p>No. You need one strong information foundation, then appropriate optimization per surface. Three parallel strategies create work without creating authority.</p></div>
+      </details>
+      <details>
+        <summary>Are AI agents actually buying things yet, or is this still hype?</summary>
+        <div class="answer"><p>Both, depending on the stage. AI involvement is already high at comparison, around 62%, but only about 23% at checkout, with roughly 3% of transactions involving agents. The infrastructure is real: ACP from Stripe and OpenAI, UCP from Google and Shopify, and AP2 now governed by the FIDO Alliance.</p></div>
+      </details>
+      <details>
+        <summary>What should we do first to prepare for AI agents?</summary>
+        <div class="answer"><p>Data quality before protocol integrations. A structured feed with accurate price, availability, variants, shipping, and returns that matches your site and listings, plus published answers to compatibility questions. An agent can't ask for clarification; it picks whoever is unambiguous.</p></div>
+      </details>
+      <details>
+        <summary>How do I find the questions my customers are asking?</summary>
+        <div class="answer"><p>Six places: search queries, support tickets, sales conversations, product reviews, community discussions on Reddit and YouTube, and the AI systems themselves.</p></div>
+      </details>
+      <details>
+        <summary>Does every customer question deserve its own article?</summary>
+        <div class="answer"><p>No. Filter for relevance, legitimate expertise, connection to a problem you solve, and whether you can genuinely answer better than what exists.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section class="chunk" id="conclusion">
+    <div class="sec-label"><i>11</i> Conclusion <span></span></div>
+    <h2>Find the Questions. Answer Them. Repeat.</h2>
+
+    <p>AI is changing how brands get discovered and the role it plays in buying decisions, and agents will eventually complete more of the purchase themselves. Pay attention, but don't let the technology's complexity make the strategy complicated.</p>
+
+    <p>Start with your customer. What are they asking? What are they comparing? What do they need to know before choosing? If you can provide the best answer, create it, structure it, publish it, and find the next question.</p>
+
+    <p>Then prepare for the version where the customer never sees a page. When someone asks their glasses to handle it, the only thing representing your brand is the information you published and how clearly a machine can read it.</p>
+
+    <p>AEO isn't magic. GEO isn't magic. Agentic commerce isn't magic either. Your customers have questions. Answer them better than anyone else, make the answers machine-readable, and keep going.</p>
+  </section>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is AEO different from SEO?", "acceptedAnswer": { "@type": "Answer", "text": "They overlap heavily but optimize for different outcomes. SEO is about being ranked among links. AEO is about being clear enough to become the direct answer. One well-structured page can do both." } },
+    { "@type": "Question", "name": "Do I need a separate GEO strategy?", "acceptedAnswer": { "@type": "Answer", "text": "No. You need one strong information foundation, then appropriate optimization per surface. Three parallel strategies create work without creating authority." } },
+    { "@type": "Question", "name": "Are AI agents actually buying things yet, or is this still hype?", "acceptedAnswer": { "@type": "Answer", "text": "Both, depending on the stage. AI involvement is already high at comparison, around 62 percent, but only about 23 percent at checkout, with roughly 3 percent of transactions involving agents. The infrastructure is real: ACP from Stripe and OpenAI, UCP from Google and Shopify, and AP2 now governed by the FIDO Alliance." } },
+    { "@type": "Question", "name": "What should we do first to prepare for AI agents?", "acceptedAnswer": { "@type": "Answer", "text": "Data quality before protocol integrations. A structured feed with accurate price, availability, variants, shipping, and returns that matches your site and listings, plus published answers to compatibility questions. An agent cannot ask for clarification; it picks whoever is unambiguous." } },
+    { "@type": "Question", "name": "How do I find the questions my customers are asking?", "acceptedAnswer": { "@type": "Answer", "text": "Six places: search queries, support tickets, sales conversations, product reviews, community discussions on Reddit and YouTube, and the AI systems themselves." } },
+    { "@type": "Question", "name": "Does every customer question deserve its own article?", "acceptedAnswer": { "@type": "Answer", "text": "No. Filter for relevance, legitimate expertise, connection to a problem you solve, and whether you can genuinely answer better than what exists." } }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vewo.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://vewo.ai/blog/" },
+    { "@type": "ListItem", "position": 3, "name": "Stop Overcomplicating AEO and GEO", "item": "https://vewo.ai/blog/stop-overcomplicating-aeo-geo/" }
+  ]
+}
+</script>
+{% endraw %}

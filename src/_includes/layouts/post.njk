@@ -8,10 +8,7 @@ ogType: article
     <header class="blog-post__head reveal">
       {% if category %}<span class="kicker">{{ category }}</span>{% endif %}
       <h1>{{ title }}</h1>
-      <p class="blog-post__meta">
-        <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
-        {% if author %} · {{ author }}{% endif %}
-      </p>
+      {% if author %}<p class="blog-post__meta">By {{ author }}</p>{% endif %}
     </header>
     <div class="blog-post__body">
       {{ content | safe }}

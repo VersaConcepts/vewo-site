@@ -20,7 +20,7 @@ permalink: /blog/index.html
     {% if post.data.category %}<span class="blog-card__tag">{{ post.data.category }}</span>{% endif %}
     <h3>{{ post.data.title }}</h3>
     <p class="blog-card__excerpt">{{ post.data.description }}</p>
-    <p class="blog-card__meta"><time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time></p>
+    {% if post.data.author %}<p class="blog-card__meta">By {{ post.data.author }}</p>{% endif %}
     <span class="blog-card__more">Read more →</span>
    </a>
    {% endfor %}
