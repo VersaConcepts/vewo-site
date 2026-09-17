@@ -17,6 +17,15 @@ ogType: article
       {{ content | safe }}
     </div>
 
+    <aside class="author-bio reveal">
+      <div class="author-bio__mark" aria-hidden="true">JU</div>
+      <div>
+        <p class="author-bio__label">About the Author</p>
+        <p class="author-bio__name">{{ author or "Jim Umlauf" }}</p>
+        <p class="author-bio__text">Jim Umlauf is the founder of VEWO and an entrepreneur with a background in sales and leadership and more than 13 years of experience operating an 8 figure e-commerce brand. He believes the best strategies are built around strong execution, consistency, quality, and making complicated things easier.</p>
+      </div>
+    </aside>
+
     <div class="blog-post__cta reveal">
       <h3>Want AI to recommend your brand?</h3>
       <p>See exactly where you stand with a free visibility audit.</p>
@@ -33,7 +42,7 @@ ogType: article
   "description": {{ description | dump | safe }},
   "datePublished": "{{ page.date | isoDate }}",
   "dateModified": "{{ page.date | isoDate }}",
-  "author": { "@type": "Organization", "name": "VEWO" },
+  "author": { "@type": "Person", "name": {{ (author or "Jim Umlauf") | dump | safe }} },
   "publisher": {
     "@type": "Organization",
     "name": "VEWO",

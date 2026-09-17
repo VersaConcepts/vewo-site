@@ -669,3 +669,11 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 
 /* Emphasize a phrase inside the gradient feature callout */
 .hl-white { font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.75); padding-bottom: 1px; white-space: nowrap; }
+
+/* ---------- Blog author bio ---------- */
+.author-bio { display: flex; gap: 18px; align-items: flex-start; margin-top: 44px; padding: 24px 26px; border: 1px solid var(--line); border-radius: 18px; background: var(--bg-2); }
+.author-bio__mark { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: var(--grad); color: #fff; display: flex; align-items: center; justify-content: center; font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.05rem; letter-spacing: 0.02em; }
+.author-bio__label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted-2); font-weight: 700; margin: 0 0 4px; }
+.author-bio__name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); margin: 0 0 8px; }
+.author-bio__text { color: var(--muted); font-size: 0.98rem; line-height: 1.6; margin: 0; }
+@media (max-width: 600px) { .author-bio { flex-direction: column; gap: 12px; padding: 20px; } }
