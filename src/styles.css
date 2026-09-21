@@ -677,3 +677,42 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 .author-bio__name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--text); margin: 0 0 8px; }
 .author-bio__text { color: var(--muted); font-size: 0.98rem; line-height: 1.6; margin: 0; }
 @media (max-width: 600px) { .author-bio { flex-direction: column; gap: 12px; padding: 20px; } }
+
+/* ---------- The Content Playbook Changed ---------- */
+.playbook-viz { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 22px 20px 16px; margin: 8px 0 30px; box-shadow: 0 10px 30px rgba(26,36,64,0.05); }
+.playbook-viz .scroller { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.playbook-viz svg { display: block; width: 100%; min-width: 660px; height: auto; }
+.playbook-viz figcaption { font-size: 0.9rem; line-height: 1.6; color: var(--muted); margin: 14px 0 0; padding-top: 14px; border-top: 1px solid var(--line); }
+
+.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 10px 0 8px; }
+.vs-card { border: 1px solid var(--line); border-radius: 18px; background: #fff; padding: 24px 24px; }
+.vs-card--now { border-color: #cdbdff; background: linear-gradient(180deg, #f7f4ff, #ffffff); }
+.vs-card__tag { display: inline-block; font-size: 0.72rem; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 800; color: #525c6b; background: #eef0f4; padding: 5px 11px; border-radius: 999px; margin-bottom: 14px; }
+.vs-card--now .vs-card__tag { background: var(--v3); color: #fff; }
+.vs-card h3 { font-size: 1.2rem; margin: 0 0 12px; color: var(--text); }
+.vs-card__q { font-size: 1rem; line-height: 1.55; color: var(--text); background: var(--bg-2); border-left: 3px solid var(--v3); border-radius: 0 10px 10px 0; padding: 12px 15px; margin: 0 0 14px; }
+.vs-card__flow { font-size: 0.9rem; font-weight: 700; color: var(--muted); letter-spacing: 0.01em; margin: 0; }
+.vs-card__flow .a { color: var(--v3); font-weight: 800; }
+
+.then-now { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0 8px; }
+.then-now__col { border: 1px solid var(--line); border-radius: 16px; padding: 20px 22px; background: #fff; }
+.then-now__col--now { border-color: #cdbdff; background: #f7f4ff; }
+.then-now__col h4 { font-size: 0.75rem; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 800; color: var(--muted-2); margin: 0 0 14px; }
+.then-now__col--now h4 { color: var(--v3); }
+.then-now ul { list-style: none; padding: 0; margin: 0; }
+.then-now li { position: relative; padding: 6px 0 6px 24px; font-size: 0.98rem; color: var(--text); }
+.then-now li::before { content: ""; position: absolute; left: 4px; top: 14px; width: 7px; height: 7px; border-radius: 2px; background: #c8cdd6; }
+.then-now__col--now li::before { background: var(--v3); }
+
+.struct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; margin: 20px 0 4px; padding: 0; list-style: none; }
+.struct-grid li { position: relative; padding: 8px 0 8px 30px; font-size: 0.98rem; color: var(--text); }
+.struct-grid li::before { content: "\2713"; position: absolute; left: 2px; top: 7px; color: var(--c-ink); font-weight: 800; }
+
+.loop-flow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 6px; margin: 18px 0 26px; }
+.loop-flow span.step { display: inline-block; font-family: "Poppins", sans-serif; font-weight: 700; font-size: 0.92rem; color: var(--text); background: #f3f0ff; border: 1px solid #cdbdff; border-radius: 999px; padding: 7px 14px; }
+.loop-flow span.step.last { background: var(--grad); color: #fff; border-color: transparent; }
+.loop-flow span.arrow { color: var(--v3); font-weight: 800; }
+
+@media (max-width: 760px) {
+  .vs-grid, .then-now, .struct-grid { grid-template-columns: 1fr; }
+}
