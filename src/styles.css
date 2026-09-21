@@ -413,7 +413,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 .future strong { color: var(--text); }
 
 /* ---------- FAQ ---------- */
-.faq { display: grid; gap: 12px; }
+.faq { display: grid; gap: 12px; max-width: 860px; margin: 0 auto; width: 100%; }
 .faq__item { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); overflow: hidden; }
 .faq__item summary { list-style: none; cursor: pointer; padding: 20px 24px; font-family: "Poppins"; font-weight: 600; font-size: 1.05rem; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
 .faq__item summary::-webkit-details-marker { display: none; }
@@ -423,7 +423,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 
 /* ---------- CTA / Form ---------- */
 .section--cta { background: radial-gradient(70% 80% at 50% 100%, rgba(124,92,255,0.08), transparent 70%); }
-.audit-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 16px; }
+.audit-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 16px auto 0; max-width: 720px; width: 100%; }
 .field { display: flex; flex-direction: column; gap: 8px; }
 .field--full { grid-column: 1 / -1; }
 .field label { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
