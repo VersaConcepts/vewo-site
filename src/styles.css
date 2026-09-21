@@ -716,3 +716,10 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 @media (max-width: 760px) {
   .vs-grid, .then-now, .struct-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Bridge band (market change -> capacity) ---------- */
+.bridge { background: var(--grad); color: #fff; text-align: center; padding: 66px 24px; }
+.bridge .container { max-width: 1000px; }
+.bridge p { font-family: "Poppins", sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4.2vw, 2.55rem); line-height: 1.2; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+.bridge .b-quiet { display: block; margin-top: 8px; color: rgba(255,255,255,0.82); font-weight: 700; }
+@media (max-width: 600px) { .bridge { padding: 48px 20px; } }
