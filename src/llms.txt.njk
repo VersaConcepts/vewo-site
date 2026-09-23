@@ -1,0 +1,25 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
+# VEWO
+
+> VEWO is a managed service that consistently creates, human-reviews, optimizes, and publishes the content a brand needs to be discovered, understood, and recommended across SEO, AEO, and GEO, without adding work to the brand's team.
+
+VEWO helps growth-stage brands increase visibility across traditional search and AI-driven discovery. AI has expanded the number of questions a brand needs to answer: one customer question fans out into many related queries that AI systems research and synthesize before deciding which brands to recommend. VEWO continuously identifies those questions, closes the content and visibility gaps, structures the answers for search engines and AI systems, publishes them to the brand's own site, and measures what changes. Every publishable piece is human-reviewed. The result is an owned content asset whose coverage and authority compound over time.
+
+Key terms: SEO (search engine optimization), AEO (answer engine optimization), GEO (generative engine optimization), query fan-out, question coverage, visibility asset, Brand Brain (VEWO's per-brand context layer).
+
+## Main pages
+- [VEWO home](https://vewo.ai/): What VEWO does, how AI changed discovery, the compounding advantage, the managed loop (Monitor, Identify, Create, Human Review, Optimize, Publish, Amplify, Learn), pricing, and FAQ.
+- [About VEWO](https://vewo.ai/about/): Built by operators from a decade-plus of e-commerce and SEO; why consistent execution compounds into a visibility advantage.
+- [Blog](https://vewo.ai/blog/): Insights on AI visibility, generative search, content coverage, and consistent execution.
+
+## Blog posts
+{%- for post in collections.posts %}
+- [{{ post.data.title }}](https://vewo.ai{{ post.url }}): {{ post.data.description }}
+{%- endfor %}
+
+## Contact
+- Email: hello@vewo.ai
+- Free Visibility Report: https://vewo.ai/#audit
