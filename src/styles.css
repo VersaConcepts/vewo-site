@@ -728,3 +728,7 @@ main #pricing > .container { background: transparent; border: 0; box-shadow: non
 .bridge p { font-family: "Poppins", sans-serif; font-weight: 800; font-size: clamp(1.6rem, 4.2vw, 2.55rem); line-height: 1.2; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
 .bridge .b-quiet { display: block; margin-top: 8px; color: rgba(255,255,255,0.82); font-weight: 700; }
 @media (max-width: 600px) { .bridge { padding: 48px 20px; } }
+
+/* Explainer: wider header so the plain-language headline isn't cramped */
+#explainer .sec-head { max-width: 1040px; }
+#explainer .sec-head h1 { font-size: clamp(2rem, 5vw, 3.4rem); }
