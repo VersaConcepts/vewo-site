@@ -180,5 +180,52 @@
   });
  }
 
+ /* ---- Radar waitlist form (submits to Web3Forms) ---- */
+ var rform = document.getElementById("radarForm");
+ var rnote = document.getElementById("radarNote");
+ if (rform) {
+  rform.addEventListener("submit", function (e) {
+   e.preventDefault();
+   var first = rform.first_name.value.trim();
+   var email = rform.email.value.trim();
+   var valid = first && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+   if (!valid) {
+    rnote.textContent = "Please enter your first name and a valid work email.";
+    rnote.className = "form-note err";
+    return;
+   }
+   var submitBtn = rform.querySelector('button[type="submit"]');
+   var originalLabel = submitBtn ? submitBtn.textContent : "";
+   if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Submitting…"; }
+   rnote.textContent = "Adding you to the waitlist…";
+   rnote.className = "form-note";
+
+   fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    headers: { "Accept": "application/json" },
+    body: new FormData(rform)
+   })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+     if (data.success) {
+      rnote.textContent = "You're on the Radar waitlist. We'll keep you posted as early access becomes available.";
+      rnote.className = "form-note ok";
+      if (window.fbq) { fbq("track", "Lead"); }
+      rform.reset();
+     } else {
+      rnote.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
+      rnote.className = "form-note err";
+     }
+    })
+    .catch(function () {
+     rnote.textContent = "Network error. Please email hello@vewo.ai directly.";
+     rnote.className = "form-note err";
+    })
+    .finally(function () {
+     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+    });
+  });
+ }
+
  /* ---- Footer year (keep static 2026 per source, but guard) ---- */
 })();
