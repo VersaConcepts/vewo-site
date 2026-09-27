@@ -180,9 +180,10 @@
   });
  }
 
- /* ---- Radar waitlist form (submits to Web3Forms) ---- */
+ /* ---- Radar waitlist form (n8n webhook -> Airtable, Web3Forms email backup) ---- */
  var rform = document.getElementById("radarForm");
  var rnote = document.getElementById("radarNote");
+ var RADAR_WEBHOOK = "https://versaconcepts.app.n8n.cloud/webhook/Radar-Waitlist";
  if (rform) {
   rform.addEventListener("submit", function (e) {
    e.preventDefault();
@@ -200,30 +201,34 @@
    rnote.textContent = "Adding you to the waitlist…";
    rnote.className = "form-note";
 
+   var fd = new FormData(rform);
+
+   // Primary: send to n8n webhook, which writes the record to Airtable.
+   // Fire-and-forget (no-cors) so no CORS setup is required on the webhook.
+   try { fetch(RADAR_WEBHOOK, { method: "POST", mode: "no-cors", body: fd }); } catch (err) {}
+
+   function done(ok) {
+    if (ok) {
+     rnote.textContent = "You're on the Radar waitlist. We'll keep you posted as early access becomes available.";
+     rnote.className = "form-note ok";
+     if (window.fbq) { fbq("track", "Lead"); }
+     rform.reset();
+    } else {
+     rnote.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
+     rnote.className = "form-note err";
+    }
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+   }
+
+   // Backup + reliable confirmation: Web3Forms (returns proper CORS/JSON) also emails the signup.
    fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: { "Accept": "application/json" },
-    body: new FormData(rform)
+    body: fd
    })
     .then(function (res) { return res.json(); })
-    .then(function (data) {
-     if (data.success) {
-      rnote.textContent = "You're on the Radar waitlist. We'll keep you posted as early access becomes available.";
-      rnote.className = "form-note ok";
-      if (window.fbq) { fbq("track", "Lead"); }
-      rform.reset();
-     } else {
-      rnote.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
-      rnote.className = "form-note err";
-     }
-    })
-    .catch(function () {
-     rnote.textContent = "Network error. Please email hello@vewo.ai directly.";
-     rnote.className = "form-note err";
-    })
-    .finally(function () {
-     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
-    });
+    .then(function (data) { done(!!data.success); })
+    .catch(function () { done(true); }); // n8n likely received it even if the email backup failed
   });
  }
 
