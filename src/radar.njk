@@ -10,11 +10,11 @@ permalink: /radar/index.html
   .radar-page .r-eyebrow { display:inline-flex; align-items:center; gap:9px; font-size:0.95rem; letter-spacing:0.14em; text-transform:uppercase; font-weight:800; color:#fff; background:var(--grad); padding:11px 22px; border-radius:999px; margin-bottom:20px; box-shadow:0 12px 30px rgba(109,74,255,0.30); }
   .radar-page .r-eyebrow::before { content:""; width:9px; height:9px; border-radius:50%; background:#fff; box-shadow:0 0 0 0 rgba(255,255,255,0.7); animation:r-pulse 1.8s ease-out infinite; }
   @keyframes r-pulse { 0%{box-shadow:0 0 0 0 rgba(255,255,255,0.65);} 70%{box-shadow:0 0 0 8px rgba(255,255,255,0);} 100%{box-shadow:0 0 0 0 rgba(255,255,255,0);} }
-  .radar-page .r-hero { display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:center; }
+  .radar-page .r-hero { display:grid; grid-template-columns:1.05fr 0.95fr; gap:44px; align-items:start; }
   .radar-page .r-hero h1 { font-size:clamp(2rem,4.4vw,3.2rem); line-height:1.12; letter-spacing:-0.02em; margin:0 0 18px; color:var(--text); text-wrap:balance; }
   .radar-page .r-hero .r-sub { font-size:clamp(1.05rem,2.2vw,1.3rem); font-weight:650; color:var(--text); margin:0 0 16px; }
   .radar-page .r-hero p.r-body { color:var(--muted); font-size:1.02rem; line-height:1.65; margin:0 0 20px; }
-  .radar-page .r-external { border-left:4px solid var(--v3); background:var(--accent-soft, #f3f0ff); border-radius:0 14px 14px 0; padding:16px 20px; margin:0 0 26px; font-size:1.02rem; line-height:1.6; color:var(--text); }
+  .radar-page .r-external { border-left:4px solid var(--v3); background:var(--accent-soft, #f3f0ff); border-radius:0 14px 14px 0; padding:16px 20px; margin:20px 0 0; font-size:0.98rem; line-height:1.6; color:var(--text); }
   .radar-page .r-external strong { color:var(--v3); }
   .radar-page .r-actions { display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
   .radar-page .r-textlink { color:var(--v3); font-weight:700; text-decoration:none; }
@@ -88,24 +88,26 @@ permalink: /radar/index.html
     <p class="r-sub">See where you're winning. Where you're losing. What your competitors are doing better. And what to do next.</p>
     <p class="r-body">Your competitors are changing their ads. Customers are talking. Search and AI results are shifting. Platforms are changing the rules. New products and opportunities are emerging.</p>
     <p class="r-body">VEWO Radar continuously watches your brand, competitors, customers, advertising, search, AI visibility, and the market around you, then turns all of that activity into the few things your team actually needs to know.</p>
-    <p class="r-external"><strong>These are external signals, the market moving outside your own walls.</strong> Your analytics show what's happening inside your business. They can't show what competitors, customers, search, and AI are doing around it. That outside view has always required an enterprise intelligence team and expensive tools most growing brands can't justify. Radar gives you that view without building either.</p>
     <div class="r-actions">
      <a href="#radar-waitlist" class="btn btn--solid btn--lg">Join the Radar Waitlist</a>
      <a href="#radar-watches" class="r-textlink">See what Radar watches ↓</a>
     </div>
    </div>
 
-   <div class="r-mock reveal" aria-hidden="true">
-    <div class="r-mock__top">VEWO Radar · Executive Brief <span>This week</span></div>
-    <div class="r-mock__body">
-     <div><div class="r-mrow__head"><b>Competitive Position</b><span class="r-stat r-stat--up">Gaining</span></div><div class="r-bar"><i style="width:68%"></i></div></div>
-     <div><div class="r-mrow__head"><b>Market Presence</b><span class="r-stat r-stat--watch">Holding</span></div><div class="r-bar"><i style="width:52%"></i></div></div>
-     <div><div class="r-mrow__head"><b>Advertising Intelligence</b><span class="r-stat r-stat--down">Out-tested</span></div><div class="r-bar"><i style="width:34%"></i></div></div>
-     <div><div class="r-mrow__head"><b>AI Visibility</b><span class="r-stat r-stat--down">Gap found</span></div><div class="r-bar"><i style="width:41%"></i></div></div>
-     <div><div class="r-mrow__head"><b>Message Ownership</b><span class="r-stat r-stat--up">Advantage</span></div><div class="r-bar"><i style="width:73%"></i></div></div>
-     <div><div class="r-mrow__head"><b>Opportunities</b><span class="r-stat r-stat--watch">3 to act on</span></div><div class="r-bar"><i style="width:60%"></i></div></div>
+   <div class="r-right reveal">
+    <div class="r-mock" aria-hidden="true">
+     <div class="r-mock__top">VEWO Radar · Executive Brief <span>This week</span></div>
+     <div class="r-mock__body">
+      <div><div class="r-mrow__head"><b>Competitive Position</b><span class="r-stat r-stat--up">Gaining</span></div><div class="r-bar"><i style="width:68%"></i></div></div>
+      <div><div class="r-mrow__head"><b>Market Presence</b><span class="r-stat r-stat--watch">Holding</span></div><div class="r-bar"><i style="width:52%"></i></div></div>
+      <div><div class="r-mrow__head"><b>Advertising Intelligence</b><span class="r-stat r-stat--down">Out-tested</span></div><div class="r-bar"><i style="width:34%"></i></div></div>
+      <div><div class="r-mrow__head"><b>AI Visibility</b><span class="r-stat r-stat--down">Gap found</span></div><div class="r-bar"><i style="width:41%"></i></div></div>
+      <div><div class="r-mrow__head"><b>Message Ownership</b><span class="r-stat r-stat--up">Advantage</span></div><div class="r-bar"><i style="width:73%"></i></div></div>
+      <div><div class="r-mrow__head"><b>Opportunities</b><span class="r-stat r-stat--watch">3 to act on</span></div><div class="r-bar"><i style="width:60%"></i></div></div>
+     </div>
+     <div class="r-mock__foot">Illustrative example</div>
     </div>
-    <div class="r-mock__foot">Illustrative example</div>
+    <p class="r-external"><strong>These are external signals, the market moving outside your own walls.</strong> Your analytics show what's happening inside your business. They can't show what competitors, customers, search, and AI are doing around it. That outside view has always required an enterprise intelligence team and expensive tools most growing brands can't justify. Radar gives you that view without building either.</p>
    </div>
   </div>
  </div>
