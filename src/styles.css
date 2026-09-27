@@ -115,6 +115,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 /* Radar stands out (new / coming soon) */
 .nav__radar { color: var(--v3) !important; font-weight: 700 !important; }
 .nav__radar:hover { color: var(--c-ink) !important; }
+.nav__soon { display: inline-block; margin-left: 6px; font-family: "Poppins", sans-serif; font-size: 0.58rem; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; color: #fff; background: var(--grad); padding: 2px 7px; border-radius: 999px; vertical-align: middle; line-height: 1.5; }
 .nav__cta { padding: 9px 18px; }
 .nav__actions { display: flex; align-items: center; gap: 10px; }
 .nav__toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 6px; }
