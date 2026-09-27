@@ -203,10 +203,6 @@
 
    var fd = new FormData(rform);
 
-   // Primary: send to n8n webhook, which writes the record to Airtable.
-   // Fire-and-forget (no-cors) so no CORS setup is required on the webhook.
-   try { fetch(RADAR_WEBHOOK, { method: "POST", mode: "no-cors", body: fd }); } catch (err) {}
-
    function done(ok) {
     if (ok) {
      rnote.textContent = "You're on the Radar waitlist. We'll keep you posted as early access becomes available.";
@@ -214,21 +210,18 @@
      if (window.fbq) { fbq("track", "Lead"); }
      rform.reset();
     } else {
-     rnote.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
+     rnote.textContent = "Network error. Please email hello@vewo.ai directly.";
      rnote.className = "form-note err";
     }
     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
    }
 
-   // Backup + reliable confirmation: Web3Forms (returns proper CORS/JSON) also emails the signup.
-   fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: { "Accept": "application/json" },
-    body: fd
-   })
-    .then(function (res) { return res.json(); })
-    .then(function (data) { done(!!data.success); })
-    .catch(function () { done(true); }); // n8n likely received it even if the email backup failed
+   // Send to the n8n webhook, which writes the record to Airtable.
+   // Fire-and-forget (no-cors); the response is opaque, so treat a dispatched
+   // request as success and only surface an error on an actual network failure.
+   fetch(RADAR_WEBHOOK, { method: "POST", mode: "no-cors", body: fd })
+    .then(function () { done(true); })
+    .catch(function () { done(false); });
   });
  }
 
