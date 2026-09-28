@@ -138,8 +138,8 @@
  if (form) {
   form.addEventListener("submit", function (e) {
    e.preventDefault();
-   var name = form.name.value.trim();
-   var email = form.email.value.trim();
+   var name = (form.elements["name"] ? form.elements["name"].value : "").trim();
+   var email = (form.elements["email"] ? form.elements["email"].value : "").trim();
    var valid = name && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
    if (!valid) {
     note.textContent = "Please enter your name and a valid email.";
