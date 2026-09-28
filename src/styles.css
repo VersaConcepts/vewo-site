@@ -468,7 +468,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 .footer__col h4 { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 16px; }
 .footer__col a, .footer__col span { display: block; color: var(--muted); font-size: 0.93rem; padding: 5px 0; transition: color .15s; }
 .footer__col a:hover { color: var(--text); }
-.footer__col .nav__soon { display: inline-block; width: auto; padding: 2px 7px; color: #fff; }
+.footer__col .nav__soon { display: inline-block; width: auto; padding: 2px 7px; color: #fff; font-size: 0.55rem; line-height: 1.5; }
 .footer__bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted-2); font-size: 0.88rem; }
 .footer__tag { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
 
