@@ -98,7 +98,7 @@ In a real sense, your brand has become a distributed entity across the web. Your
 <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: AI synthesizes signals from your website, Reddit, LinkedIn, YouTube, and reviews into a single answer and shortlist for the customer.">
  <defs>
   <linearGradient id="ig-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-   <stop offset="0%" stop-color="#6d4aff"/><stop offset="50%" stop-color="#4f7df0"/><stop offset="100%" stop-color="#0fa9c4"/>
+   <stop offset="0%" stop-color="#0750d7"/><stop offset="50%" stop-color="#1267f5"/><stop offset="100%" stop-color="#0088ff"/>
   </linearGradient>
  </defs>
  <!-- connector lines from signals to AI -->
@@ -111,11 +111,11 @@ In a real sense, your brand has become a distributed entity across the web. Your
  </g>
  <!-- AI to answer -->
  <path d="M438 184 L 520 184" stroke="url(#ig-grad)" stroke-width="3" fill="none" marker-end="url(#ah)"/>
- <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#0fa9c4"/></marker></defs>
+ <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#0088ff"/></marker></defs>
 
  <!-- signal nodes -->
  <g font-family="Poppins, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
-  <g><rect x="20" y="38" width="176" height="36" rx="10" fill="#fff" stroke="#6a3fff" stroke-width="1.5"/><text x="108" y="61" fill="#0e0f1a">Your Website</text></g>
+  <g><rect x="20" y="38" width="176" height="36" rx="10" fill="#fff" stroke="#0750d7" stroke-width="1.5"/><text x="108" y="61" fill="#03183d">Your Website</text></g>
   <g><rect x="20" y="102" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="125" fill="#545569">Reddit</text></g>
   <g><rect x="20" y="166" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="189" fill="#545569">LinkedIn</text></g>
   <g><rect x="20" y="230" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="253" fill="#545569">YouTube &amp; Social</text></g>
@@ -131,8 +131,8 @@ In a real sense, your brand has become a distributed entity across the web. Your
 
  <!-- answer card -->
  <g font-family="Poppins, sans-serif" text-anchor="middle">
-  <rect x="528" y="118" width="212" height="132" rx="14" fill="#fff" stroke="#6a3fff" stroke-width="1.5"/>
-  <text x="634" y="148" font-size="13" font-weight="700" fill="#0e0f1a">One Answer</text>
+  <rect x="528" y="118" width="212" height="132" rx="14" fill="#fff" stroke="#0750d7" stroke-width="1.5"/>
+  <text x="634" y="148" font-size="13" font-weight="700" fill="#03183d">One Answer</text>
   <text x="634" y="170" font-size="11" font-weight="600" fill="#545569">Shortlist of brands</text>
   <rect x="552" y="184" width="164" height="14" rx="4" fill="#eceaff"/>
   <rect x="552" y="206" width="120" height="14" rx="4" fill="#f1f2f8"/>
