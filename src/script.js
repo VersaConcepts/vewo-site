@@ -140,10 +140,17 @@
    e.preventDefault();
    var name = (form.elements["name"] ? form.elements["name"].value : "").trim();
    var email = (form.elements["email"] ? form.elements["email"].value : "").trim();
-   var valid = name && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-   if (!valid) {
+   var emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+   if (!name || !emailOk) {
     note.textContent = "Please enter your name and a valid email.";
     note.className = "form-note err";
+    return;
+   }
+   var revenueEl = form.elements["revenue"];
+   if (revenueEl && !revenueEl.value) {
+    note.textContent = "Please select your annual revenue range.";
+    note.className = "form-note err";
+    revenueEl.focus();
     return;
    }
 
