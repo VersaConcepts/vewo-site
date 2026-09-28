@@ -212,7 +212,8 @@
    .outcome svg{flex:none;width:28px;height:28px;color:var(--cobalt)}
 
    /* Pitch */
-   .pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+   .pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+   .fan-headline{margin-top:32px;text-align:center;text-wrap:balance}
    .pitch p{color:var(--muted);margin-top:16px;font-size:1.02rem}
    .honest{margin-top:22px;padding:16px 18px;border-left:3px solid var(--cobalt);background:#fff;border-radius:0 12px 12px 0;font-size:.95rem;color:var(--navy-2)}
    .era{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:20px 0 4px;font-size:.82rem;color:var(--muted-2)}
@@ -447,7 +448,6 @@
    <div class="container pitch-grid">
     <div class="pitch">
      <span class="eyebrow">How search changed</span>
-     <h2>Consistency is the hard part. That's the part we take over.</h2>
      <div class="era"><span>Traditional search</span>→<span>AI search</span>→<span class="on">AI agents</span></div>
      <p>Search has moved through three eras. Traditional search rewarded keywords and links. AI search answers a whole question in one place. Now AI agents research and shortlist brands on a person's behalf, before they ever visit a website.</p>
      <p>AI breaks a single question into dozens of smaller ones, such as fit, materials, durability, and safety, before it decides which brands to recommend.</p>
@@ -458,6 +458,7 @@
      </div>
     </div>
 
+    <div class="fan-col">
     <div class="fanout reveal" aria-label="Diagram: one customer question fans out into many AI sub-questions">
      <svg viewBox="0 0 460 400" role="img" aria-labelledby="fanTitle">
       <title id="fanTitle">One customer question becomes many AI sub-questions, then a short list of recommended brands</title>
@@ -489,6 +490,8 @@
       <text x="230" y="370" text-anchor="middle" font-family="Poppins" font-size="11" fill="#9fc3ff">If you're not in it, you're not considered</text>
      </svg>
      <p class="fan-cap">One question a person types becomes many questions AI researches before it answers.</p>
+    </div>
+    <h2 class="fan-headline">Consistency is the hard part. That's the part we take over.</h2>
     </div>
    </div>
   </section>
@@ -590,7 +593,10 @@
     </div>
     <div class="center"><div class="cycle reveal"><span class="s on">Sprint 1 · build the base</span>→<span class="s">Sprint 2 · fill the gaps</span>→<span class="s">Sprint 3 · pull ahead</span></div></div>
     <p class="center micro" style="margin-top:18px">Each sprint builds on the last. Early changes show up in sprint 1. The bigger gains come over several.</p>
-    <div class="center"><span class="radar"><b>Coming soon</b>Radar tracks where AI mentions you, and who it recommends instead.</span></div>
+    <div class="center">
+     <span class="radar"><b>Coming soon</b>Radar</span>
+     <p class="micro" style="max-width:680px;margin:14px auto 0">Radar tracks all the external signals that impact your brand, from what competitors are saying and doing, to what marketing platforms are changing and how that's impacting your advertising, to external forces you may or may not be able to control. We give you the full visibility.</p>
+    </div>
    </div>
   </section>
 
