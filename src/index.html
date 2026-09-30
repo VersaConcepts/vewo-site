@@ -338,7 +338,9 @@
    .form-note.err{color:#c0392b}
 
    @media(max-width:960px){
-     .hero-grid,.pitch-grid,.proof-grid,.work{grid-template-columns:1fr}
+     .hero-grid,.pitch-grid,.proof-grid,.work{grid-template-columns:minmax(0,1fr)}
+     .hero-grid>*,.pitch-grid>*,.proof-grid>*,.work>*{min-width:0}
+     .btn{white-space:normal;text-align:center}
      .floating{right:10px}
    }
    @media(max-width:860px){
@@ -349,7 +351,8 @@
    }
    @media(max-width:760px){
      section{padding:72px 0}
-     .price-card,.cta-band{grid-template-columns:1fr;padding:30px 22px}
+     .price-card,.cta-band{grid-template-columns:minmax(0,1fr);padding:30px 22px}
+     .cta-band>*,.price-card>*{min-width:0}
    }
  }
  </style>
