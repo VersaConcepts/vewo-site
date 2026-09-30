@@ -60,6 +60,7 @@
   {% block head %}{% endblock %}
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to main content</a>
   <div class="bg-aura" aria-hidden="true"></div>
   <div class="bg-grid" aria-hidden="true"></div>
 
@@ -97,7 +98,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="top" tabindex="-1">
     {{ content | safe }}
   </main>
 
@@ -109,7 +110,7 @@
         <p class="footer__contact">Questions? <a href="mailto:hello@vewo.ai">hello@vewo.ai</a></p>
       </div>
       <div class="footer__col">
-        <h4>Explore</h4>
+        <h2 class="footer__h">Explore</h2>
         <a href="/#playbook">What Changed</a>
         <a href="/#compound">Why Start Now</a>
         <a href="/#consistency">The Problem</a>
@@ -118,7 +119,7 @@
         <a href="/#brand-brain">Brand Brain</a>
       </div>
       <div class="footer__col">
-        <h4>Company</h4>
+        <h2 class="footer__h">Company</h2>
         <a href="/radar/" class="nav__radar">Radar<span class="nav__soon">Soon</span></a>
         <a href="/#pricing">Pricing</a>
         <a href="/about/">About</a>
@@ -130,6 +131,7 @@
     </div>
     <div class="container footer__bottom">
       <p>© 2026 VEWO LLC · Phoenix, AZ</p>
+      <nav class="footer__legal" aria-label="Legal"><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/dpa/">Data Processing</a><a href="/subprocessors/">Sub-processors</a><a href="/data-deletion/">Data Deletion</a><a href="/accessibility/">Accessibility</a></nav>
       <p class="footer__tag">Consistent content. Compounding visibility.</p>
     </div>
   </footer>

@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+title: "Sub-processors"
+description: "The service providers VEWO uses to host, store and process client data, what each one does and what data it receives."
+permalink: /subprocessors/index.html
+canonical: https://vewo.ai/subprocessors/
+---
+<article class="section blog-post legal">
+  <div class="container narrow">
+    <header class="blog-post__head">
+      <span class="kicker">Legal</span>
+      <h1>Sub-processors</h1>
+      <p class="legal__date">Updated September 29, 2026</p>
+    </header>
+
+    <div class="blog-post__body">
+      <p>These are the service providers that may process client data for VEWO. Each is bound by contract to protect it and use it only to provide its service to us. We update this page at least 30 days before adding a new sub-processor, as described in our <a href="/dpa/#subprocessors">Data Processing Addendum</a>.</p>
+
+      <h2 id="infrastructure">Infrastructure</h2>
+      <div class="tablewrap"><table>
+        <thead><tr><th scope="col">Provider</th><th scope="col">What it does for VEWO</th><th scope="col">Data it receives</th></tr></thead>
+        <tbody>
+          <tr><td>Supabase</td><td>Database, file storage and portal sign-in</td><td>All client data, encrypted access tokens, portal user names and emails</td></tr>
+          <tr><td>Render</td><td>Hosts the portal, website and background jobs</td><td>Data in transit while being processed</td></tr>
+          <tr><td>Sentry</td><td>Error monitoring</td><td>Error details, which may include identifiers</td></tr>
+          <tr><td>Brevo</td><td>Sends portal emails (sign-in links, notifications)</td><td>Portal user names and emails</td></tr>
+          <tr><td>Google Workspace and Google Cloud</td><td>Content trackers, review documents and file sharing</td><td>Content drafts, schema and social posts for Managed Content clients</td></tr>
+          <tr><td>Airtable</td><td>Intake forms and content workflow records</td><td>Intake answers, content briefs and drafts</td></tr>
+          <tr><td>Pinecone</td><td>Knowledge base for Managed Content</td><td>Text from the client's website and videos</td></tr>
+          <tr><td>n8n</td><td>Workflow automation</td><td>Content workflow records</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="ai">AI models</h2>
+      <p>Used through business APIs whose terms do not allow training on the data we send.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th scope="col">Provider</th><th scope="col">What it does for VEWO</th><th scope="col">Data it receives</th></tr></thead>
+        <tbody>
+          <tr><td>OpenAI</td><td>Writing, schema and analysis</td><td>Content, product data and task instructions</td></tr>
+          <tr><td>Anthropic</td><td>Research, analysis and writing</td><td>Business data needed for each task</td></tr>
+          <tr><td>Google (Gemini)</td><td>Research and image analysis</td><td>Business data and images needed for each task</td></tr>
+          <tr><td>xAI (Grok)</td><td>Research and AI-answer checks</td><td>Brand and product names, research questions</td></tr>
+          <tr><td>Perplexity</td><td>Research and AI-answer checks</td><td>Brand and product names, research questions</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="research">Research data</h2>
+      <p>These providers gather public information for our reports. They receive search terms, brand and competitor names and public URLs, not client account data.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th scope="col">Provider</th><th scope="col">What it does for VEWO</th></tr></thead>
+        <tbody>
+          <tr><td>Apify</td><td>Collects public social posts, public ads, reviews and web pages</td></tr>
+          <tr><td>Keepa</td><td>Amazon product rank, price and review history</td></tr>
+          <tr><td>Tavily and Exa</td><td>Web search for research</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2 id="website">Our website only</h2>
+      <p>Google Analytics, Microsoft Clarity, the Meta Pixel and Web3Forms (form delivery) are used on vewo.ai, not in the client portal. See our <a href="/privacy/">Privacy Policy</a>.</p>
+
+      <h2 id="contact">Questions</h2>
+      <p>Email <a href="mailto:hello@vewo.ai">hello@vewo.ai</a>.</p>
+    </div>
+  </div>
+</article>
