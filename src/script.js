@@ -154,6 +154,14 @@
     return;
    }
 
+   // hCaptcha: the widget writes its token into this textarea once the check is done.
+   var captcha = form.querySelector('textarea[name="h-captcha-response"]');
+   if (captcha && !captcha.value) {
+    note.textContent = "Please complete the human check above the button. If it won't load for you, email hello@vewo.ai instead.";
+    note.className = "form-note err";
+    return;
+   }
+
    var submitBtn = form.querySelector('button[type="submit"]');
    var originalLabel = submitBtn ? submitBtn.textContent : "";
    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Sending…"; }
@@ -183,6 +191,8 @@
     })
     .finally(function () {
      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
+     // A token works once; get a fresh check for the next attempt.
+     if (window.hcaptcha && typeof window.hcaptcha.reset === "function") { try { window.hcaptcha.reset(); } catch (err) { /* widget not ready */ } }
     });
   });
  }

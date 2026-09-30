@@ -333,6 +333,8 @@
    .field--hidden{display:none}
    form .btn{width:100%;justify-content:center}
    form .micro{text-align:center}
+   .captcha-field{display:flex;justify-content:center;min-height:78px;margin:0 0 16px;max-width:100%;overflow:hidden}
+   @media (max-width:419px){.captcha-field{min-height:144px}}
    .form-note{margin-top:12px;font-size:.9rem;text-align:center;min-height:1.2em}
    .form-note.ok{color:#0a7d3c}
    .form-note.err{color:#c0392b}
@@ -698,6 +700,10 @@
        <option value="$5M – $10M">$5M – $10M</option>
        <option value="$10M or more">$10M or more</option>
       </select>
+      <div class="captcha-field">
+       <div class="h-captcha" data-captcha="true"></div>
+       <script>if (window.innerWidth < 420) document.currentScript.previousElementSibling.setAttribute("data-size", "compact");</script>
+      </div>
       <button class="btn btn-primary" type="submit">Get my free Visibility Report</button>
       <p class="form-note" id="formNote" role="status"></p>
       <p class="micro">Your report arrives within a few business days. No call required.</p>
@@ -741,5 +747,7 @@
  </footer>
 
  <script src="script.js"></script>
+ <!-- hCaptcha for the report form (Web3Forms free plan; enable it as the form's captcha in the Web3Forms dashboard) -->
+ <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
