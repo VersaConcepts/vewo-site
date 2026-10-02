@@ -222,6 +222,10 @@
    .pitch-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
    .fan-headline{margin-top:32px;text-align:center;text-wrap:balance}
    .pitch p{color:var(--muted);margin-top:16px;font-size:1.02rem}
+   .live-link{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:11px 18px;border:1px solid rgba(159,195,255,.45);border-radius:999px;color:#fff;font-weight:600;font-size:.95rem;text-decoration:none;background:rgba(18,103,245,.18);line-height:1.35}
+   .live-link:hover{background:rgba(18,103,245,.32)}
+   .live-link:focus-visible{outline:3px solid #9fc3ff;outline-offset:3px}
+   .live-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#5ef0a6;box-shadow:0 0 0 4px rgba(94,240,166,.2)}
    .fan-note{margin-top:26px;padding:22px 26px;background:#fff;border:1px solid var(--line-2);border-left:4px solid var(--cobalt);border-radius:var(--radius)}
    .fan-note p{margin:12px 0 0;color:var(--navy-2);font-size:1.05rem;line-height:1.6}
    .fan-note .fan-note__title{margin:0;font-size:1.3rem;color:var(--navy)}
@@ -700,6 +704,7 @@
        <li>Your biggest content gaps</li>
        <li>Where competitors are ahead</li>
       </ul>
+      <a class="live-link" href="https://app.vewo.ai/audit"><span class="live-dot" aria-hidden="true"></span>Can't wait? Run the live audit and see results in about a minute <span aria-hidden="true">→</span></a>
      </div>
      <form id="auditForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
       <input type="hidden" name="access_key" value="d5c030dd-d68a-48c4-9597-2978a61ff143" />
