@@ -461,7 +461,12 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 44px 0 28px; background: var(--bg-2); }
-.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+/* The columns spread edge to edge: the brand block starts on the left margin and the last column ends on the right
+   margin, lining up with the bottom row (the copyright on the left, the tagline on the right). */
+/* The footer logo is trimmed and transparent (logo-footer.png), so it sits flush with the text under it. */
+.footer__logo-link { display: inline-block; margin: 2px 0 16px; }
+.footer__logo { display: block; width: 130px; height: auto; }
+.footer__inner { display: grid; grid-template-columns: minmax(240px, 340px) repeat(3, auto); justify-content: space-between; gap: 40px; }
 .footer__brand p { color: var(--muted); margin-top: 16px; font-size: 0.95rem; }
 .footer__contact { margin-top: 12px; }
 .footer__contact a { color: var(--v3); font-weight: 600; }
@@ -498,7 +503,8 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
  .surfaces { grid-template-columns: repeat(2, 1fr); }
  .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid, .recipe-grid { grid-template-columns: 1fr; }
  .metric { flex-basis: calc(50% - 8px); }
- .footer__inner { grid-template-columns: 1fr 1fr; }
+ .footer__inner { grid-template-columns: repeat(3, auto); }
+ .footer__brand { grid-column: 1 / -1; }
 }
 @media (max-width: 600px) {
  .section { padding: 44px 0; }
