@@ -174,8 +174,8 @@
    /* Hero */
    .hero{padding:32px 0 40px;position:relative;overflow:hidden}
    .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(60% 60% at 10% 0%,rgba(18,103,245,.10),transparent 60%),radial-gradient(50% 50% at 95% 10%,rgba(0,136,255,.08),transparent 60%)}
-   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:start}
-   .hero h1{font-size:clamp(2.4rem,5.2vw,4rem);margin-bottom:20px}
+   .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+   .hero h1{font-size:clamp(2.4rem,5.6vw,4.6rem);margin-bottom:28px;text-align:center;text-wrap:balance}
    .hero .lead{font-size:1.2rem;margin-bottom:30px}
    .hero-alert{position:relative;margin:-6px auto 28px;padding:18px 22px 18px 24px;background:var(--navy);color:#fff;border-radius:16px;box-shadow:0 18px 40px -18px rgba(3,24,61,.55);overflow:hidden;max-width:560px}
    .hero-alert::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#0088ff,#1267f5)}
@@ -423,9 +423,10 @@
 
   <!-- 1. HERO -->
   <header class="hero">
-   <div class="container hero-grid">
+   <div class="container">
+   <h1>Be the brand <span class="grad-text">AI recommends.</span></h1>
+   <div class="hero-grid">
     <div>
-     <h1>Be the brand <span class="grad-text">AI recommends.</span></h1>
      <p class="lead">We publish the answers your customers are asking for: human-reviewed, on your site, 20 pieces every month.</p>
      <div class="hero-alert" role="note" aria-label="The new math">
       <p class="hero-alert__big">The new <span>math.</span></p>
@@ -453,6 +454,7 @@
      </div>
      <div class="floating"><b>Up to 20 / month</b>human-reviewed answers published to your site</div>
     </div>
+   </div>
    </div>
   </header>
 
