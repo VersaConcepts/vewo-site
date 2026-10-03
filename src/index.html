@@ -329,6 +329,10 @@
    .price-card li{display:flex;gap:10px;font-size:.93rem;color:var(--muted)}
    .price-card li::before{content:"✓";color:var(--cobalt);font-weight:800}
    .price-card .terms{font-size:.9rem;color:var(--muted);margin:14px 0 22px}
+   .price-card__main{display:flex;flex-direction:column;align-items:center;text-align:center}
+   .price-card__main .amt{margin-top:6px}
+   .price-card__main .terms{max-width:340px}
+   .price-card__main .micro{margin-top:14px}
 
    /* FAQ */
    .faq{margin-top:28px;display:grid;gap:12px}
@@ -656,7 +660,7 @@
      <h2>One managed program, in 90-day sprints.</h2>
     </div>
     <div class="price-card reveal">
-     <div>
+     <div class="price-card__main">
       <span class="from">One managed program</span>
       <div class="amt">Let's talk</div>
       <p class="terms">Scoped to your brand and goals. 90-day sprints; continue, pause, or stop after each one.</p>
