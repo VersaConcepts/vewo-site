@@ -210,6 +210,7 @@
 
    /* Steps + outcomes */
    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+   .steps-title{margin-top:40px}
    .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
    .step .num{width:38px;height:38px;border-radius:12px;background:var(--ice);color:var(--cobalt);font-weight:800;display:grid;place-items:center;margin-bottom:18px}
    .step p{color:var(--muted);font-size:.95rem;margin-top:8px}
@@ -226,7 +227,7 @@
    .live-link:hover{background:rgba(18,103,245,.32)}
    .live-link:focus-visible{outline:3px solid #9fc3ff;outline-offset:3px}
    .live-dot{flex:none;width:9px;height:9px;border-radius:50%;background:#5ef0a6;box-shadow:0 0 0 4px rgba(94,240,166,.2)}
-   .fan-note{margin-top:28px;padding:22px 26px;background:#fff;border:1px solid var(--line-2);border-left:4px solid var(--cobalt);border-radius:var(--radius)}
+   .fan-note{margin-top:6px;padding:22px 26px;background:#fff;border:1px solid var(--line-2);border-left:4px solid var(--cobalt);border-radius:var(--radius)}
    .fan-note p{margin:12px 0 0;color:var(--navy-2);font-size:1.05rem;line-height:1.6}
    .fan-note .fan-note__title{margin:0;font-size:1.3rem;color:var(--navy)}
    .fan-note .fan-note__key{margin:16px -26px 6px -22px;padding:14px 26px 14px 22px;background:var(--navy);font-family:Poppins,sans-serif;font-weight:600;font-size:1.12rem;line-height:1.45;color:#fff;box-shadow:0 10px 24px -16px rgba(3,24,61,.55)}
@@ -466,7 +467,6 @@
    <div class="container">
     <div class="center">
      <span class="eyebrow">How it works</span>
-     <h2>Three steps, repeated every month.</h2>
     </div>
      <aside class="fan-note reveal" aria-labelledby="fanNoteTitle">
       <h3 id="fanNoteTitle" class="fan-note__title">One question isn&rsquo;t one question anymore.</h3>
@@ -476,6 +476,7 @@
       <p class="fan-note__stat"><strong>AI citations have a half-life of just 11 days.</strong><sup><a href="#fn-profound" id="fnref-profound" aria-label="Source 1">1</a></sup> <span class="fan-note__then">Staying recommended takes thorough coverage: answering the full range of questions your customers ask, and keeping those answers fresh.</span></p>
       <p class="fan-note__src" id="fn-profound"><span aria-hidden="true">¹</span> <a href="https://www.tryprofound.com/blog/the-half-life-of-an-ai-citation-is-11-days" target="_blank" rel="noopener">Profound, <cite>The Half-Life of an AI Citation Is 11 Days</cite><span class="sr-only"> (opens in a new tab)</span></a>, Sept. 30, 2026</p>
      </aside>
+    <h2 class="steps-title center">Three steps, repeated every month.</h2>
     <div class="steps">
      <div class="step reveal"><div class="num">1</div><h3>We find the questions.</h3><p>The real questions your customers type into Google and ask AI about what you sell.</p></div>
      <div class="step reveal"><div class="num">2</div><h3>We write the answers.</h3><p>Genuinely helpful, human-reviewed content, published directly on your site.</p></div>
@@ -769,12 +770,19 @@
    </div>
    <div class="footer__col">
     <h2 class="footer__h">Company</h2>
-    <a href="/radar/" class="nav__radar">Radar<span class="nav__soon">Soon</span></a>
     <a href="/about/">About</a>
     <a href="/blog/">Blog</a>
     <a href="#faq">FAQ</a>
     <a href="https://app.vewo.ai/">Log In</a>
     <a href="#report">Free Visibility Report</a>
+   </div>
+   <div class="footer__col">
+    <h2 class="footer__h">Coming Soon</h2>
+    <a href="/radar/">Radar</a>
+    <span>Ads</span>
+    <span>Social</span>
+    <span>Email</span>
+    <a href="/pulse/">Pulse</a>
    </div>
   </div>
   <div class="container footer__bottom">

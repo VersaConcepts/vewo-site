@@ -461,7 +461,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 
 /* ---------- Footer ---------- */
 .footer { border-top: 1px solid var(--line); padding: 44px 0 28px; background: var(--bg-2); }
-.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+.footer__inner { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
 .footer__brand p { color: var(--muted); margin-top: 16px; font-size: 0.95rem; }
 .footer__contact { margin-top: 12px; }
 .footer__contact a { color: var(--v3); font-weight: 600; }
