@@ -14,6 +14,7 @@ eleventyExcludeFromCollections: true
 
     <div class="reveal" style="border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff;">
       <iframe
+        id="radar-intake-form"
         class="airtable-embed"
         src="https://airtable.com/embed/appUqrNIcJw7e4yM7/paggjDZ4HwpOzd5Jt/form"
         title="Brand Radar Intake form"
@@ -25,3 +26,13 @@ eleventyExcludeFromCollections: true
     </div>
   </div>
 </section>
+<script>
+  // The Quick Visibility Check (app.vewo.ai/audit) links here with the prospect's answers as Airtable prefill_ / hide_
+  // parameters, so the intake never asks them twice. Only those parameters are passed to the form.
+  (function () {
+    var q = new URLSearchParams(location.search), out = new URLSearchParams();
+    q.forEach(function (v, k) { if (/^(prefill|hide)_/.test(k)) out.append(k, v); });
+    var f = document.getElementById("radar-intake-form");
+    if (f && out.toString()) f.src = f.src.split("?")[0] + "?" + out.toString();
+  })();
+</script>
