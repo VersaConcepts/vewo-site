@@ -116,7 +116,7 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 .brand__logo { height: 72px; width: auto; display: block; mix-blend-mode: multiply; }
 .footer .brand__logo { height: 66px; }
 .nav__links { display: flex; gap: 30px; }
-.nav__links a { color: var(--text); font-size: 1.05rem; font-weight: 600; transition: color .15s; }
+.nav__links a { color: var(--text); font-size: 1.05rem; font-weight: 600; white-space: nowrap; transition: color .15s; }
 .nav__links a:hover { color: var(--v3); }
 /* Radar stands out (new / coming soon) */
 .nav__radar { color: var(--v3) !important; font-weight: 700 !important; }
@@ -473,6 +473,10 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 .footer__col h4, .footer__col .footer__h { font-size: 0.8rem; font-family: inherit; font-weight: 700; line-height: 1.4; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 16px; }
 .footer__col a, .footer__col span { display: block; color: var(--muted); font-size: 0.93rem; padding: 5px 0; transition: color .15s; }
 .footer__col a:hover { color: var(--text); }
+/* Coming Soon: pages that exist are underlined links; the rest are plain, lighter text (#5b6883 on ice = 5:1). */
+.footer__col--soon a { text-decoration: underline; text-decoration-color: rgba(70, 86, 122, 0.45); text-underline-offset: 3px; }
+.footer__col--soon a:hover { text-decoration-color: currentColor; }
+.footer__col--soon span { color: var(--muted-2); }
 .footer__col .nav__soon { display: inline-block; width: auto; padding: 2px 7px; color: #fff; font-size: 0.55rem; line-height: 1.5; }
 .footer__bottom { display: flex; justify-content: space-between; align-items: center; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted-2); font-size: 0.88rem; }
 .footer__tag { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
@@ -496,10 +500,13 @@ h1, h2, h3, h4 { font-family: "Poppins", sans-serif; line-height: 1.12; letter-s
 .skip-link:focus-visible { outline-color: #fff; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 960px) {
+/* The full nav (links + two buttons) needs about 1140px on one line; below that, the menu button. */
+@media (max-width: 1140px) {
  .nav__links, .nav__cta, .nav__actions { display: none; }
  .nav__toggle { display: flex; }
  .nav.open .nav__mobile { display: flex; }
+}
+@media (max-width: 960px) {
  .surfaces { grid-template-columns: repeat(2, 1fr); }
  .layers, .ld-grid, .tiers, .compare, .invest-grid, .steps-grid, .recipe-grid { grid-template-columns: 1fr; }
  .metric { flex-basis: calc(50% - 8px); }

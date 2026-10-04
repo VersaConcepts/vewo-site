@@ -176,7 +176,7 @@
     .then(function (res) { return res.json(); })
     .then(function (data) {
      if (data.success) {
-      note.textContent = "Thanks, " + name + ", your visibility audit request has been received. We'll be in touch at " + email + ".";
+      note.textContent = "Thanks, " + name + ", your Visibility Report request has been received. We'll be in touch at " + email + ".";
       note.className = "form-note ok";
       if (window.fbq) { fbq("track", "Lead"); }
       form.reset();

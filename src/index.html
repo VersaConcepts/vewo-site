@@ -154,6 +154,7 @@
    h3{font-size:1.1rem;font-weight:700;letter-spacing:-.01em}
    p{text-wrap:pretty}
    .eyebrow{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cobalt);margin-bottom:14px}
+   .eyebrow--h{font-family:inherit;line-height:inherit}
    .report-badge{display:inline-flex;align-items:center;gap:10px;font-family:Poppins,sans-serif;font-size:clamp(1.15rem,2.1vw,1.5rem);font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);background:#fff;border-radius:999px;padding:13px 28px;margin-bottom:20px;box-shadow:0 0 0 6px rgba(255,255,255,.16),0 16px 32px -12px rgba(0,0,0,.5)}
    .report-badge__dot{width:12px;height:12px;border-radius:50%;background:var(--cobalt);box-shadow:0 0 0 4px rgba(18,103,245,.2)}
    .lead{font-size:1.1rem;color:var(--muted);max-width:640px}
@@ -380,10 +381,13 @@
    }
    @media(max-width:760px){
      .hero{padding:16px 0 32px}
-     .report-badge{font-size:.98rem;letter-spacing:.04em;padding:11px 18px;white-space:nowrap}
+     .report-badge{font-size:.98rem;letter-spacing:.04em;padding:11px 18px;white-space:normal;max-width:100%;text-align:center;line-height:1.25}
      section{padding:48px 0}
      .price-card,.cta-band{grid-template-columns:minmax(0,1fr);padding:30px 22px}
      .cta-band>*,.price-card>*{min-width:0}
+   }
+   @media(max-width:360px){
+     .report-badge{font-size:.86rem;letter-spacing:.03em;padding:10px 14px;gap:8px}
    }
  }
  </style>
@@ -470,7 +474,7 @@
   <section class="alt" id="how">
    <div class="container">
     <div class="center">
-     <span class="eyebrow">How it works</span>
+     <h2 class="eyebrow eyebrow--h">How it works</h2>
     </div>
      <aside class="fan-note reveal" aria-labelledby="fanNoteTitle">
       <h3 id="fanNoteTitle" class="fan-note__title">One question isn&rsquo;t one question anymore.</h3>
@@ -564,7 +568,7 @@
       <div class="stats">
        <div class="stat"><b>13</b><span>years operating on Shopify</span></div>
        <div class="stat"><b>7-fig</b><span>annual store revenue</span></div>
-       <div class="stat"><b>100%</b><span>tested on our own store first</span></div>
+       <div class="stat"><b>Tested</b><span>on our own store first</span></div>
       </div>
      </div>
 
@@ -638,7 +642,7 @@
     <div class="timeline reveal">
      <div class="phase"><span class="wk">Weeks 1–2</span><h3>Research</h3><p>Your customers' questions, AI prompts, content gaps, and where competitors are ahead.</p></div>
      <div class="phase mid"><span class="wk">Weeks 2–12</span><h3>Publish</h3><p>Up to 20 human-reviewed pieces a month, published to your site. The mix follows what your customers ask.</p>
-      <div class="months"><span>Month 1 · 20</span><span>Month 2 · 20</span><span>Month 3 · 20</span></div>
+      <div class="months"><span>Month 1 · up to 20</span><span>Month 2 · up to 20</span><span>Month 3 · up to 20</span></div>
       <div class="types"><span>Buying guides</span><span>Comparisons</span><span>FAQs</span><span>Collection pages</span><span>Product education</span><span>Page updates</span></div>
      </div>
      <div class="phase"><span class="wk">Week 13</span><h3>Scorecard</h3><p>What changed, what AI says about you now, and the plan for the next sprint.</p></div>
@@ -780,7 +784,7 @@
     <a href="https://app.vewo.ai/">Log In</a>
     <a href="#report">Free Visibility Report</a>
    </div>
-   <div class="footer__col">
+   <div class="footer__col footer__col--soon">
     <h2 class="footer__h">Coming Soon</h2>
     <a href="/radar/">Radar</a>
     <span>Ads</span>
