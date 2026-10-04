@@ -114,7 +114,7 @@ In a real sense, your brand has become a distributed entity across the web. Your
  <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#0088ff"/></marker></defs>
 
  <!-- signal nodes -->
- <g font-family="Poppins, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
+ <g font-family="Geist, sans-serif" font-size="13" font-weight="600" text-anchor="middle">
   <g><rect x="20" y="38" width="176" height="36" rx="10" fill="#fff" stroke="#0750d7" stroke-width="1.5"/><text x="108" y="61" fill="#03183d">Your Website</text></g>
   <g><rect x="20" y="102" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="125" fill="#545569">Reddit</text></g>
   <g><rect x="20" y="166" width="176" height="36" rx="10" fill="#fff" stroke="#e3e4ef" stroke-width="1.5"/><text x="108" y="189" fill="#545569">LinkedIn</text></g>
@@ -125,12 +125,12 @@ In a real sense, your brand has become a distributed entity across the web. Your
  <!-- AI engine -->
  <g>
   <circle cx="380" cy="184" r="58" fill="url(#ig-grad)"/>
-  <text x="380" y="178" font-family="Poppins, sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">AI</text>
-  <text x="380" y="200" font-family="Poppins, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">synthesizes</text>
+  <text x="380" y="178" font-family="Geist, sans-serif" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">AI</text>
+  <text x="380" y="200" font-family="Geist, sans-serif" font-size="11" font-weight="600" fill="#fff" text-anchor="middle">synthesizes</text>
  </g>
 
  <!-- answer card -->
- <g font-family="Poppins, sans-serif" text-anchor="middle">
+ <g font-family="Geist, sans-serif" text-anchor="middle">
   <rect x="528" y="118" width="212" height="132" rx="14" fill="#fff" stroke="#0750d7" stroke-width="1.5"/>
   <text x="634" y="148" font-size="13" font-weight="700" fill="#03183d">One Answer</text>
   <text x="634" y="170" font-size="11" font-weight="600" fill="#545569">Shortlist of brands</text>
@@ -138,7 +138,7 @@ In a real sense, your brand has become a distributed entity across the web. Your
   <rect x="552" y="206" width="120" height="14" rx="4" fill="#f1f2f8"/>
   <rect x="552" y="228" width="140" height="14" rx="4" fill="#f1f2f8"/>
  </g>
- <text x="634" y="282" font-family="Poppins, sans-serif" font-size="12" font-weight="600" fill="#82839a" text-anchor="middle">→ shown to the customer</text>
+ <text x="634" y="282" font-family="Geist, sans-serif" font-size="12" font-weight="600" fill="#82839a" text-anchor="middle">→ shown to the customer</text>
 </svg>
 <figcaption>AI doesn't read your website in isolation. It triangulates signals from across the web, your site, Reddit, LinkedIn, YouTube, reviews, into a single synthesized answer. Your job is to make every signal clear and consistent.</figcaption>
 </figure>
