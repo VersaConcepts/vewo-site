@@ -179,6 +179,22 @@
       note.textContent = "Thanks, " + name + ", your Visibility Report request has been received. We'll be in touch at " + email + ".";
       note.className = "form-note ok";
       if (window.fbq) { fbq("track", "Lead"); }
+      // Also start their Brand Radar Intake as a Lead in VEWO (2026-10-05). Nothing is sent to them until we approve it.
+      try {
+       fetch("https://app.vewo.ai/api/report-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+         name: name,
+         email: email,
+         website: (form.elements["website"] ? form.elements["website"].value : "").trim(),
+         platform: form.elements["platform"] ? form.elements["platform"].value : "",
+         revenue: form.elements["revenue"] ? form.elements["revenue"].value : "",
+         botcheck: form.elements["botcheck"] ? form.elements["botcheck"].checked : false
+        })
+       }).catch(function () { /* the email above already reached us */ });
+      } catch (err) { /* older browsers: the email above already reached us */ }
       form.reset();
      } else {
       note.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
