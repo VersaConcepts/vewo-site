@@ -54,8 +54,8 @@ module.exports = function (eleventyConfig) {
 
   // Cache busting: every page links styles.css and script.js with ?v=<content hash>, so browsers may keep them for a
   // year and still get a new version the moment either file changes (the cache headers live in render.yaml).
-  eleventyConfig.on("eleventy.after", ({ dir }) => {
-    const out = dir.output;
+  eleventyConfig.on("eleventy.after", ({ dir, directories }) => {
+    const out = directories?.output ?? dir.output;
     const hashOf = (f) => crypto.createHash("sha256").update(fs.readFileSync(path.join(out, f))).digest("hex").slice(0, 10);
     const versions = { "styles.css": hashOf("styles.css"), "script.js": hashOf("script.js") };
     const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));

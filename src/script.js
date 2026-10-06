@@ -60,10 +60,13 @@
    var s = document.createElement("script");
    s.src = "https://web3forms.com/client/script.js";
    s.async = true;
+   // A failed load (blocked or offline) can be tried again on the next submit or field focus.
+   s.onerror = function () { captchaLoaded = false; s.remove(); };
    document.body.appendChild(s);
   };
+  window.vewoLoadCaptcha = loadCaptcha;
   var captchaForm = captchaBox.closest("form");
-  if (captchaForm) { captchaForm.addEventListener("focusin", loadCaptcha, { once: true }); }
+  if (captchaForm) { captchaForm.addEventListener("focusin", loadCaptcha); }
   if ("IntersectionObserver" in window) {
    var captchaIo = new IntersectionObserver(function (entries) {
     if (entries.some(function (e) { return e.isIntersecting; })) { captchaIo.disconnect(); loadCaptcha(); }
@@ -104,8 +107,10 @@
    }
 
    // hCaptcha: the widget writes its token into this textarea once the check is done.
+   // A missing widget (not loaded yet, or blocked) counts as not done: start loading it and ask again.
    var captcha = form.querySelector('textarea[name="h-captcha-response"]');
-   if (captcha && !captcha.value) {
+   if (!captcha) { if (window.vewoLoadCaptcha) { window.vewoLoadCaptcha(); } }
+   if (!captcha || !captcha.value) {
     note.textContent = "Please complete the human check above the button. If it won't load for you, email hello@vewo.ai instead.";
     note.className = "form-note err";
     return;
@@ -122,12 +127,14 @@
     headers: { "Accept": "application/json" },
     body: new FormData(form)
    })
-    .then(function (res) { return res.json(); })
+    // A non-JSON answer (a gateway page) is a failure with its status, not a "network error".
+    .then(function (res) { return res.json().catch(function () { return { success: false, message: "The form service didn't answer properly (" + res.status + ")." }; }); })
     .then(function (data) {
      if (data.success) {
       note.textContent = "Thanks, " + name + ", your Visibility Report request has been received. We'll be in touch at " + email + ".";
       note.className = "form-note ok";
       if (window.fbq) { fbq("track", "Lead"); }
+      if (window.gtag) { gtag("event", "generate_lead", { form: "visibility_report" }); }
       // Also start their Brand Radar Intake as a Lead in VEWO (2026-10-05). Nothing is sent to them until we approve it.
       try {
        fetch("https://app.vewo.ai/api/report-request", {
@@ -149,7 +156,7 @@
       } catch (err) { /* older browsers: the email above already reached us */ }
       form.reset();
      } else {
-      note.textContent = "Something went wrong. Please email hello@vewo.ai directly.";
+      note.textContent = (data && data.message ? data.message + " " : "Something went wrong. ") + "Please try again, or email hello@vewo.ai directly.";
       note.className = "form-note err";
      }
     })
