@@ -8,6 +8,45 @@ services:
       - key: NODE_VERSION
         value: "20"
     headers:
+      # Security (every page)
       - path: /*
         name: X-Frame-Options
         value: SAMEORIGIN
+      - path: /*
+        name: Strict-Transport-Security
+        value: max-age=31536000; includeSubDomains
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: Cross-Origin-Opener-Policy
+        value: same-origin-allow-popups
+      # Caching. Pages stay uncached so a deploy shows at once. styles.css and script.js are linked as ?v=<hash>
+      # (.eleventy.js), so they and the fonts can be kept for a year; images, which keep their names, for 30 days.
+      - path: /fonts/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /styles.css
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /script.js
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /logo.webp
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /logo-footer.webp
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /og-image.png
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /favicon-32.png
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /favicon-192.png
+        name: Cache-Control
+        value: public, max-age=2592000
+      - path: /apple-touch-icon.png
+        name: Cache-Control
+        value: public, max-age=2592000

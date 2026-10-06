@@ -50,6 +50,30 @@
   });
  });
 
+ /* ---- The form's human check (hCaptcha, ~780 KB) loads only when the form is near or a field is used ---- */
+ var captchaBox = document.querySelector(".h-captcha");
+ if (captchaBox) {
+  var captchaLoaded = false;
+  var loadCaptcha = function () {
+   if (captchaLoaded) return;
+   captchaLoaded = true;
+   var s = document.createElement("script");
+   s.src = "https://web3forms.com/client/script.js";
+   s.async = true;
+   document.body.appendChild(s);
+  };
+  var captchaForm = captchaBox.closest("form");
+  if (captchaForm) { captchaForm.addEventListener("focusin", loadCaptcha, { once: true }); }
+  if ("IntersectionObserver" in window) {
+   var captchaIo = new IntersectionObserver(function (entries) {
+    if (entries.some(function (e) { return e.isIntersecting; })) { captchaIo.disconnect(); loadCaptcha(); }
+   }, { rootMargin: "800px 0px" });
+   captchaIo.observe(captchaForm || captchaBox);
+  } else {
+   loadCaptcha();
+  }
+ }
+
  /* ---- Audit form (submits to Web3Forms) ---- */
  var form = document.getElementById("auditForm");
  var note = document.getElementById("formNote");

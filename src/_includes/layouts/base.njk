@@ -26,36 +26,41 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="alternate" type="application/atom+xml" href="/blog/feed.xml" title="VEWO Blog" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Fonts are served from vewo.ai (Inter and Geist, SIL OFL; latin): no wait on Google Fonts before the first paint. -->
+  <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <style>
+   @font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/fonts/inter-latin.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+   @font-face { font-family: "Geist"; font-style: normal; font-weight: 100 900; font-display: swap; src: url(/fonts/geist-latin.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+  </style>
   <link rel="stylesheet" href="/styles.css" />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B7B1BNDQYQ"></script>
+  <!-- Google Analytics and Meta Pixel: their calls queue at once (PageView included), and their ~450 KB of script
+       loads at the visitor's first scroll, tap or key, or 4 s after the page has loaded, so it never slows the first view. -->
   <script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
    gtag('config', 'G-B7B1BNDQYQ');
-  </script>
-
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window,document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '906319405682467');
-  fbq('track', 'PageView');
+   !function(f){if(f.fbq)return;var n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+   if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window);
+   fbq('init', '906319405682467');
+   fbq('track', 'PageView');
+   (function () {
+    var started = false;
+    function start() {
+     if (started) return;
+     started = true;
+     ["https://www.googletagmanager.com/gtag/js?id=G-B7B1BNDQYQ", "https://connect.facebook.net/en_US/fbevents.js"].forEach(function (src) {
+      var s = document.createElement("script"); s.async = true; s.src = src; document.head.appendChild(s);
+     });
+    }
+    ["scroll", "pointerdown", "keydown", "touchstart"].forEach(function (e) { addEventListener(e, start, { once: true, passive: true }); });
+    addEventListener("load", function () { setTimeout(start, 4000); });
+   })();
   </script>
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=906319405682467&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel Code -->
 
   {% block head %}{% endblock %}
 </head>
@@ -67,7 +72,7 @@
   <header class="nav" id="nav">
     <div class="container nav__inner">
       <a href="/" class="brand" aria-label="VEWO home">
-        <img src="/logo.png" class="brand__logo" alt="VEWO" width="150" height="50" />
+        <img src="/logo.webp" class="brand__logo" alt="VEWO" width="150" height="50" />
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="/#how">How It Works</a>
@@ -103,7 +108,7 @@
  <footer class="footer">
   <div class="container footer__inner">
    <div class="footer__brand">
-    <a href="/" class="footer__logo-link" aria-label="VEWO home"><img src="/logo-footer.png" class="footer__logo" alt="VEWO" width="130" height="17" /></a>
+    <a href="/" class="footer__logo-link" aria-label="VEWO home"><img src="/logo-footer.webp" class="footer__logo" alt="VEWO" width="130" height="17" /></a>
     <p>Be the brand AI recommends.<br />A managed content service for brands with lean teams.</p>
     <p class="footer__contact">Questions? <a href="mailto:hello@vewo.ai">hello@vewo.ai</a></p>
    </div>
