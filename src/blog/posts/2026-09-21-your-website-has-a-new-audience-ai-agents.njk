@@ -14,7 +14,7 @@ canonical: https://vewo.ai/blog/your-website-has-a-new-audience-ai-agents/
   .agents-post{
     --ink:#1a2440; --ink-soft:#39424f; --muted:#5d6570;
     --rule:#e4e7ec; --rule-soft:#eef0f4;
-    --accent:#0750d7; --accent-dark:#5433c9; --accent-soft:#f3f0ff;
+    --accent:#0750d7; --accent-dark:#03183D; --accent-soft:#eef4ff;
     --warn:#b4530a; --warn-soft:#fff6ec; --panel:#f7f8fa;
     color:var(--ink-soft);
   }
@@ -109,6 +109,13 @@ canonical: https://vewo.ai/blog/your-website-has-a-new-audience-ai-agents/
   .agents-post .faq details[open] summary{ border-bottom:1px solid var(--rule-soft); }
   .agents-post .faq .answer{ padding:14px 0 4px; }
   .agents-post .faq .answer p{ margin:0; font-size:17px; }
+  .agents-post figure{ margin:30px 0; }
+  .agents-post .fig-frame{ border:1px solid var(--rule); border-radius:12px; background:#fff; padding:22px 20px 16px; }
+  .agents-post .fig-kicker{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:700; color:var(--muted); margin:0 0 4px; }
+  .agents-post .fig-title{ font-size:18px; font-weight:700; color:var(--ink); margin:0 0 18px; line-height:1.4; }
+  .agents-post .scroller{ overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .agents-post .scroller svg{ display:block; width:100%; min-width:600px; height:auto; }
+  .agents-post figcaption{ font-size:14px; line-height:1.6; color:var(--muted); margin-top:12px; padding-top:12px; border-top:1px solid var(--rule-soft); }
 </style>
 
   <p class="standfirst">For most of the internet's history we built websites for two audiences: people and search engines. There's now a third, and it changes what your website has to do.</p>
@@ -196,6 +203,60 @@ canonical: https://vewo.ai/blog/your-website-has-a-new-audience-ai-agents/
     </div>
 
     <p>Does your website explain those things? Not buried somewhere in a product description, but clearly enough that someone, or something, can connect the customer's situation to the right solution? That's the shift.</p>
+
+    <figure>
+      <div class="fig-frame">
+        <p class="fig-kicker">Figure 1</p>
+        <p class="fig-title">What an AI assistant looks for before it recommends a product</p>
+        <div class="scroller" tabindex="0" role="region" aria-label="Chart (scrolls sideways on small screens)">
+          <svg viewBox="0 0 760 320" role="img" aria-labelledby="agfig1t agfig1d">
+            <title id="agfig1t">From a shopper's situation to a recommendation</title>
+            <desc id="agfig1d">A shopper describes their situation: a 90-pound Labrador, muddy hikes, leather seats, and one side of the back seat kept free for a child. An AI assistant checks the brand's website for answers about fit, materials, split-seat use and proof. When those answers are clear, the brand can be recommended. When they are missing or buried, the assistant can't confirm the fit and is likely to recommend another brand.</desc>
+            <defs>
+              <marker id="agarw" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#8fb4ff"/></marker>
+            </defs>
+            <g fill="none" stroke="#8fb4ff" stroke-width="2.5" marker-end="url(#agarw)">
+              <path d="M214,160 L262,160"/>
+              <path d="M478,160 C512,160 512,82 540,82"/>
+              <path d="M478,160 C512,160 512,238 540,238"/>
+            </g>
+            <rect x="14" y="62" width="200" height="196" rx="12" fill="#03183D"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" fill="#ffffff">
+              <text x="32" y="94" font-size="15" font-weight="750">The shopper's situation</text>
+              <text x="32" y="126" font-size="13.5" fill="#dbe8ff">90-pound Labrador</text>
+              <text x="32" y="150" font-size="13.5" fill="#dbe8ff">Muddy hikes every weekend</text>
+              <text x="32" y="174" font-size="13.5" fill="#dbe8ff">Leather seats</text>
+              <text x="32" y="198" font-size="13.5" fill="#dbe8ff">One side free for a child</text>
+              <text x="32" y="232" font-size="12.5" fill="#8fb4ff">"What should I get?"</text>
+            </g>
+            <rect x="268" y="62" width="210" height="196" rx="12" fill="#0750d7"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" fill="#ffffff">
+              <text x="286" y="94" font-size="15" font-weight="750">The AI assistant checks</text>
+              <text x="286" y="114" font-size="15" font-weight="750">your website for</text>
+              <text x="286" y="146" font-size="13.5" fill="#dbe8ff">Fit for a large dog</text>
+              <text x="286" y="170" font-size="13.5" fill="#dbe8ff">Materials for leather and mud</text>
+              <text x="286" y="194" font-size="13.5" fill="#dbe8ff">Split-seat use</text>
+              <text x="286" y="218" font-size="13.5" fill="#dbe8ff">Proof: tests, reviews, FAQs</text>
+            </g>
+            <rect x="546" y="26" width="200" height="112" rx="10" fill="#ffffff" stroke="#e4e7ec" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+              <text x="564" y="56" font-size="15" font-weight="780" fill="#0750d7">Answers are clear</text>
+              <text x="564" y="80" font-size="13.5" fill="#39424f">The fit can be confirmed,</text>
+              <text x="564" y="100" font-size="13.5" fill="#39424f">so your product can be</text>
+              <text x="564" y="120" font-size="13.5" fill="#39424f">recommended</text>
+            </g>
+            <rect x="546" y="182" width="200" height="112" rx="10" fill="#fff6ec" stroke="#f1d9bd" stroke-width="1.5"/>
+            <g font-family="-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif">
+              <text x="564" y="212" font-size="15" font-weight="780" fill="#b4530a">Answers are missing</text>
+              <text x="564" y="236" font-size="13.5" fill="#39424f">The fit can't be confirmed,</text>
+              <text x="564" y="256" font-size="13.5" fill="#39424f">so another brand is the</text>
+              <text x="564" y="276" font-size="13.5" fill="#39424f">likelier recommendation</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption>The assistant can only connect a shopper's situation to your product if your website answers the questions that situation raises. Clear, specific answers make the recommendation easy; gaps hand it to whoever answered them.</figcaption>
+      </div>
+    </figure>
   </section>
 
   <section class="chunk" id="questions">
