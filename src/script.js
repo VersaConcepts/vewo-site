@@ -172,10 +172,10 @@
   });
  }
 
- /* ---- Radar waitlist form (n8n webhook -> Airtable, Web3Forms email backup) ---- */
+ /* ---- Radar waitlist form (VEWO Hub app.vewo.ai/api/waitlist -> Airtable Waitlist table, since 2026-10-14) ---- */
  var rform = document.getElementById("radarForm");
  var rnote = document.getElementById("radarNote");
- var RADAR_WEBHOOK = "https://versaconcepts.app.n8n.cloud/webhook/Radar-Waitlist";
+ var RADAR_WAITLIST = "https://app.vewo.ai/api/waitlist";
  if (rform) {
   rform.addEventListener("submit", function (e) {
    e.preventDefault();
@@ -193,26 +193,34 @@
    rnote.textContent = "Adding you to the waitlist…";
    rnote.className = "form-note";
 
-   var fd = new FormData(rform);
-
-   function done(ok) {
+   function done(ok, message) {
     if (ok) {
      rnote.textContent = "You're on the Radar waitlist. We'll keep you posted as early access becomes available.";
      rnote.className = "form-note ok";
      if (window.fbq) { fbq("track", "Lead"); }
      rform.reset();
     } else {
-     rnote.textContent = "Network error. Please email hello@vewo.ai directly.";
+     rnote.textContent = message || "Network error. Please email hello@vewo.ai directly.";
      rnote.className = "form-note err";
     }
     if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel; }
    }
 
-   // Send to the n8n webhook, which writes the record to Airtable.
-   // Fire-and-forget (no-cors); the response is opaque, so treat a dispatched
-   // request as success and only surface an error on an actual network failure.
-   fetch(RADAR_WEBHOOK, { method: "POST", mode: "no-cors", body: fd })
-    .then(function () { done(true); })
+   // VEWO Hub stores the sign-up; its worker copies it into the Airtable Waitlist table.
+   fetch(RADAR_WAITLIST, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+     first_name: first,
+     last_name: rform.last_name.value.trim(),
+     email: email,
+     company: rform.company.value.trim(),
+     website: rform.website.value.trim(),
+     radar_wishlist: rform.radar_wishlist.value.trim(),
+     botcheck: rform.elements["botcheck"] ? rform.elements["botcheck"].checked : false
+    })
+   })
+    .then(function (res) { return res.json().catch(function () { return {}; }).then(function (data) { done(res.ok && data.ok !== false, data && data.error); }); })
     .catch(function () { done(false); });
   });
  }
