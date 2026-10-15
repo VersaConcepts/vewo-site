@@ -138,6 +138,10 @@ h1, h2, h3, h4 { font-family: "Geist", sans-serif; line-height: 1.12; letter-spa
 .nav__menu:hover .nav__drop, .nav__menu:focus-within .nav__drop, .nav__menu.open .nav__drop { display: flex; }
 .nav__links .nav__drop a { padding: 11px 18px; font-size: 1rem; }
 .nav__links .nav__drop a:first-child { margin-top: 6px; }
+/* The dropdown's header: the Content service's promise, above its four links (founder 2026-10-15). */
+.nav__links .nav__drop a.nav__drophead { font-family: "Geist", sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; padding: 14px 18px 12px; margin: 6px 0 4px; border-bottom: 1px solid var(--line); border-radius: 0; }
+.nav__links .nav__drop a.nav__drophead:hover { background: none; color: var(--v3); }
+.nav__mobile a.nav__subhead { font-weight: 800; color: var(--navy); }
 .nav__links .nav__drop a:last-child { margin-bottom: 6px; }
 .nav__links .nav__drop a:hover, .nav__links .nav__drop a:focus-visible { background: var(--ice); outline: none; }
 .nav__group { color: var(--muted-2); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 12px 0 4px; }
