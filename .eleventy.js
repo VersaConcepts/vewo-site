@@ -10,6 +10,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/logo.png");
   eleventyConfig.addPassthroughCopy("src/logo-footer.png");
   eleventyConfig.addPassthroughCopy("src/logo.webp");
+  // The menu logo on a transparent background (2026-10-15: the white box behind the logo).
+  eleventyConfig.addPassthroughCopy("src/logo-nav.webp");
+  eleventyConfig.addPassthroughCopy("src/logo-nav@2x.webp");
   eleventyConfig.addPassthroughCopy("src/logo-footer.webp");
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/favicon-32.png");
