@@ -1,0 +1,281 @@
+{# The VEWO ecosystem map on the Radar page (founder, 2026-10-15: "add the VEWO ecosystem map to the Radar page ... highlighting
+   what's coming soon ... Make it salesy"). Same layout as the Hub's map (app.vewo.ai Overview): the brain in the middle,
+   the products around it, and on the outer ring what VEWO asks, watches, reads and posts. Radar is open for the waitlist;
+   everything else is coming soon. Drawn by the script below; no outside requests. #}
+<section class="section" id="radar-ecosystem">
+ <div class="container">
+  <header class="sec-head reveal">
+   <span class="kicker">The VEWO Ecosystem · Coming Soon</span>
+   <h2>What if you could see everything moving around your business, <span class="grad gradline">before your next decision?</span></h2>
+   <p class="sec-sub">Radar is where it starts. Behind it, VEWO is building one brain for your brand: what AI assistants say about you, what your competitors are running, what buyers are asking, and what is shifting in search and social, all in one place. Every report, idea and answer starts from that same, current picture of your market. Click (or tap) around the map to see what's coming.</p>
+  </header>
+
+  <div class="eco reveal">
+   <div class="eco__map"><svg id="ecoMap" viewBox="-70 -70 1320 1320" role="img" aria-label="The VEWO ecosystem: the VEWO Brain in the middle, Radar and eleven products coming soon around it, and the sources VEWO reads and the places it publishes on the outer ring"></svg></div>
+   <aside class="eco__panel" id="ecoPanel" aria-live="polite"></aside>
+  </div>
+
+  <div class="r-grid r-grid--3 eco__points reveal">
+   <div class="r-card"><h3 style="font-size:1.08rem;line-height:1.3">Know what changed, before it shows up in your numbers</h3><p>Competitor launches, new ads, shifting AI answers and rising searches, spotted while you can still act on them.</p></div>
+   <div class="r-card"><h3 style="font-size:1.08rem;line-height:1.3">One brain behind every suggestion</h3><p>Your products, customers, competitors and past choices, so nothing VEWO suggests is generic and nothing you turned down comes back.</p></div>
+   <div class="r-card"><h3 style="font-size:1.08rem;line-height:1.3">You stay in control</h3><p>VEWO suggests. You decide what goes out. Nothing is published or sent without your yes.</p></div>
+  </div>
+
+  <div class="eco__cta reveal">
+   <a href="#radar-waitlist" class="btn btn--solid btn--lg">Get early access: join the Radar waitlist</a>
+   <span>Waitlist members hear first as each new product opens.</span>
+  </div>
+ </div>
+</section>
+
+<style>
+  #radar-ecosystem { --eco-ai:#6E47D1; --eco-market:#0C8577; --eco-client:#B5762F; --eco-out:#C2185B; --eco-edge:rgba(3,24,61,0.09); --eco-hot:#1267F5; }
+  #radar-ecosystem .eco { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:20px; align-items:start; margin-top:8px; }
+  #radar-ecosystem .eco__map { background:#fff; border:1px solid var(--line); border-radius:20px; overflow-x:auto; box-shadow:var(--shadow); }
+  #radar-ecosystem .eco__map svg { display:block; width:100%; height:auto; min-width:600px; }
+  #radar-ecosystem .eco__panel { background:#fff; border:1px solid var(--line); border-radius:20px; padding:22px; display:grid; gap:12px; position:sticky; top:90px; box-shadow:var(--shadow); }
+  #radar-ecosystem .eco__panel h3 { font-size:1.35rem; line-height:1.2; margin:0; color:var(--text); }
+  #radar-ecosystem .eco__panel p { margin:0; color:var(--muted); font-size:0.97rem; line-height:1.55; }
+  #radar-ecosystem .eco__kind { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--muted-2); }
+  #radar-ecosystem .eco__badge { justify-self:start; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 11px; border-radius:999px; background:var(--ice); color:var(--v3); }
+  #radar-ecosystem .eco__badge--open { background:var(--grad); color:#fff; }
+  #radar-ecosystem .eco__facts { display:grid; gap:9px; margin:0; }
+  #radar-ecosystem .eco__facts dt { font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:700; color:var(--muted-2); }
+  #radar-ecosystem .eco__facts dd { margin:2px 0 0; font-size:0.94rem; color:var(--text); line-height:1.45; }
+  #radar-ecosystem .eco__chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+  #radar-ecosystem .eco__chip { font:inherit; font-size:0.8rem; padding:4px 11px; border-radius:999px; border:1px solid var(--line-2); background:#fff; color:var(--text); cursor:pointer; }
+  #radar-ecosystem .eco__chip:hover, #radar-ecosystem .eco__chip:focus-visible { border-color:var(--v3); outline:none; }
+  #radar-ecosystem .eco__hint { font-size:0.85rem !important; color:var(--muted-2) !important; }
+  #radar-ecosystem .eco__panel .btn { justify-self:start; }
+  #radar-ecosystem .eco__points { margin-top:26px; }
+  #radar-ecosystem .eco__cta { margin-top:26px; display:flex; flex-wrap:wrap; gap:14px; align-items:center; justify-content:center; text-align:center; }
+  #radar-ecosystem .eco__cta span { color:var(--muted); font-size:0.95rem; }
+  #ecoMap .eco-node { cursor:pointer; }
+  #ecoMap .eco-node:focus { outline:none; }
+  #ecoMap .eco-node:focus-visible .eco-ring { stroke:var(--eco-hot); stroke-width:4; }
+  #ecoMap .eco-label { font-family:"Geist",system-ui,sans-serif; fill:var(--text); font-size:13px; font-weight:500; pointer-events:none; }
+  #ecoMap .eco-plabel { font-family:"Geist",system-ui,sans-serif; fill:var(--text); font-size:15px; font-weight:700; pointer-events:none; }
+  #ecoMap .eco-sub { font-family:"Geist Mono",ui-monospace,Menlo,monospace; fill:var(--muted-2); font-size:10.5px; letter-spacing:0.05em; pointer-events:none; }
+  #ecoMap .eco-sub--open { fill:var(--v3); font-weight:700; }
+  #ecoMap .eco-edge { fill:none; stroke:var(--eco-edge); stroke-width:1.2; transition:stroke 120ms, opacity 120ms; }
+  #ecoMap .eco-spoke { stroke:var(--line-2); stroke-width:1.4; fill:none; }
+  #ecoMap.dim .eco-edge:not(.hot), #ecoMap.dim .eco-spoke:not(.hot) { opacity:0.22; }
+  #ecoMap.dim .eco-node:not(.hot) { opacity:0.3; }
+  #ecoMap .eco-edge.hot { stroke:var(--eco-hot); stroke-width:2.2; opacity:1; }
+  #ecoMap .eco-spoke.hot { stroke:var(--eco-hot); stroke-width:2; opacity:1; }
+  #ecoMap .eco-arctext { font-family:"Geist Mono",ui-monospace,Menlo,monospace; font-size:12.5px; font-weight:700; letter-spacing:0.04em; pointer-events:none; }
+  #ecoMap .eco-hubtext { font-family:"Geist Mono",ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:0.18em; fill:var(--v3); font-weight:600; }
+  @media (max-width:980px) { #radar-ecosystem .eco { grid-template-columns:1fr; } #radar-ecosystem .eco__panel { position:static; } }
+  /* Phones: the whole map at once (tap a circle; the panel below explains it) rather than half a map to scroll. */
+  @media (max-width:640px) { #radar-ecosystem .eco__map svg { min-width:0; } #radar-ecosystem .eco__map { overflow:hidden; } }
+  @media (prefers-reduced-motion: reduce) { #ecoMap .eco-edge { transition:none; } }
+</style>
+
+<script>
+(function () {
+  var svg = document.getElementById("ecoMap"), panel = document.getElementById("ecoPanel");
+  if (!svg || !panel) return;
+  var NS = "http://www.w3.org/2000/svg";
+  var CX = 590, CY = 590, R_PROD = 238, R_CONN = 405, R_BRAIN = 122, R_HUB = 178;
+
+  // Each colour is an action, written on its own band of the outer ring.
+  var GROUPS = {
+    ai: { name: "VEWO asks: AI assistants", arc: "ASKS AI ENGINES YOUR BUYERS' QUESTIONS", color: "var(--eco-ai)" },
+    market: { name: "VEWO watches: your market and competitors", arc: "WATCHES YOUR MARKET AND COMPETITORS", color: "var(--eco-market)" },
+    client: { name: "VEWO reads: your own results", arc: "READS YOUR OWN RESULTS", color: "var(--eco-client)" },
+    out: { name: "VEWO posts: only what you approve", arc: "POSTS WHAT YOU APPROVE", color: "var(--eco-out)" }
+  };
+
+  var SOURCES = [
+    { id: "chatgpt", name: "ChatGPT", group: "ai", desc: "VEWO asks the questions your buyers ask and sees whether ChatGPT names you, recommends you or links to your site." },
+    { id: "claude", name: "Claude", group: "ai", desc: "The same buyer questions, asked of Claude every week." },
+    { id: "gemini", name: "Gemini", group: "ai", desc: "The same buyer questions, asked of Gemini every week." },
+    { id: "grok", name: "Grok", group: "ai", desc: "The same buyer questions, asked of Grok every week." },
+    { id: "perplexity", name: "Perplexity", group: "ai", desc: "The same buyer questions, asked of Perplexity every week." },
+    { id: "aimode", name: "Google AI Mode", group: "ai", desc: "Google's AI answers to the same buyer questions." },
+    { id: "aioverview", name: "Google AI Overviews", group: "ai", desc: "Google's AI summary above the search results: whether it names or links you." },
+    { id: "copilot", name: "Microsoft Copilot", group: "ai", desc: "Whether Copilot's answers cite your site." },
+    { id: "gsearch", name: "Google rankings", group: "market", desc: "Where you and your competitors rank, and the questions people ask." },
+    { id: "seo", name: "SEO + backlink data", group: "market", desc: "Search rankings, top pages and backlinks for you and every competitor." },
+    { id: "gads", name: "Competitor Google ads", group: "market", desc: "The ads your competitors run on Google." },
+    { id: "gtrends", name: "Google Trends + News", group: "market", desc: "What is rising in your category, and the stories that matter to it." },
+    { id: "metalib", name: "Competitor Meta ads", group: "market", desc: "Your competitors' ads on Facebook and Instagram; their newest ads show where their strategy is heading." },
+    { id: "tiktok", name: "TikTok", group: "market", desc: "Competitor accounts, category videos and videos that mention you." },
+    { id: "instagram", name: "Instagram", group: "market", desc: "Your posts, competitor posts, tags and hashtags." },
+    { id: "facebook", name: "Facebook", group: "market", desc: "Public posts about you and your competitors." },
+    { id: "youtube", name: "YouTube", group: "market", desc: "Videos that mention your brand." },
+    { id: "reddit", name: "Reddit", group: "market", desc: "What real buyers say about you and your category." },
+    { id: "x", name: "X", group: "market", desc: "Live conversation about your brand and category." },
+    { id: "pinterest", name: "Pinterest", group: "market", desc: "Pins that mention your brand." },
+    { id: "linkedin", name: "Competitor LinkedIn ads", group: "market", desc: "The ads competitors run on LinkedIn." },
+    { id: "amazon", name: "Amazon listings + prices", group: "market", desc: "Best sellers, new listings, prices and competitor products." },
+    { id: "reviews", name: "Competitor reviews", group: "market", desc: "What your competitors' unhappy buyers complain about: the openings your brand can answer." },
+    { id: "web", name: "News, press + gift guides", group: "market", desc: "News, articles, gift guides and journalist requests." },
+    { id: "shopify", name: "Shopify sales + returns", group: "client", desc: "Your top sellers, returns and sales, when you connect your store. Keys are stored encrypted." },
+    { id: "metaads", name: "Meta ad results", group: "client", desc: "Which of your own ads perform best, when you connect your ad account." },
+    { id: "klaviyo", name: "Klaviyo email results", group: "client", desc: "Your emails and how they perform, when you connect Klaviyo." },
+    { id: "amazonseller", name: "Amazon sales", group: "client", desc: "Your Amazon sales, when you connect your seller account." },
+    { id: "triplewhale", name: "Triple Whale results", group: "client", desc: "Blended ad and store results, when you connect Triple Whale." },
+    { id: "vibe", name: "Vibe TV ad results", group: "client", desc: "Connected TV ad results, when you connect Vibe." },
+    { id: "metamgr", name: "Meta Ads Manager", group: "out", desc: "Ads you approve arrive in your ad account paused, so nothing runs until you turn it on." },
+    { id: "site", name: "Your website", group: "out", desc: "Shopify, Webflow or your own code. Articles and page markup you approve are published there, or handed to your team to add." }
+  ];
+  var ARCS = { ai: -172, market: -84, client: 78, out: 154 }, STEP = 9.8;
+
+  // Radar opens first (waitlist); the rest are coming soon. viaRadar: also uses what Radar finds, through the brain.
+  var PRODUCTS = [
+    { id: "visibility", name: "Content Visibility", line: "Content", angle: -90, when: "When you start, then a content plan every quarter", what: "Find out how search engines and AI assistants see your brand today, then get a content plan built around the questions your buyers actually ask.", src: ["seo", "chatgpt", "gemini", "perplexity", "grok", "aimode", "aioverview", "copilot", "gsearch", "gtrends", "web"] },
+    { id: "radar", name: "Radar", line: "Intelligence", angle: -60, open: true, when: "Every Monday", what: "Your weekly outside view of the business: competitor moves measured against their own usual, how AI assistants answer your buyers, search, ads, Amazon, social, and mentions of your brand across social, search and press, boiled down to the few things that deserve your attention.", src: ["seo", "chatgpt", "claude", "gemini", "grok", "perplexity", "aimode", "aioverview", "gsearch", "gads", "gtrends", "metalib", "tiktok", "instagram", "facebook", "youtube", "reddit", "x", "pinterest", "linkedin", "amazon", "web"] },
+    { id: "social", name: "Social", line: "Creative", angle: -30, viaRadar: true, when: "Every Monday", what: "See what you, your competitors and your customers are posting, then get post ideas built on what is already working in your market.", src: ["tiktok", "instagram", "facebook", "youtube", "pinterest", "reddit", "x"] },
+    { id: "creators", name: "Creators", line: "Creative", angle: 0, viaRadar: true, when: "Every week", what: "Creators who fit your brand and your customers, ranked, each with a suggested first note.", src: ["tiktok", "instagram", "youtube"] },
+    { id: "backlinks", name: "Backlinks + PR", line: "Content", angle: 30, viaRadar: true, when: "Every Monday", what: "The links and press your competitors have and you don't, broken links worth reclaiming, and journalist requests, each with a suggested pitch.", src: ["seo", "web"] },
+    { id: "leads", name: "Lead Gen", line: "Growth", angle: 60, when: "Every week", what: "For brands that sell to businesses: companies showing a buying signal, each with the reason it fits.", src: ["web", "amazon"] },
+    { id: "ads", name: "Ads", line: "Creative", angle: 90, viaRadar: true, when: "Every Monday, for the products you choose", what: "Meta ad ideas for the products you pick: hooks ranked against your best ads and your competitors', copy built on your real customer reviews, images in your brand's style, and a fact check on every ad.", src: ["metalib", "gads", "reviews", "shopify", "metaads", "metamgr"] },
+    { id: "pulse", name: "Pulse", line: "Intelligence", angle: 120, when: "Every morning", what: "Yesterday's results from your store, Amazon, ads and email, together on one page.", src: ["shopify", "metaads", "klaviyo", "amazonseller", "triplewhale", "vibe"] },
+    { id: "email", name: "Email", line: "Creative", angle: 150, viaRadar: true, when: "Every Monday", what: "Your best emails and your competitors', then draft emails with subject lines ranked head to head, shown as finished mockups.", src: ["klaviyo"] },
+    { id: "blog", name: "Blog", line: "Content", angle: 180, when: "As your content plan schedules it", what: "Articles written from your brand's brain and content plan, researched live and fact-checked, ready for your site.", src: ["site"] },
+    { id: "website", name: "Website", line: "Content", angle: 210, viaRadar: true, when: "With every new page, checked weekly", what: "Structured data on your pages so search engines and AI assistants understand your products.", src: ["site"] },
+    { id: "ask", name: "Ask VEWO", line: "Growth", angle: 240, viaRadar: true, when: "Any time", what: "Ask anything about your brand, your market or your results, and get an answer from everything VEWO knows about your business.", src: [] }
+  ];
+  var BRAIN = [
+    ["Your brand profile", "Products, offer and what makes you different"],
+    ["Your ideal customers", "Who buys and why, used by every product"],
+    ["Your competitors", "The brands you are measured against, every week"],
+    ["Every report and result", "What changed, what worked and what didn't"],
+    ["Messaging map", "Your strongest angles, what competitors claim, and the gaps"],
+    ["Brand voice", "How you sound, from your own work and your customers' words"],
+    ["Real customer reviews", "The only source for customer quotes"],
+    ["Your choices", "Every approval and every pass, so next week is better"]
+  ];
+
+  function el(tag, attrs, parent) { var e = document.createElementNS(NS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function pt(r, deg) { var a = deg * Math.PI / 180; return [CX + r * Math.cos(a), CY + r * Math.sin(a)]; }
+  function arcPath(r, a0, a1, reverse) {
+    var p0 = pt(r, reverse ? a1 : a0), p1 = pt(r, reverse ? a0 : a1);
+    return "M " + p0[0] + " " + p0[1] + " A " + r + " " + r + " 0 " + (Math.abs(a1 - a0) > 180 ? 1 : 0) + " " + (reverse ? 0 : 1) + " " + p1[0] + " " + p1[1];
+  }
+  var counters = { ai: 0, market: 0, client: 0, out: 0 };
+  SOURCES.forEach(function (s) { s.angle = ARCS[s.group] + STEP * counters[s.group]++; s.users = []; });
+  var srcById = {}; SOURCES.forEach(function (s) { srcById[s.id] = s; });
+  PRODUCTS.forEach(function (p) { p.src.forEach(function (id) { srcById[id].users.push(p.id); }); });
+  var prodById = {}; PRODUCTS.forEach(function (p) { prodById[p.id] = p; });
+  var feeds = PRODUCTS.filter(function (x) { return x.viaRadar; });
+
+  var defs = el("defs", {}, svg);
+  el("path", { id: "ecoHubRing", d: "M " + (CX - R_HUB) + " " + CY + " a " + R_HUB + " " + R_HUB + " 0 1 1 " + (2 * R_HUB) + " 0 a " + R_HUB + " " + R_HUB + " 0 1 1 " + (-2 * R_HUB) + " 0" }, defs);
+  var gBack = el("g", {}, svg), gEdges = el("g", {}, svg), gSpokes = el("g", {}, svg), gArcs = el("g", {}, svg), gNodes = el("g", {}, svg);
+  el("circle", { cx: CX, cy: CY, r: R_CONN, fill: "none", stroke: "var(--line)", "stroke-width": 1, "stroke-dasharray": "2 6" }, gBack);
+  el("circle", { cx: CX, cy: CY, r: R_PROD, fill: "none", stroke: "var(--line)", "stroke-width": 1 }, gBack);
+  el("circle", { cx: CX, cy: CY, r: R_HUB, fill: "none", stroke: "var(--v3)", "stroke-width": 16, opacity: 0.1 }, gBack);
+  var ht = el("text", { class: "eco-hubtext" }, gBack);
+  el("textPath", { href: "#ecoHubRing", startOffset: "0" }, ht).textContent = "VEWO HUB · EVERYTHING LANDS HERE FOR YOUR YES OR NO · VEWO HUB · YOU DECIDE WHAT GOES OUT · ";
+
+  Object.keys(GROUPS).forEach(function (k) {
+    var angs = SOURCES.filter(function (x) { return x.group === k; }).map(function (x) { return x.angle; });
+    var lo = Math.min.apply(null, angs), hi = Math.max.apply(null, angs), pad = Math.max(4.5, (34 - (hi - lo)) / 2);
+    var a0 = lo - pad, a1 = hi + pad, bottom = Math.sin(((a0 + a1) / 2) * Math.PI / 180) > 0.05;
+    el("path", { id: "ecoArc-" + k, d: arcPath(R_CONN - 36, a0, a1, bottom), fill: "none" }, defs);
+    el("path", { d: arcPath(R_CONN - 36, a0, a1, bottom), fill: "none", stroke: GROUPS[k].color, "stroke-width": 30, opacity: 0.14 }, gArcs);
+    var t = el("text", { class: "eco-arctext", fill: GROUPS[k].color, "dominant-baseline": "central" }, gArcs);
+    el("textPath", { href: "#ecoArc-" + k, startOffset: "50%", "text-anchor": "middle" }, t).textContent = GROUPS[k].arc;
+  });
+
+  var edges = [], spokes = [], nodes = [];
+  PRODUCTS.forEach(function (p) {
+    p.src.forEach(function (sid) {
+      var s = srcById[sid], a = pt(R_PROD + 30, p.angle), b = pt(R_CONN - 12, s.angle);
+      var d = s.angle - p.angle; while (d > 180) d -= 360; while (d < -180) d += 360;
+      var m = pt((R_PROD + R_CONN) / 2 + 28, p.angle + d / 2);
+      edges.push({ p: p.id, s: sid, node: el("path", { class: "eco-edge", d: "M" + a[0] + "," + a[1] + " Q" + m[0] + "," + m[1] + " " + b[0] + "," + b[1] }, gEdges) });
+    });
+    var a2 = pt(R_BRAIN + 6, p.angle), b2 = pt(R_PROD - 32, p.angle);
+    spokes.push({ p: p.id, node: el("line", { class: "eco-spoke", x1: a2[0], y1: a2[1], x2: b2[0], y2: b2[1] }, gSpokes) });
+  });
+
+  function focusable(g, label, fn) {
+    g.setAttribute("tabindex", "0"); g.setAttribute("role", "button"); g.setAttribute("aria-label", label);
+    g.addEventListener("click", function (e) { e.stopPropagation(); fn(); });
+    g.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fn(); } });
+  }
+
+  var gb = el("g", { class: "eco-node" }, gNodes);
+  el("circle", { cx: CX, cy: CY, r: R_BRAIN + 18, fill: "rgba(18,103,245,0.12)" }, gb);
+  el("circle", { class: "eco-ring", cx: CX, cy: CY, r: R_BRAIN, fill: "#03183D", stroke: "#03183D", "stroke-width": 2 }, gb);
+  el("text", { x: CX, y: CY - 58, "text-anchor": "middle", fill: "#fff", "font-family": "Geist, system-ui, sans-serif", "font-size": 24, "font-weight": 800 }, gb).textContent = "VEWO Brain";
+  ["Brand profile", "Ideal customers", "Competitors", "Reports + results", "Messaging map", "Brand voice", "Customer reviews", "Your choices"].forEach(function (t, i) {
+    el("text", { x: CX, y: CY - 30 + i * 15.5, "text-anchor": "middle", fill: "#fff", "font-family": "Geist Mono, ui-monospace, monospace", "font-size": 11.5, opacity: 0.88 }, gb).textContent = t;
+  });
+  focusable(gb, "VEWO Brain", function () { select({ kind: "brain" }); });
+  nodes.push({ kind: "brain", id: "brain", node: gb });
+
+  PRODUCTS.forEach(function (p) {
+    var c = pt(R_PROD, p.angle), g = el("g", { class: "eco-node" }, gNodes);
+    if (p.open) el("circle", { cx: c[0], cy: c[1], r: 40, fill: "rgba(18,103,245,0.14)" }, g);
+    el("circle", { class: "eco-ring", cx: c[0], cy: c[1], r: 30, fill: "#fff", stroke: "#1267F5", "stroke-width": p.open ? 3.5 : 2.5, "stroke-dasharray": p.open ? null : "5 4" }, g);
+    el("circle", { cx: c[0], cy: c[1], r: 11, fill: p.open ? "#0750D7" : "#9DB8EA" }, g);
+    var below = Math.sin(p.angle * Math.PI / 180) > -0.3, ly = below ? c[1] + 48 : c[1] - 52;
+    el("text", { class: "eco-plabel", x: c[0], y: ly, "text-anchor": "middle" }, g).textContent = p.name;
+    el("text", { class: "eco-sub" + (p.open ? " eco-sub--open" : ""), x: c[0], y: ly + 15, "text-anchor": "middle" }, g).textContent = p.open ? "WAITLIST OPEN" : "COMING SOON";
+    focusable(g, p.name + (p.open ? ", waitlist open" : ", coming soon"), function () { select({ kind: "product", id: p.id }); });
+    nodes.push({ kind: "product", id: p.id, node: g });
+  });
+
+  SOURCES.forEach(function (s) {
+    var c = pt(R_CONN, s.angle), g = el("g", { class: "eco-node" }, gNodes);
+    el("circle", { class: "eco-ring", cx: c[0], cy: c[1], r: 10, fill: GROUPS[s.group].color, stroke: "#fff", "stroke-width": 2 }, g);
+    var left = Math.cos(s.angle * Math.PI / 180) < 0, lp = pt(R_CONN + 18, s.angle), rot = left ? s.angle + 180 : s.angle;
+    el("text", { class: "eco-label", x: lp[0], y: lp[1], "text-anchor": left ? "end" : "start", "dominant-baseline": "middle", transform: "rotate(" + rot + " " + lp[0] + " " + lp[1] + ")" }, g).textContent = s.name;
+    focusable(g, s.name, function () { select({ kind: "source", id: s.id }); });
+    nodes.push({ kind: "source", id: s.id, node: g });
+  });
+
+  function hot(prodIds, srcIds, brain, owner) {
+    svg.classList.add("dim");
+    edges.forEach(function (e) { e.node.classList.toggle("hot", prodIds.indexOf(e.p) >= 0 && srcIds.indexOf(e.s) >= 0 && (!owner || e.p === owner)); });
+    spokes.forEach(function (s) { s.node.classList.toggle("hot", brain && prodIds.indexOf(s.p) >= 0); });
+    nodes.forEach(function (n) { n.node.classList.toggle("hot", (n.kind === "brain" && brain) || (n.kind === "product" && prodIds.indexOf(n.id) >= 0) || (n.kind === "source" && srcIds.indexOf(n.id) >= 0)); });
+  }
+  function cool() { svg.classList.remove("dim"); edges.concat(spokes).forEach(function (e) { e.node.classList.remove("hot"); }); nodes.forEach(function (n) { n.node.classList.remove("hot"); }); }
+  function esc(x) { return String(x).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
+  function chips(list, kind) { return '<div class="eco__chips">' + list.map(function (x) { return '<button type="button" class="eco__chip" data-kind="' + kind + '" data-id="' + x.id + '">' + esc(x.name) + "</button>"; }).join("") + "</div>"; }
+  var WAITLIST = '<a href="#radar-waitlist" class="btn btn--solid">Join the Radar waitlist</a>';
+
+  function select(sel) {
+    var html;
+    if (sel.kind === "brain") {
+      hot(PRODUCTS.map(function (p) { return p.id; }), [], true);
+      html = '<span class="eco__kind">The center</span><h3>VEWO Brain</h3><p>Built for your brand alone. Every product reads it before it suggests anything, so nothing is generic, nothing repeats what you already have, and nothing you turned down comes back.</p><dl class="eco__facts">' +
+        BRAIN.map(function (b) { return "<div><dt>" + esc(b[0]) + "</dt><dd>" + esc(b[1]) + "</dd></div>"; }).join("") + "</dl>";
+    } else if (sel.kind === "product") {
+      var p = prodById[sel.id];
+      var lit = p.id === "radar" ? [p.id].concat(feeds.map(function (x) { return x.id; })) : p.viaRadar ? [p.id, "radar"] : [p.id];
+      hot(lit, p.src, true, p.id);
+      html = '<span class="eco__badge' + (p.open ? " eco__badge--open" : "") + '">' + (p.open ? "Waitlist open" : "Coming soon") + '</span><span class="eco__kind">' + esc(p.line) + "</span><h3>" + esc(p.name) + "</h3><p>" + esc(p.what) + '</p><dl class="eco__facts"><div><dt>When</dt><dd>' + esc(p.when) + "</dd></div>" +
+        (p.viaRadar ? "<div><dt>Powered by Radar</dt><dd>Starts from what Radar found in your market this week</dd></div>" : "") +
+        (p.id === "radar" ? "<div><dt>Feeds</dt><dd>" + esc(feeds.map(function (x) { return x.name; }).join(", ")) + "</dd></div>" : "") + "</dl>" +
+        (p.src.length ? '<div><span class="eco__kind">Reads from and publishes to</span>' + chips(p.src.map(function (id) { return srcById[id]; }), "source") + "</div>" : '<p>Answers from the brain itself, which holds everything the other products learn.</p>') + WAITLIST;
+    } else {
+      var s = srcById[sel.id];
+      hot(s.users, [s.id], false);
+      html = '<span class="eco__kind">' + esc(GROUPS[s.group].name) + "</span><h3>" + esc(s.name) + "</h3><p>" + esc(s.desc) + "</p>" +
+        '<div><span class="eco__kind">Used by</span>' + chips(s.users.map(function (id) { return prodById[id]; }), "product") + "</div>";
+    }
+    panel.innerHTML = html + '<p class="eco__hint">Click empty space on the map to start over.</p>';
+    panel.querySelectorAll(".eco__chip").forEach(function (b) { b.addEventListener("click", function () { select({ kind: b.getAttribute("data-kind"), id: b.getAttribute("data-id") }); }); });
+  }
+
+  function overview() {
+    cool();
+    panel.innerHTML = '<span class="eco__badge eco__badge--open">Radar opens first</span><h3>12 products. 32 sources. One brain built for your brand.</h3>' +
+      "<p>Radar reads the world around your business every week. Everything VEWO builds next starts from what it finds.</p><dl class=\"eco__facts\">" +
+      "<div><dt>Intelligence</dt><dd>Radar for your market every Monday, Pulse for your own results every morning</dd></div>" +
+      "<div><dt>Creative</dt><dd>Ads, Social, Email and Creators, built on what already works in your market</dd></div>" +
+      "<div><dt>Content</dt><dd>Content Visibility, Blog, Website and Backlinks + PR, so search and AI assistants find you</dd></div>" +
+      "<div><dt>Growth</dt><dd>Lead Gen and Ask VEWO</dd></div>" +
+      "<div><dt>You stay in control</dt><dd>VEWO suggests. You decide what goes out.</dd></div></dl>" +
+      '<p class="eco__hint">Click any circle to see what it does and what it connects to.</p>' + WAITLIST;
+  }
+  svg.addEventListener("click", overview);
+  overview();
+})();
+</script>
