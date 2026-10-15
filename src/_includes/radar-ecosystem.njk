@@ -153,7 +153,7 @@
     { id: "ads", name: "Ads", line: "Creative", angle: 90, viaRadar: true, when: "Every Monday, for the products you choose", what: "Meta ad ideas for the products you pick: hooks ranked against your best ads and your competitors', copy built on your real customer reviews, images in your brand's style, and a fact check on every ad.", src: ["metalib", "gads", "reviews", "shopify", "metaads", "metamgr"] },
     { id: "pulse", name: "Pulse", line: "Intelligence", angle: 120, when: "Every morning", what: "Yesterday's results from your store, Amazon, ads and email, together on one page.", src: ["shopify", "metaads", "klaviyo", "amazonseller", "triplewhale", "vibe"] },
     { id: "email", name: "Email", line: "Creative", angle: 150, viaRadar: true, when: "Every Monday", what: "Your best emails and your competitors', then draft emails with subject lines ranked head to head, shown as finished mockups.", src: ["klaviyo"] },
-    { id: "blog", name: "Blog", line: "Content", angle: 180, when: "As your content plan schedules it", what: "Articles written from your brand's brain and content plan, researched live and fact-checked, ready for your site.", src: ["site"] },
+    { id: "blog", name: "Blog", line: "Content", angle: 180, live: { label: "Content", href: "/", cta: "See VEWO Content" }, when: "As your content plan schedules it", what: "Articles written from your brand's brain and content plan, researched live and fact-checked, ready for your site.", src: ["site"] },
     { id: "website", name: "Website", line: "Content", angle: 210, viaRadar: true, when: "With every new page, checked weekly", what: "Structured data on your pages so search engines and AI assistants understand your products.", src: ["site"] },
     { id: "ask", name: "Ask VEWO", line: "Growth", angle: 240, viaRadar: true, when: "Any time", what: "Ask anything about your brand, your market or your results, and get an answer from everything VEWO knows about your business.", src: [] }
   ];
@@ -230,13 +230,14 @@
 
   PRODUCTS.forEach(function (p) {
     var c = pt(R_PROD, p.angle), g = el("g", { class: "eco-node" }, gNodes);
-    if (p.open) el("circle", { cx: c[0], cy: c[1], r: 40, fill: "rgba(18,103,245,0.14)" }, g);
-    el("circle", { class: "eco-ring", cx: c[0], cy: c[1], r: 30, fill: "#fff", stroke: "#1267F5", "stroke-width": p.open ? 3.5 : 2.5, "stroke-dasharray": p.open ? null : "5 4" }, g);
-    el("circle", { cx: c[0], cy: c[1], r: 11, fill: p.open ? "#0750D7" : "#9DB8EA" }, g);
+    var on = p.open || p.live;
+    if (on) el("circle", { cx: c[0], cy: c[1], r: 40, fill: "rgba(18,103,245,0.14)" }, g);
+    el("circle", { class: "eco-ring", cx: c[0], cy: c[1], r: 30, fill: "#fff", stroke: "#1267F5", "stroke-width": on ? 3.5 : 2.5, "stroke-dasharray": on ? null : "5 4" }, g);
+    el("circle", { cx: c[0], cy: c[1], r: 11, fill: on ? "#0750D7" : "#9DB8EA" }, g);
     var below = Math.sin(p.angle * Math.PI / 180) > -0.3, ly = below ? c[1] + 48 : c[1] - 52;
     el("text", { class: "eco-plabel", x: c[0], y: ly, "text-anchor": "middle" }, g).textContent = p.name;
-    el("text", { class: "eco-sub" + (p.open ? " eco-sub--open" : ""), x: c[0], y: ly + 15, "text-anchor": "middle" }, g).textContent = p.open ? "WAITLIST OPEN" : "COMING SOON";
-    focusable(g, p.name + (p.open ? ", waitlist open" : ", coming soon"), function () { select({ kind: "product", id: p.id }); });
+    el("text", { class: "eco-sub" + (on ? " eco-sub--open" : ""), x: c[0], y: ly + 15, "text-anchor": "middle" }, g).textContent = (p.open ? "WAITLIST OPEN" : p.live ? p.live.label : "COMING SOON").toUpperCase();
+    focusable(g, p.name + (p.open ? ", waitlist open" : p.live ? ", " + p.live.label : ", coming soon"), function () { select({ kind: "product", id: p.id }); });
     nodes.push({ kind: "product", id: p.id, node: g });
   });
 
@@ -270,10 +271,10 @@
       var p = prodById[sel.id];
       var lit = p.id === "radar" ? [p.id].concat(feeds.map(function (x) { return x.id; })) : p.viaRadar ? [p.id, "radar"] : [p.id];
       hot(lit, p.src, true, p.id);
-      html = '<span class="eco__badge' + (p.open ? " eco__badge--open" : "") + '">' + (p.open ? "Waitlist open" : "Coming soon") + '</span><span class="eco__kind">' + esc(p.line) + "</span><h3>" + esc(p.name) + "</h3><p>" + esc(p.what) + '</p><dl class="eco__facts"><div><dt>When</dt><dd>' + esc(p.when) + "</dd></div>" +
+      html = '<span class="eco__badge' + (p.open || p.live ? " eco__badge--open" : "") + '">' + (p.open ? "Waitlist open" : p.live ? esc(p.live.label) : "Coming soon") + "</span>" + (p.live && p.live.label === p.line ? "" : '<span class="eco__kind">' + esc(p.line) + "</span>") + "<h3>" + esc(p.name) + "</h3><p>" + esc(p.what) + '</p><dl class="eco__facts"><div><dt>When</dt><dd>' + esc(p.when) + "</dd></div>" +
         (p.viaRadar ? "<div><dt>Powered by Radar</dt><dd>Starts from what Radar found in your market this week</dd></div>" : "") +
         (p.id === "radar" ? "<div><dt>Feeds</dt><dd>" + esc(feeds.map(function (x) { return x.name; }).join(", ")) + "</dd></div>" : "") + "</dl>" +
-        (p.src.length ? '<div><span class="eco__kind">Reads from and publishes to</span>' + chips(p.src.map(function (id) { return srcById[id]; }), "source") + "</div>" : '<p>Answers from the brain itself, which holds everything the other products learn.</p>') + WAITLIST;
+        (p.src.length ? '<div><span class="eco__kind">Reads from and publishes to</span>' + chips(p.src.map(function (id) { return srcById[id]; }), "source") + "</div>" : '<p>Answers from the brain itself, which holds everything the other products learn.</p>') + (p.live ? '<a href="' + esc(p.live.href) + '" class="btn btn--solid">' + esc(p.live.cta) + "</a>" : WAITLIST);
     } else {
       var s = srcById[sel.id];
       hot(s.users, [s.id], false);
@@ -300,7 +301,7 @@
 
   var picker = document.getElementById("ecoPicker");
   if (picker) {
-    var picks = [{ kind: "brain", id: "brain", name: "VEWO Brain", note: "The center" }].concat(PRODUCTS.map(function (p) { return { kind: "product", id: p.id, name: p.name, note: p.open ? "Waitlist open" : "Coming soon", open: p.open }; }));
+    var picks = [{ kind: "brain", id: "brain", name: "VEWO Brain", note: "The center" }].concat(PRODUCTS.map(function (p) { return { kind: "product", id: p.id, name: p.name, note: p.open ? "Waitlist open" : p.live ? p.live.label : "Coming soon", open: p.open || Boolean(p.live) }; }));
     // Radar first after the brain: it is the one open now.
     picks.sort(function (a, b) { return (a.kind === "brain" ? -2 : a.open ? -1 : 0) - (b.kind === "brain" ? -2 : b.open ? -1 : 0); });
     picks.forEach(function (x) {
