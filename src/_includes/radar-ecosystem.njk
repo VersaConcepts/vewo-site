@@ -15,7 +15,7 @@
   </header>
 
   <div class="eco reveal">
-   <div class="eco__map"><svg id="ecoMap" viewBox="-70 -70 1320 1320" role="img" aria-label="The VEWO ecosystem: the VEWO Brain in the middle, Radar and eleven products coming soon around it, and the sources VEWO reads and the places it publishes on the outer ring"></svg></div>
+   <div class="eco__map"><div class="eco__picker" id="ecoPicker" role="group" aria-label="Tap a product to see what it does"></div><svg id="ecoMap" viewBox="-70 -70 1320 1320" role="img" aria-label="The VEWO ecosystem: the VEWO Brain in the middle, Radar and eleven products coming soon around it, and the sources VEWO reads and the places it publishes on the outer ring"></svg></div>
    <aside class="eco__panel" id="ecoPanel" aria-live="polite"></aside>
   </div>
 
@@ -33,7 +33,7 @@
   #radar-ecosystem .eco { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:20px; align-items:start; margin-top:8px; }
   #radar-ecosystem .eco__map { background:#fff; border:1px solid var(--line); border-radius:20px; overflow-x:auto; box-shadow:var(--shadow); }
   #radar-ecosystem .eco__map svg { display:block; width:100%; height:auto; min-width:600px; }
-  #radar-ecosystem .eco__panel { background:#fff; border:1px solid var(--line); border-radius:20px; padding:22px; display:grid; gap:12px; position:sticky; top:90px; box-shadow:var(--shadow); }
+  #radar-ecosystem .eco__panel { scroll-margin-top:96px; background:#fff; border:1px solid var(--line); border-radius:20px; padding:22px; display:grid; gap:12px; position:sticky; top:90px; box-shadow:var(--shadow); }
   #radar-ecosystem .eco__panel h3 { font-size:1.35rem; line-height:1.2; margin:0; color:var(--text); }
   #radar-ecosystem .eco__panel p { margin:0; color:var(--muted); font-size:0.97rem; line-height:1.55; }
   #radar-ecosystem .eco__kind { font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:700; color:var(--muted-2); }
@@ -69,7 +69,25 @@
   #ecoMap .eco-hubtext { font-family:"Geist Mono",ui-monospace,Menlo,monospace; font-size:11px; letter-spacing:0.18em; fill:var(--v3); font-weight:600; }
   @media (max-width:980px) { #radar-ecosystem .eco { grid-template-columns:1fr; } #radar-ecosystem .eco__panel { position:static; } }
   /* Phones: the whole map at once (tap a circle; the panel below explains it) rather than half a map to scroll. */
-  @media (max-width:640px) { #radar-ecosystem .eco__map svg { min-width:0; } #radar-ecosystem .eco__map { overflow:hidden; } }
+  #radar-ecosystem .eco__map { display:flex; flex-direction:column; }
+  #radar-ecosystem .eco__picker { display:none; }
+  @media (max-width:640px) {
+    #radar-ecosystem .eco__map svg { min-width:0; }
+    #radar-ecosystem .eco__map { overflow:hidden; }
+    /* Phones: the map is the picture; these buttons are the way in (each at least 44px tall). */
+    #radar-ecosystem .eco__picker { display:grid; grid-template-columns:1fr 1fr; gap:8px; padding:4px 14px 16px; order:2; }
+    #radar-ecosystem .eco__pick { font:inherit; min-height:48px; padding:8px 10px; border-radius:12px; border:1px solid var(--line-2); background:#fff; color:var(--text); text-align:left; display:flex; flex-direction:column; justify-content:center; gap:2px; cursor:pointer; }
+    #radar-ecosystem .eco__pick b { font-size:0.92rem; line-height:1.2; }
+    #radar-ecosystem .eco__pick span { font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:700; color:var(--muted-2); }
+    #radar-ecosystem .eco__pick--open { border:2px solid var(--v3); }
+    #radar-ecosystem .eco__pick--open span { color:var(--v3); }
+    #radar-ecosystem .eco__pick--brain { grid-column:1 / -1; background:#03183D; color:#fff; border-color:#03183D; }
+    #radar-ecosystem .eco__pick--brain span { color:rgba(255,255,255,0.8); }
+    #radar-ecosystem .eco__pick[aria-pressed="true"] { box-shadow:0 0 0 3px rgba(18,103,245,0.35); }
+    #radar-ecosystem .eco__chip { min-height:36px; padding:6px 13px; font-size:0.85rem; }
+    #radar-ecosystem .eco__kind, #radar-ecosystem .eco__facts dt, #radar-ecosystem .eco__badge { font-size:0.76rem; }
+    #radar-ecosystem .eco__panel { padding:20px 18px; }
+  }
   @media (prefers-reduced-motion: reduce) { #ecoMap .eco-edge { transition:none; } }
 </style>
 
@@ -262,7 +280,7 @@
       html = '<span class="eco__kind">' + esc(GROUPS[s.group].name) + "</span><h3>" + esc(s.name) + "</h3><p>" + esc(s.desc) + "</p>" +
         '<div><span class="eco__kind">Used by</span>' + chips(s.users.map(function (id) { return prodById[id]; }), "product") + "</div>";
     }
-    panel.innerHTML = html + '<p class="eco__hint">Click empty space on the map to start over.</p>';
+    panel.innerHTML = html + '<p class="eco__hint">Pick another product to compare, or click empty space on the map to start over.</p>';
     panel.querySelectorAll(".eco__chip").forEach(function (b) { b.addEventListener("click", function () { select({ kind: b.getAttribute("data-kind"), id: b.getAttribute("data-id") }); }); });
   }
 
@@ -275,9 +293,29 @@
       "<div><dt>Content</dt><dd>Content Visibility, Blog, Website and Backlinks + PR, so search and AI assistants find you</dd></div>" +
       "<div><dt>Growth</dt><dd>Lead Gen and Ask VEWO</dd></div>" +
       "<div><dt>You stay in control</dt><dd>VEWO suggests. You decide what goes out.</dd></div></dl>" +
-      '<p class="eco__hint">Click any circle to see what it does and what it connects to.</p>' + WAITLIST;
+      '<p class="eco__hint">Pick any product to see what it does and what it connects to.</p>' + WAITLIST;
   }
   svg.addEventListener("click", overview);
   overview();
+
+  var picker = document.getElementById("ecoPicker");
+  if (picker) {
+    var picks = [{ kind: "brain", id: "brain", name: "VEWO Brain", note: "The center" }].concat(PRODUCTS.map(function (p) { return { kind: "product", id: p.id, name: p.name, note: p.open ? "Waitlist open" : "Coming soon", open: p.open }; }));
+    // Radar first after the brain: it is the one open now.
+    picks.sort(function (a, b) { return (a.kind === "brain" ? -2 : a.open ? -1 : 0) - (b.kind === "brain" ? -2 : b.open ? -1 : 0); });
+    picks.forEach(function (x) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "eco__pick" + (x.kind === "brain" ? " eco__pick--brain" : "") + (x.open ? " eco__pick--open" : "");
+      btn.setAttribute("aria-pressed", "false");
+      btn.innerHTML = "<b>" + esc(x.name) + "</b><span>" + esc(x.note) + "</span>";
+      btn.addEventListener("click", function () {
+        picker.querySelectorAll(".eco__pick").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+        select({ kind: x.kind, id: x.id });
+        panel.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+      });
+      picker.appendChild(btn);
+    });
+  }
 })();
 </script>

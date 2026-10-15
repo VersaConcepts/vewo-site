@@ -205,13 +205,17 @@ permalink: /radar/index.html
 <a href="#radar-waitlist" class="btn btn--solid btn--lg r-float" id="radarFloat" hidden>Join the Radar Waitlist</a>
 <script>
 (function () {
-  // The floating button shows once the opening call to action has scrolled away, and hides again at the form.
+  // The floating button shows once the opening call to action has scrolled away, and hides again at the form and below it.
   var btn = document.getElementById("radarFloat"), top = document.getElementById("ecoCta"), form = document.getElementById("radar-waitlist");
-  if (!btn || !top || !form || !("IntersectionObserver" in window)) return;
-  var topSeen = true, formSeen = false;
-  function sync() { btn.hidden = topSeen || formSeen; }
-  new IntersectionObserver(function (e) { topSeen = e[0].isIntersecting || e[0].boundingClientRect.top > 0; sync(); }).observe(top);
-  new IntersectionObserver(function (e) { formSeen = e[0].isIntersecting; sync(); }, { rootMargin: "0px 0px -20% 0px" }).observe(form);
+  if (!btn || !top || !form) return;
+  function sync() {
+    var h = window.innerHeight;
+    // Hidden while the opening button is still on screen (or above it), and from the moment the form comes into view on down.
+    btn.hidden = top.getBoundingClientRect().bottom > 0 || form.getBoundingClientRect().top < h * 0.85;
+  }
+  window.addEventListener("scroll", sync, { passive: true });
+  window.addEventListener("resize", sync);
+  sync();
 })();
 </script>
 </div>
