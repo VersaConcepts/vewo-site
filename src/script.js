@@ -15,6 +15,17 @@
    var open = nav.classList.toggle("open");
    toggle.setAttribute("aria-expanded", open ? "true" : "false");
   });
+  // The Content menu (founder 2026-10-15): opens on hover (CSS), on click or Enter for touch and keyboards, and
+  // closes on Escape, on a click outside, or when one of its links is chosen.
+  var cmenu = document.getElementById("navContent");
+  if (cmenu) {
+    var cbtn = cmenu.querySelector(".nav__menubtn");
+    var setOpen = function (on) { cmenu.classList.toggle("open", on); cbtn.setAttribute("aria-expanded", String(on)); };
+    cbtn.addEventListener("click", function (e) { e.stopPropagation(); setOpen(!cmenu.classList.contains("open")); });
+    document.addEventListener("click", function (e) { if (!cmenu.contains(e.target)) setOpen(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && cmenu.classList.contains("open")) { setOpen(false); cbtn.focus(); } });
+    cmenu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); cbtn.blur(); }); });
+  }
   document.querySelectorAll("#navMobile a").forEach(function (a) {
    a.addEventListener("click", function () {
     nav.classList.remove("open");
