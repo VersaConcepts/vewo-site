@@ -6,33 +6,57 @@ permalink: /brand-radar-intake/index.html
 robots: noindex, nofollow
 eleventyExcludeFromCollections: true
 ---
-<section class="section">
+<section class="section intake-page">
   <div class="container">
-    <header class="sec-head reveal">
+    <header class="sec-head intake-page__head">
       <h2>Brand Radar <span class="grad">Intake.</span></h2>
+      <p class="intake-page__lede">Tell us about your brand. We review every intake and email you the next step.</p>
+      <p class="intake-page__note">About 10 minutes. The answers that matter most: your website, company snapshot, hero products, competitors, the questions buyers ask, and what makes you different.</p>
+      <p class="intake-page__note"><a id="radar-intake-full" href="https://airtable.com/appUqrNIcJw7e4yM7/paggjDZ4HwpOzd5Jt/form">Open the form full screen</a></p>
     </header>
 
-    <div class="reveal" style="border:1px solid var(--line); border-radius:16px; overflow:hidden; background:#fff;">
+    <div class="intake-page__frame">
+      <p class="intake-page__loading">Loading the form…</p>
       <iframe
         id="radar-intake-form"
         class="airtable-embed"
         src="https://airtable.com/embed/appUqrNIcJw7e4yM7/paggjDZ4HwpOzd5Jt/form"
         title="Brand Radar Intake form"
-        loading="lazy"
         width="100%"
-        height="900"
-        style="background:transparent; border:0; display:block;">
+        height="900">
       </iframe>
     </div>
   </div>
 </section>
+<style>
+  /* Phone first (2026-10-16, conference sign-ups start here): the form fills the screen below the menu and scrolls on
+     its own, so a phone never scrolls a box inside the page; the frame shows "Loading the form…" until Airtable paints. */
+  .intake-page__head { margin-bottom: 22px; }
+  .intake-page__head h2 { margin-bottom: 12px; }
+  .intake-page__lede { color: var(--text); font-size: 1.05rem; margin: 0 0 8px; }
+  .intake-page__note { color: var(--muted); font-size: 0.92rem; margin: 0 0 6px; }
+  .intake-page__note a { color: var(--v3); font-weight: 600; }
+  .intake-page__frame { position: relative; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; }
+  .intake-page__loading { position: absolute; top: 28px; left: 0; right: 0; text-align: center; color: var(--muted); font-size: 0.95rem; margin: 0; }
+  .intake-page__frame iframe { position: relative; display: block; width: 100%; height: min(900px, calc(100svh - 120px)); min-height: 560px; border: 0; background: transparent; }
+  @media (max-width: 640px) {
+    main .section.intake-page { padding: 12px 0 0; }
+    main .section.intake-page > .container { padding: 18px 0 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+    .intake-page__head { padding: 0 18px; text-align: left; }
+    .intake-page__frame { border-left: 0; border-right: 0; border-radius: 0; }
+    .intake-page__frame iframe { height: calc(100svh - 96px); }
+  }
+</style>
 <script>
   // The Quick Visibility Check (app.vewo.ai/audit) links here with the prospect's answers as Airtable prefill_ / hide_
-  // parameters, so the intake never asks them twice. Only those parameters are passed to the form.
+  // parameters, so the intake never asks them twice. Only those parameters are passed to the form (embedded and full
+  // screen).
   (function () {
     var q = new URLSearchParams(location.search), out = new URLSearchParams();
     q.forEach(function (v, k) { if (/^(prefill|hide)_/.test(k)) out.append(k, v); });
-    var f = document.getElementById("radar-intake-form");
-    if (f && out.toString()) f.src = f.src.split("?")[0] + "?" + out.toString();
+    if (!out.toString()) return;
+    var f = document.getElementById("radar-intake-form"), a = document.getElementById("radar-intake-full");
+    if (f) f.src = f.src.split("?")[0] + "?" + out.toString();
+    if (a) a.href = a.href.split("?")[0] + "?" + out.toString();
   })();
 </script>
